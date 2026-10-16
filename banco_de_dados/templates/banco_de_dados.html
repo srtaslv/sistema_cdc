@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Banco de Dados</h1>
+
+    <p> Listagem de tabelas: </p>
+    {%  for banco_de_dados in todos_bdd %}
+    <p>Imagem: {{banco_de_dados.imagem}}</p>
+    <p>Usuário: {{banco_de_dados.usuario}}</p>
+    <p>Promoção: {{banco_de_dados.promocao}}</p>
+    <p>Produto: {{banco_de_dados.produto}}</p>
+    <p>Categoria: {{banco_de_dados.categoria}}</p>
+    <p>Gerenciamento: {{banco_de_dados.gerenciamento}}</p>
+    <p>Reserva: {{banco_de_dados.reserva}}</p>
+    {% empty %}
+    <p>Nenhuma tabela encontrada.</p>
+    {% endfor %}
+</body>
+</html>
