@@ -20,3 +20,9 @@ def cadastrar_bdd(request):
         'form_bdd': form
     }
     return render(request, 'bdd_cadastrar.html', contexto)
+
+def pagina_inicial(request):
+    return render(request, 'index.html')
+
+def pagina_contatos(request):
+    return render (request, 'cont.html')

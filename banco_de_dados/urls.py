@@ -16,9 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from core.views import listar_tabelas, cadastrar_bdd
+from core.views import listar_tabelas, cadastrar_bdd, pagina_inicial, pagina_contatos
 
-urlpatterns = [    
+urlpatterns = [ 
+    path('contatos/', pagina_contatos, name='pagina_contatos'),
+    path('', pagina_inicial, name='pagina_inicial'),   
     path('banco_de_dados/', listar_tabelas, name='listar_tabelas'),
     path('cadastrar_bdd/', cadastrar_bdd, name='cadastrar_bdd'),
     path('admin/', admin.site.urls),

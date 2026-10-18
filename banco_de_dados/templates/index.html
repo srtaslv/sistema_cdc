@@ -1,3 +1,4 @@
+ {% load static %}
  <!DOCTYPE html>
  <html>
  <head>
@@ -11,14 +12,14 @@
         <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='paginainicial.css'>
+    <link rel="stylesheet" href="{% static 'css/paginainicial.css' %}">
     <script src='main.js'></script>
  </head>
  <body>
      
      <header class="header">
          <div class="logo">
-            <img src="logo.png">
+            <img src="{% static 'img/logo.png' %}" alt="Cabana da Carol">
          </div>
          <div>
              <h1>Cabana da Carol</h1>
@@ -50,10 +51,11 @@
                 Reservas
             </a>  
             
-            <a href="#">
+            <a href="/contatos/">
                 <i class="fa-solid fa-phone"></i>
                 Contato
-            </a>   
+            </a>
+            
          </nav>
 
          <a href="#" class="entrar">

@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -30,7 +31,7 @@
 
 
     <!-- CSS -->
-    <link rel="stylesheet" href="cont.css">
+    <link rel="stylesheet" href="{% static 'cont.css' %}">
 </head>
 <body>
 
@@ -42,8 +43,9 @@
 
 
 
-        <div class="logo">
-            <img src="img.logo.png" alt="Logo da Cabana da Carol">
+            <div class="logo">
+              <img src="{% static 'img/logo.png' %}" alt="Logo da Cabana da Carol">
+            </div>
 
 
             <div class="texto-logo">
