@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from core.views import listar_tabelas, cadastrar_bdd, pagina_inicial, pagina_contatos, cardapio
+from core.views import listar_tabelas, cadastrar_bdd, pagina_inicial, pagina_contatos, cardapio, pagina_localizacao
 
 urlpatterns = [ 
     path('contatos/', pagina_contatos, name='pagina_contatos'),
@@ -24,5 +24,6 @@ urlpatterns = [
     path('cardapio/', cardapio, name='cardapio'),
     path('banco_de_dados/', listar_tabelas, name='listar_tabelas'),
     path('cadastrar_bdd/', cadastrar_bdd, name='cadastrar_bdd'),
+    path('localizacao/' ,pagina_localizacao, name='pagina_localizacao'),
     path('admin/', admin.site.urls),
 ]
