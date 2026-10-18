@@ -1,219 +1,243 @@
 
+:root {
+    --azul-mar: #526b80;
+    --azul-escuro: #344c60;
+    --areia: #f5eee3;
+    --creme: #fffdf9;
+    --terracota: #bd704d;
+    --texto: #443b34;
+    --texto-suave: #796e63;
+    --linha: #e5d8c7;
+}
+
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
-:root {
-    --terracota: #b95735;
-    --laranja: #d97745;
-    --areia: #fff4e3;
-    --creme: #fffaf2;
-    --marrom: #43291f;
-    --marrom-claro: #76513e;
-    --branco: #ffffff;
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 20px;
 }
 
 body {
+    margin: 0;
+    background: var(--areia);
+    color: var(--texto);
     font-family: Arial, Helvetica, sans-serif;
-    background-color: var(--creme);
-    color: var(--marrom);
-    line-height: 1.6;
 }
 
-/* Cabeçalho */
-
+/* Cabeçalho no estilo da página inicial */
 .cabecalho {
-    background-color: var(--areia);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 22px 8%;
-    border-bottom: 1px solid #ead8c3;
-    gap: 20px;
+    gap: 16px;
+    padding: 20px 7%;
+    background: #fff;
+    border-bottom: 1px solid var(--linha);
 }
 
 .logo {
-    color: var(--terracota);
-    font-size: 24px;
+    color: var(--azul-mar);
+    font-size: 22px;
     font-weight: bold;
     text-decoration: none;
 }
 
 .voltar {
-    color: var(--marrom);
+    color: var(--azul-mar);
+    font-size: 14px;
     text-decoration: none;
-    font-weight: bold;
-    border: 1px solid var(--terracota);
-    padding: 10px 16px;
-    border-radius: 25px;
-    transition: 0.3s;
 }
 
 .voltar:hover {
-    background-color: var(--terracota);
-    color: var(--branco);
+    color: var(--terracota);
 }
 
-/* Introdução */
+/* Área principal */
+main {
+    width: 92%;
+    max-width: 1050px;
+    margin: 32px auto;
+    padding: 35px 6%;
+    background: var(--creme);
+    border: 1px solid var(--linha);
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(52, 76, 96, 0.06);
+}
 
+/* Título */
 .introducao {
+    padding: 20px 0 30px;
     text-align: center;
-    padding: 65px 20px 35px;
+    border-bottom: 1px solid var(--linha);
 }
 
 .subtitulo {
     color: var(--terracota);
     font-size: 12px;
     font-weight: bold;
-    letter-spacing: 4px;
-    margin-bottom: 10px;
+    letter-spacing: 3px;
 }
 
 .introducao h1 {
-    font-family: Georgia, serif;
-    font-size: clamp(36px, 5vw, 52px);
-    margin-bottom: 12px;
+    margin: 12px 0;
+    color: var(--azul-escuro);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(36px, 6vw, 54px);
+    font-weight: normal;
 }
 
 .introducao > p:last-child {
-    color: var(--marrom-claro);
-    font-size: 16px;
+    color: var(--texto-suave);
+    font-size: 15px;
+    line-height: 1.7;
 }
 
-/* Abas de comidas e bebidas */
-
-.abas {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    padding: 15px 20px;
-}
-
-.aba {
-    background-color: transparent;
-    color: var(--marrom);
-    border: 1px solid #ddc6ad;
-    border-radius: 30px;
-    padding: 13px 28px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.aba.ativa {
-    background-color: var(--terracota);
-    color: var(--branco);
-    border-color: var(--terracota);
-}
-
-/* Categorias */
-
+/* Atalhos das categorias */
 .categorias {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
-    padding: 20px;
+    gap: 9px;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--linha);
 }
 
-.categoria {
-    background-color: var(--areia);
-    color: var(--marrom);
-    border: 1px solid #ead8c3;
+.categorias a {
+    padding: 9px 13px;
+    color: var(--azul-escuro);
+    background: #fff;
+    border: 1px solid #d7e0e5;
     border-radius: 20px;
-    padding: 8px 18px;
-    cursor: pointer;
-    transition: 0.3s;
+    font-size: 12px;
+    text-decoration: none;
+    transition: 0.2s;
 }
 
-.categoria:hover,
-.categoria.ativa {
-    background-color: var(--laranja);
-    color: var(--branco);
-    border-color: var(--laranja);
+.categorias a:hover {
+    color: #fff;
+    background: var(--azul-mar);
+    border-color: var(--azul-mar);
 }
 
-/* Lista de produtos */
+/* Seções do cardápio */
+.secao-cardapio {
+    padding: 28px 0;
+    border-bottom: 1px solid var(--linha);
+    scroll-margin-top: 20px;
+}
 
+.secao-cardapio h2 {
+    margin: 0 0 18px;
+    padding-bottom: 12px;
+    color: var(--azul-mar);
+    border-bottom: 2px solid #d9b69b;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 25px;
+    font-weight: normal;
+}
+
+.observacao {
+    margin: -5px 0 18px;
+    color: var(--texto-suave);
+    font-size: 13px;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+/* Pratos e preços */
 .produtos {
-    width: min(900px, 88%);
-    margin: 20px auto 70px;
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 32px;
 }
 
 .produto {
-    background-color: var(--branco);
-    border: 1px solid #f0e2d2;
-    border-radius: 14px;
-    padding: 22px;
-    box-shadow: 0 4px 14px rgba(67, 41, 31, 0.05);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-content: start;
+    align-items: baseline;
+    gap: 5px 12px;
+    padding: 13px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px dotted #d8c8b6;
+    border-radius: 0;
+    box-shadow: none;
 }
 
-.produto h2 {
-    font-family: Georgia, serif;
-    font-size: 20px;
-    margin-bottom: 8px;
+.produto h3 {
+    margin: 0;
+    color: var(--texto);
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: bold;
+}
+
+.produto span {
+    color: var(--terracota);
+    font-size: 14px;
+    font-weight: bold;
+    white-space: nowrap;
 }
 
 .produto p {
-    color: var(--marrom-claro);
-    font-size: 14px;
-}
-
-.produto .preco {
-    display: block;
-    color: var(--terracota);
-    font-size: 18px;
-    font-weight: bold;
-    margin-top: 14px;
+    grid-column: 1 / -1;
+    margin: 2px 0 0;
+    color: var(--texto-suave);
+    font-size: 12px;
+    line-height: 1.6;
 }
 
 /* Rodapé */
-
 footer {
+    padding: 24px 15px;
+    color: #fff;
+    background: var(--azul-escuro);
     text-align: center;
-    background-color: var(--marrom);
-    color: var(--areia);
-    padding: 25px 15px;
-    font-size: 14px;
+    font-size: 13px;
+    line-height: 1.6;
 }
 
 /* Celulares */
-
-@media (max-width: 600px) {
+@media (max-width: 650px) {
     .cabecalho {
-        padding: 18px 5%;
-        flex-wrap: wrap;
+        padding: 17px 5%;
     }
 
     .logo {
-        font-size: 20px;
+        font-size: 18px;
     }
 
-    .voltar {
-        font-size: 13px;
-        padding: 8px 12px;
+    main {
+        width: 95%;
+        margin: 16px auto;
+        padding: 22px 6%;
     }
 
     .introducao {
-        padding-top: 45px;
+        padding: 15px 0 24px;
     }
 
-    .abas {
-        gap: 8px;
+    .subtitulo {
+        letter-spacing: 2px;
     }
 
-    .aba {
-        padding: 11px 20px;
-        font-size: 14px;
+    .categorias {
+        gap: 7px;
+    }
+
+    .categorias a {
+        padding: 8px 11px;
+        font-size: 11px;
     }
 
     .produtos {
         grid-template-columns: 1fr;
-        width: 90%;
+    }
+
+    .secao-cardapio h2 {
+        font-size: 23px;
     }
 }
