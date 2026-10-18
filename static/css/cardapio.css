@@ -1,0 +1,219 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --terracota: #b95735;
+    --laranja: #d97745;
+    --areia: #fff4e3;
+    --creme: #fffaf2;
+    --marrom: #43291f;
+    --marrom-claro: #76513e;
+    --branco: #ffffff;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--creme);
+    color: var(--marrom);
+    line-height: 1.6;
+}
+
+/* Cabeçalho */
+
+.cabecalho {
+    background-color: var(--areia);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 8%;
+    border-bottom: 1px solid #ead8c3;
+    gap: 20px;
+}
+
+.logo {
+    color: var(--terracota);
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.voltar {
+    color: var(--marrom);
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid var(--terracota);
+    padding: 10px 16px;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+.voltar:hover {
+    background-color: var(--terracota);
+    color: var(--branco);
+}
+
+/* Introdução */
+
+.introducao {
+    text-align: center;
+    padding: 65px 20px 35px;
+}
+
+.subtitulo {
+    color: var(--terracota);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+}
+
+.introducao h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(36px, 5vw, 52px);
+    margin-bottom: 12px;
+}
+
+.introducao > p:last-child {
+    color: var(--marrom-claro);
+    font-size: 16px;
+}
+
+/* Abas de comidas e bebidas */
+
+.abas {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    padding: 15px 20px;
+}
+
+.aba {
+    background-color: transparent;
+    color: var(--marrom);
+    border: 1px solid #ddc6ad;
+    border-radius: 30px;
+    padding: 13px 28px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.aba.ativa {
+    background-color: var(--terracota);
+    color: var(--branco);
+    border-color: var(--terracota);
+}
+
+/* Categorias */
+
+.categorias {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+}
+
+.categoria {
+    background-color: var(--areia);
+    color: var(--marrom);
+    border: 1px solid #ead8c3;
+    border-radius: 20px;
+    padding: 8px 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.categoria:hover,
+.categoria.ativa {
+    background-color: var(--laranja);
+    color: var(--branco);
+    border-color: var(--laranja);
+}
+
+/* Lista de produtos */
+
+.produtos {
+    width: min(900px, 88%);
+    margin: 20px auto 70px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.produto {
+    background-color: var(--branco);
+    border: 1px solid #f0e2d2;
+    border-radius: 14px;
+    padding: 22px;
+    box-shadow: 0 4px 14px rgba(67, 41, 31, 0.05);
+}
+
+.produto h2 {
+    font-family: Georgia, serif;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.produto p {
+    color: var(--marrom-claro);
+    font-size: 14px;
+}
+
+.produto .preco {
+    display: block;
+    color: var(--terracota);
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 14px;
+}
+
+/* Rodapé */
+
+footer {
+    text-align: center;
+    background-color: var(--marrom);
+    color: var(--areia);
+    padding: 25px 15px;
+    font-size: 14px;
+}
+
+/* Celulares */
+
+@media (max-width: 600px) {
+    .cabecalho {
+        padding: 18px 5%;
+        flex-wrap: wrap;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .voltar {
+        font-size: 13px;
+        padding: 8px 12px;
+    }
+
+    .introducao {
+        padding-top: 45px;
+    }
+
+    .abas {
+        gap: 8px;
+    }
+
+    .aba {
+        padding: 11px 20px;
+        font-size: 14px;
+    }
+
+    .produtos {
+        grid-template-columns: 1fr;
+        width: 90%;
+    }
+}

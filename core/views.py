@@ -26,3 +26,13 @@ def pagina_inicial(request):
 
 def pagina_contatos(request):
     return render (request, 'cont.html')
+
+def cardapio(request):
+    produtos = banco_de_dados.objects.all()
+
+    contexto = {
+        'todos_bdd': produtos
+    }
+
+    return render(request, 'cardapio.html', contexto)
+
