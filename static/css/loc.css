@@ -1,0 +1,635 @@
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+    background-color: #ffffff;
+}
+
+
+/* CABEÇALHO */
+.header {
+    width: 100%;
+    min-height: 90px;
+    background-color: #ffffff;
+
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+    padding: 5px 50px;
+    overflow: visible;
+
+
+    border-bottom: 1px solid #817a7a;
+}
+
+
+/* NOME DA CABANA */
+.header h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 28px;
+    color: #d4680f;
+}
+
+
+.header p {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    color: #555555;
+    margin-top: 3px;
+}
+
+
+/* LOGO */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+
+.logo img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+
+.texto-logo {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* MENU */
+.header nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+
+.header nav a {
+    text-decoration: none;
+    color: #333333;
+
+
+    font-size: 14px;
+    font-weight: 500;
+
+
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+
+.header nav a i {
+    font-size: 15px;
+}
+
+
+.header nav a:hover,
+.header nav a.ativo {
+    color: #d4680f;
+}
+
+
+/* BOTÃO ENTRAR */
+.entrar {
+    text-decoration: none;
+    background-color: #d4680f;
+    color: white;
+
+
+    padding: 10px 18px;
+    border-radius: 20px;
+    font-size: 14px;
+
+
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+
+    flex-shrink: 0;
+}
+
+
+.entrar:hover {
+    background-color: #d4680f;
+}
+
+
+/* CONTEÚDO PRINCIPAL */
+.conteudo {
+    width: 100%;
+}
+
+
+/* FUNDO DA LOCALIZAÇÃO */
+.area-localizacao {
+    min-height: 738px;
+
+
+    background-image: url("img.praia");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    gap: 30px;
+    padding: 40px 20px;
+
+
+    position: relative;
+}
+
+
+/* TEXTO DE BOAS-VINDAS */
+.texto-boas-vindas {
+    position: absolute;
+    left: 4%;
+    top: 18%;
+    transform: translateY(-50%);
+
+
+    width: 340px;
+    text-align: center;
+}
+
+
+/* BEM-VINDO À */
+.texto-boas-vindas .bem-vindo {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: #092b6b;
+    margin-bottom: 4px;
+}
+
+
+/* NOME DA CABANA */
+.texto-boas-vindas h2 {
+    font-family: 'Pacifico', cursive;
+    font-size: 38px;
+    font-weight: normal;
+    line-height: 1.4;
+    color: #d4680f;
+    margin-bottom: 18px;
+}
+
+
+/* DESCRIÇÃO */
+.texto-boas-vindas .descricao {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #092b6b;
+}
+
+
+/* SOL */
+.texto-boas-vindas .sol {
+    margin-top: 18px;
+    color: #d4680f;
+    font-size: 38px;
+    line-height: 1;
+}
+
+
+/* CARTÃO DE LOCALIZAÇÃO */
+.cartao-localizacao {
+    background-color: #ffffff;
+    width: 390px;
+    max-width: 100%;
+
+
+    padding: 24px 20px;
+    border-radius: 15px;
+
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+
+
+    position: relative;
+    z-index: 1;
+}
+
+
+/* ÍCONE DE LOCALIZAÇÃO */
+.icone-localizacao {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 10px;
+
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    background-color: #fff0e5;
+    color: #d94b0b;
+    border-radius: 50%;
+    font-size: 23px;
+}
+
+
+/* TÍTULO DO CARTÃO */
+.cartao-localizacao h2 {
+    text-align: center;
+    font-size: 22px;
+    color: #333333;
+    margin-bottom: 5px;
+}
+
+
+/* DETALHE ABAIXO DO TÍTULO */
+.detalhe-titulo {
+    width: 45px;
+    height: 3px;
+    background-color: #e95a19;
+    border-radius: 5px;
+    margin: 8px auto 14px;
+}
+
+
+/* DESCRIÇÃO DO ENDEREÇO */
+.descricao-localizacao {
+    font-size: 12px;
+    line-height: 1.7;
+    color: #444444;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+
+/* BLOCO DO ENDEREÇO */
+.endereco {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+
+
+    padding: 13px 12px;
+    margin-bottom: 12px;
+
+
+    background-color: #fffaf6;
+    border: 1px solid #eeeeee;
+    border-radius: 10px;
+
+
+    text-align: left;
+}
+
+
+.endereco > i {
+    color: #e95a19;
+    font-size: 18px;
+    margin-top: 2px;
+}
+
+
+.endereco h3 {
+    font-size: 12px;
+    color: #333333;
+    margin-bottom: 5px;
+}
+
+
+.endereco p {
+    font-size: 11px;
+    line-height: 1.5;
+    color: #555555;
+}
+
+
+/* MAPA */
+.mapa {
+    width: 100%;
+    height: 170px;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid #eeeeee;
+    margin-bottom: 14px;
+}
+
+
+.mapa iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: 0;
+}
+
+
+/* BOTÃO GOOGLE MAPS */
+.botao-mapa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+
+    width: 100%;
+    padding: 13px 10px;
+
+
+    background-color: #e94705;
+    color: #ffffff;
+    text-decoration: none;
+
+
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+
+
+    transition: 0.3s;
+}
+
+
+.botao-mapa:hover {
+    background-color: #c93a00;
+}
+
+
+/* RODAPÉ */
+.rodape {
+    background-color: #101c25;
+    color: #ffffff;
+
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+
+
+    padding: 8px 15px 0;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+
+/* ITENS DO RODAPÉ */
+.rodape-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+
+    padding: 2px 5px;
+}
+
+
+.rodape-item > i {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    background-color: #e95a0c;
+    color: #ffffff;
+    font-size: 15px;
+    flex-shrink: 0;
+}
+
+
+/* COR DOS ÍCONES */
+.rodape-item:nth-child(2) > i {
+    background-color: #c92b9b;
+}
+
+
+.rodape-item:nth-child(3) > i {
+    background-color: #128c37;
+}
+
+
+/* TEXTOS DO RODAPÉ */
+.rodape-item h3 {
+    font-family: 'Pacifico', cursive;
+    font-size: 11px;
+    font-weight: normal;
+    margin-bottom: 1px;
+}
+
+
+.rodape-item p,
+.rodape-item a {
+    color: #dddddd;
+    font-size: 9px;
+    line-height: 1.3;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+}
+
+
+.rodape-item a:hover {
+    color: #f5a15f;
+}
+
+
+/* DIREITOS AUTORAIS */
+.direitos {
+    width: 100%;
+    border-top: 1px solid #29343c;
+
+
+    padding: 6px 5px;
+    margin-top: 2px;
+
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px;
+
+
+    color: #bbbbbb;
+    text-align: center;
+    font-size: 9px;
+}
+
+
+.direitos span {
+    color: #e95a0c;
+}
+
+
+/* ADAPTAÇÃO PARA TELAS MENORES */
+@media (max-width: 1100px) {
+
+
+    .header {
+        padding: 10px 25px;
+        flex-wrap: wrap;
+    }
+
+
+    .header nav {
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+
+    .area-localizacao {
+        padding: 35px 4%;
+    }
+
+
+    .texto-boas-vindas {
+        width: 300px;
+        left: 2%;
+    }
+
+
+}
+
+
+/* CELULARES */
+@media (max-width: 700px) {
+
+
+    .header {
+        flex-direction: column;
+        justify-content: center;
+        gap: 15px;
+        padding: 15px;
+    }
+
+
+    .logo {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+
+    .logo img {
+        width: 75px;
+        height: 75px;
+    }
+
+
+    .header h1 {
+        font-size: 24px;
+    }
+
+
+    .header nav {
+        justify-content: center;
+        gap: 14px;
+        flex-wrap: wrap;
+    }
+
+
+    .header nav a {
+        font-size: 12px;
+    }
+
+
+    .entrar {
+        align-self: center;
+    }
+
+
+    .area-localizacao {
+        min-height: auto;
+        flex-direction: column;
+        justify-content: center;
+        gap: 30px;
+        padding: 45px 18px;
+        background-position: center;
+    }
+
+
+    .texto-boas-vindas {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+
+
+        width: 100%;
+        max-width: 340px;
+    }
+
+
+    .texto-boas-vindas h2 {
+        font-size: 32px;
+    }
+
+
+    .cartao-localizacao {
+        width: 390px;
+        max-width: 100%;
+    }
+
+
+    .rodape {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 15px 0;
+    }
+
+
+    .rodape-item {
+        width: 100%;
+        padding: 5px;
+    }
+
+
+    .direitos {
+        line-height: 1.8;
+    }
+
+
+}
+
+
+/* AJUSTES PARA TELAS MUITO PEQUENAS */
+@media (max-width: 500px) {
+
+
+    .cartao-localizacao {
+        padding: 25px 20px;
+    }
+
+
+    .cartao-localizacao h2 {
+        font-size: 20px;
+    }
+
+
+}
