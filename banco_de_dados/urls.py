@@ -24,7 +24,7 @@ urlpatterns = [
     path('cardapio/', cardapio, name='cardapio'),
     path('banco_de_dados/', listar_tabelas, name='listar_tabelas'),
     path('cadastrar_bdd/', cadastrar_bdd, name='cadastrar_bdd'),
-    path('localizacao/' ,pagina_localizacao, name='pagina_localizacao'),
+    path('localizacao/', pagina_localizacao, name='pagina_localizacao'),
     
     path('admin/', admin.site.urls),
 ]
