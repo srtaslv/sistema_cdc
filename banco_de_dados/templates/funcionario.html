@@ -1,0 +1,498 @@
+ {% load static %}
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Login do Funcionário - Cabana da Carol</title>
+    <link rel='stylesheet' href='funcionario.css'>
+   <!-- Fontes semelhantes às do modelo original -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Biblioteca de ícones -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<title>Login do Funcionário - Cabana da Carol</title>
+
+
+     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            color: #292929;
+            background: #f7f7f7;
+        }
+
+
+        /* CABEÇALHO */
+        header {
+            min-height: 65px;
+            background: #fffaf4;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            padding: 10px 25px;
+            flex-wrap: wrap;
+            border-bottom: 1px solid #ddd;
+        }
+
+
+        .marca {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+
+        .marca h1 {
+            color: #ef5b17;
+            font-family: cursive;
+            font-size: 24px;
+        }
+
+
+        .marca p {
+            font-size: 11px;
+            margin-top: 3px;
+        }
+
+
+        nav {
+            display: flex;
+            gap: 18px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 12px;
+        }
+
+
+        nav a:hover {
+            color: #ef5b17;
+        }
+
+
+        .botao-entrar {
+            color: #ef5b17;
+            border: 1px solid #ef5b17;
+            padding: 9px 15px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+
+        /* CONTEÚDO PRINCIPAL */
+        main {
+            flex: 1;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            gap: 30px;
+            padding: 40px 7%;
+            background:
+                linear-gradient(
+                    rgba(0, 30, 45, 0.12),
+                    rgba(0, 30, 45, 0.12)
+                ),
+                url("praia.jpg") center / cover no-repeat;
+        }
+
+
+        .boas-vindas {
+            max-width: 330px;
+            color: white;
+            text-align: center;
+            text-shadow: 1px 2px 5px #333;
+        }
+
+
+        .boas-vindas h2 {
+            font-family: cursive;
+            font-size: 28px;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+
+        .boas-vindas p {
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+
+        /* CARTÃO DE LOGIN */
+        .login {
+            width: 350px;
+            max-width: 100%;
+            background: #fff;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
+        }
+
+
+        .login .logo {
+            margin: 0 auto 12px;
+            width: 58px;
+            height: 58px;
+        }
+
+
+        .login h2 {
+            font-size: 21px;
+            margin-bottom: 8px;
+            color: #3e2520;
+        }
+
+
+        .descricao {
+            color: #666;
+            font-size: 11px;
+            line-height: 1.5;
+            margin-bottom: 22px;
+        }
+
+
+        .campo {
+            text-align: left;
+            margin-bottom: 16px;
+        }
+
+
+        .campo label {
+            display: block;
+            font-weight: bold;
+            font-size: 12px;
+            margin-bottom: 7px;
+        }
+
+
+        .campo input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 7px;
+            font-size: 13px;
+            outline: none;
+        }
+
+
+        .campo input:focus {
+            border-color: #ef5b17;
+            box-shadow: 0 0 4px #efb18e;
+        }
+
+
+        .esqueci {
+            display: block;
+            text-align: right;
+            font-size: 11px;
+            color: #ef5b17;
+            text-decoration: none;
+            margin: -3px 0 18px;
+        }
+
+
+        .botao {
+            width: 100%;
+            padding: 13px;
+            border: none;
+            border-radius: 7px;
+            background: #ed4b00;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+
+        .botao:hover {
+            background: #c93e00;
+        }
+
+
+        /* RODAPÉ */
+        footer {
+            background: #17130e;
+            color: white;
+            padding: 18px 25px;
+            text-align: center;
+        }
+
+
+        .contatos {
+            display: flex;
+            justify-content: space-around;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+
+        .contatos p {
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+
+        .direitos {
+            border-top: 1px solid #68402a;
+            padding-top: 12px;
+            font-size: 11px;
+            color: #ddd;
+        }
+
+
+        /* TELAS MENORES */
+        @media (max-width: 700px) {
+            header {
+                justify-content: center;
+            }
+
+
+            nav {
+                justify-content: center;
+            }
+
+
+            main {
+                flex-direction: column;
+                padding: 35px 18px;
+                gap: 25px;
+            }
+
+
+            .boas-vindas h2 {
+                font-size: 24px;
+            }
+
+
+            .login {
+                width: 100%;
+                max-width: 350px;
+            }
+
+
+            .contatos {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+         <div>
+             <img src="" alt="Logo da Cabana da Carol">
+
+
+            <div class="texto-logo">
+                <h1>Cabana da Carol</h1>
+
+
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Praia do Amor - Praia da Pipa
+                </p>
+         </div>
+
+
+
+
+         <nav>
+            <a href="#" class="ativo">
+                <i class="fa-solid fa-house"></i>
+                Início
+            </a>
+
+
+
+
+            <a href="#">
+                <i class="fa-solid fa-utensilis"></i>
+                Cardápio Digital
+            </a>
+           
+            <a href="#">
+                <i class="fa-solid fa-location-dot"></i>
+                Localização
+            </a>
+           
+            <a href="#">
+                <i class="fa-solid fa-calendar-days"></i>
+                Reservas
+            </a>  
+           
+            <a href="#">
+                <i class="fa-solid fa-phone"></i>
+                Contato
+            </a>  
+         </nav>
+
+
+
+
+         <a href="#" class="Voltar">
+            <i class="fa-solid fa-user">
+                Voltar
+            </i>
+         </a>
+    </header>
+    <main>
+        <section class="boas-vindas">
+            <h2>Bem-vindo à<br>Cabana da Carol!</h2>
+            <p>
+                Sinta o melhor da Praia do Amor com
+                boa comida, bons drinks e uma vista inesquecível!
+            </p>
+        </section>
+        <section class="login" id="login">
+            <div class="logo">🌴</div>
+
+
+            <h2>Login do Funcionário</h2>
+
+
+            <p class="descricao">
+                Acesso restrito para funcionários.<br>
+                Entre com suas credenciais para continuar.
+            </p>
+
+
+            <form action="login.php" method="POST">
+                <div class="campo">
+                    <label for="usuario">Usuário</label>
+                    <input
+                        type="text"
+                        id="usuario"
+                        name="usuario"
+                        placeholder="Digite seu usuário"
+                        autocomplete="username"
+                        required
+                    >
+                </div>
+
+
+                <div class="campo">
+                    <label for="senha">Senha</label>
+                    <input
+                        type="password"
+                        id="senha"
+                        name="senha"
+                        placeholder="Digite sua senha"
+                        autocomplete="current-password"
+                        required
+                    >
+                </div>
+
+
+                <a href="#" class="esqueci">Esqueci minha senha</a>
+
+
+                <button type="submit" class="botao">
+                    Entrar
+                </button>
+            </form>
+        </section>
+    </main>
+  <link rel="stylesheet" href="funcionario.css">
+  <footer class="rodape">
+
+
+        <!-- LOCALIZAÇÃO -->
+        <div class="rodape-item">
+
+
+            <i class="fa-solid fa-location-dot"></i>
+
+
+            <div>
+                <h3>Onde estamos</h3>
+                <p>Praia do Amor,<br>Praia de Pipa/RN</p>
+            </div>
+
+
+        </div>
+
+
+        <!-- INSTAGRAM -->
+        <div class="rodape-item">
+
+
+            <i class="fa-brands fa-instagram"></i>
+
+
+            <div>
+                <h3>Siga nosso Instagram</h3>
+
+
+                <a href="https://www.instagram.com/cabanadacarolbeachbarpipa/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    @cabanadacarolbeachbarpipa
+                </a>
+            </div>
+
+
+        </div>
+
+
+        <!-- WHATSAPP -->
+        <div class="rodape-item">
+
+
+            <i class="fa-brands fa-whatsapp"></i>
+
+
+            <div>
+                <h3>Fale conosco</h3>
+
+
+                <a href="https://wa.me/5584981512346"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    (84) 98151-2346 – Cecília
+                </a>
+            </div>
+
+
+        </div>
+
+
+        <!-- DIREITOS AUTORAIS -->
+        <div class="direitos">
+
+
+            <span>〰〰〰</span>
+            Sistema CDC - Cabana da Carol
+            <span>|</span>
+            Todos os direitos reservados © 2026
+            <span>〰〰〰</span>
+
+
+        </div>
+
+
+    </footer>
+
+</body>
+</html>
