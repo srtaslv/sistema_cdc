@@ -39,3 +39,6 @@ def cardapio(request):
 def pagina_localizacao(request):
     return render (request, 'loc.html')
 
+def pagina_funcionario(request):
+    return render (request, 'funcionario.html')
+
