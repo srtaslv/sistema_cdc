@@ -16,16 +16,28 @@ class CategoriaAdmin(admin.ModelAdmin):
     search_fields = ('nome_categoria',)
 
 
+
 @admin.register(Produto)
 class ProdutoAdmin(admin.ModelAdmin):
     list_display = (
-        'id',
         'descricao',
+        'categoria',
         'valor_produto',
-        'categoria'
+        'preco_sob_consulta',
+        'disponivel'
     )
-    list_filter = ('categoria',)
-    search_fields = ('descricao',)
+
+    list_filter = (
+        'categoria',
+        'preco_sob_consulta',
+        'disponivel'
+    )
+
+    search_fields = (
+        'descricao',
+        'detalhes'
+    )
+
 
 
 @admin.register(Imagem)

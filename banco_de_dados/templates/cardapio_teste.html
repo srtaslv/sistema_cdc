@@ -26,36 +26,39 @@
 <!-- TESTE DE INTEGRAÇÃO COM O BANCO DE DADOS -->
 
 <section class="secao-cardapio" id="teste-banco">
+    <h2>Nosso Cardápio</h2>
 
-    <h2>Produtos cadastrados no banco de dados</h2>
+    {% for categoria in categorias %}
+        <div class="categoria-cardapio">
+            <h3>{{ categoria.nome_categoria }}</h3>
 
-    <div class="produtos">
+            <div class="produtos">
+                {% for produto in categoria.produtos.all %}
+                    {% if produto.disponivel %}
+                        <article class="produto">
+                            <h4>{{ produto.descricao }}</h4>
 
-        {% for categoria in categorias %}
+                            {% if produto.detalhes %}
+                                <p>{{ produto.detalhes }}</p>
+                            {% endif %}
 
-            {% for produto in categoria.produtos.all %}
-
-                <article class="produto">
-
-                    <h3>{{ produto.descricao }}</h3>
-
-                    <span>
-                        R$ {{ produto.valor_produto|floatformat:2 }}
-                    </span>
-
-                    <p>
-                        Categoria: {{ categoria.nome_categoria }}
-                    </p>
-
-                </article>
-
-            {% endfor %}
-
-        {% endfor %}
-
-    </div>
-
+                            {% if produto.preco_sob_consulta %}
+                                <span>Preço sob consulta</span>
+                            {% elif produto.valor_produto != None %}
+                                <span>
+                                    R$ {{ produto.valor_produto|floatformat:2 }}
+                                </span>
+                            {% else %}
+                                <span>Preço não informado</span>
+                            {% endif %}
+                        </article>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
 </section>
+
 
 
     <nav class="categorias" aria-label="Categorias do cardápio">

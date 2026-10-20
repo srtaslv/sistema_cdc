@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import banco_de_dados, Produto, Categoria
 from .forms import banco_de_dadosForm
+from django.db.models import Prefetch
 
 def listar_tabelas(request):
     bdd = banco_de_dados.objects.all()
@@ -45,17 +46,16 @@ def pagina_funcionario(request):
 
 
 def cardapio_teste(request):
-    categorias = Categoria.objects.prefetch_related(
-        'produtos'
-    ).all()
-
-    contexto = {
-        'categorias': categorias
-    }
-
-    return render(
-        request,
-        'cardapio_teste.html',
-        contexto
+    categorias = Categoria.objects.filter(
+        produtos__disponivel=True
+    ).distinct().prefetch_related(
+        Prefetch(
+            'produtos',
+            queryset=Produto.objects.filter(disponivel=True)
+        )
     )
+
+    return render(request, 'cardapio_teste.html', {
+        'categorias': categorias
+    })
 

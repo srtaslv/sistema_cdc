@@ -21,12 +21,27 @@ class Categoria(models.Model):
         return self.nome_categoria
 
 
+
 class Produto(models.Model):
     descricao = models.CharField(max_length=200)
 
+    detalhes = models.TextField(
+        blank=True
+    )
+
     valor_produto = models.DecimalField(
-        max_digits=10,
-        decimal_places=2
+        max_digits=8,
+        decimal_places=2,
+        null=True,
+        blank=True
+    )
+
+    preco_sob_consulta = models.BooleanField(
+        default=False
+    )
+
+    disponivel = models.BooleanField(
+        default=True
     )
 
     categoria = models.ForeignKey(
@@ -37,6 +52,7 @@ class Produto(models.Model):
 
     def __str__(self):
         return self.descricao
+
 
 
 class Imagem(models.Model):
