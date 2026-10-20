@@ -51,6 +51,7 @@ class PromocaoAdmin(admin.ModelAdmin):
     list_display = ('id', 'descricao')
 
 
+
 @admin.register(Reserva)
 class ReservaAdmin(admin.ModelAdmin):
     list_display = (
@@ -59,10 +60,29 @@ class ReservaAdmin(admin.ModelAdmin):
         'data_reserva',
         'horario',
         'qtnde_pessoas',
+        'telefone',
         'status'
     )
-    list_filter = ('status', 'data_reserva')
-    search_fields = ('nome_reserva', 'telefone')
+
+    list_filter = (
+        'status',
+        'data_reserva'
+    )
+
+    search_fields = (
+        'nome_reserva',
+        'telefone',
+        'email'
+    )
+
+    list_editable = (
+        'status',
+    )
+
+    ordering = (
+        'data_reserva',
+        'horario'
+    )
 
 @admin.register(Gerenciamento)
 class GerenciamentoAdmin(admin.ModelAdmin):

@@ -1,0 +1,236 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Reservas | Cabana da Carol</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Pacifico&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet"
+          href="{% static 'css/reserva.css' %}">
+</head>
+
+<body>
+
+    <!-- Cabeçalho -->
+    <header class="header">
+        <div class="logo">
+            <img src="{% static 'img/logo.png' %}"
+                 alt="Cabana da Carol">
+        </div>
+
+        <div>
+            <h1>Cabana da Carol</h1>
+
+            <div class="localizacao">
+                <i class="fa-solid fa-location-dot"></i>
+                <p>Praia do Amor - Praia da Pipa</p>
+            </div>
+        </div>
+
+        <nav>
+            <a href="/">
+                <i class="fa-solid fa-house"></i>
+                Início
+            </a>
+
+            <a href="{% url 'cardapio' %}">
+                <i class="fa-solid fa-utensils"></i>
+                Cardápio Digital
+            </a>
+
+            <a href="{% url 'pagina_localizacao' %}">
+                <i class="fa-solid fa-location-dot"></i>
+                Localização
+            </a>
+
+            <a href="{% url 'cadastrar_reserva' %}"
+               class="ativo">
+                <i class="fa-solid fa-calendar-days"></i>
+                Reservas
+            </a>
+
+            <a href="/contatos/">
+                <i class="fa-solid fa-phone"></i>
+                Contato
+            </a>
+        </nav>
+
+        <a href="#" class="entrar">
+            <i class="fa-solid fa-user"></i>
+            Entrar
+        </a>
+    </header>
+
+    <!-- Formulário -->
+    <main class="pagina-reservas">
+        
+
+     <div class="texto-boas-vindas">
+
+        <p class="bem-vindo">
+          Bem-vindo à
+        </p>
+
+       <h2>Cabana da Carol!</h2>
+
+       <div class="decoracao-praia">
+         <i class="fa-solid fa-umbrella-beach"></i>
+       </div>
+
+      <p class="descricao-boas-vindas">
+        Sinta o melhor da Praia do Amor<br>
+        com boa comida, bons drinks e<br>
+        uma vista inesquecível.
+       </p>
+
+
+       <div class="sol-reserva">
+        <i class="fa-regular fa-sun"></i>
+       </div>
+
+    </div>
+
+        <section class="formulario-reserva">
+
+            <div class="titulo-reserva">
+                <div class="icone-reserva">
+                    <i class="fa-solid fa-calendar-days"></i>
+                </div>
+
+                <h2>Fazer Reserva</h2>
+
+                <p>
+                    Preencha os dados abaixo para solicitar
+                    sua mesa na Cabana da Carol.
+                </p>
+            </div>
+
+            <form method="POST">
+                {% csrf_token %}
+
+                <div class="linha-formulario">
+                    <div class="campo-reserva">
+                        <label for="{{ form.data_reserva.id_for_label }}">
+                            Data da reserva
+                        </label>
+                        {{ form.data_reserva }}
+                        {{ form.data_reserva.errors }}
+                    </div>
+
+                    <div class="campo-reserva">
+                        <label for="{{ form.horario.id_for_label }}">
+                            Horário
+                        </label>
+                        {{ form.horario }}
+                        {{ form.horario.errors }}
+                    </div>
+                </div>
+
+                <div class="campo-reserva">
+                    <label for="{{ form.qtnde_pessoas.id_for_label }}">
+                        Número de pessoas
+                    </label>
+                    {{ form.qtnde_pessoas }}
+                    {{ form.qtnde_pessoas.errors }}
+                </div>
+
+                <div class="campo-reserva">
+                    <label for="{{ form.nome_reserva.id_for_label }}">
+                        Nome completo
+                    </label>
+                    {{ form.nome_reserva }}
+                    {{ form.nome_reserva.errors }}
+                </div>
+
+                <div class="campo-reserva">
+                    <label for="{{ form.telefone.id_for_label }}">
+                        Telefone / WhatsApp
+                    </label>
+                    {{ form.telefone }}
+                    {{ form.telefone.errors }}
+                </div>
+
+                <div class="campo-reserva">
+                    <label for="{{ form.email.id_for_label }}">
+                        E-mail
+                    </label>
+                    {{ form.email }}
+                    {{ form.email.errors }}
+                </div>
+
+                <div class="campo-reserva">
+                    <label for="{{ form.observacao.id_for_label }}">
+                        Observações (opcional)
+                    </label>
+                    {{ form.observacao }}
+                    {{ form.observacao.errors }}
+                </div>
+
+                {{ form.non_field_errors }}
+
+                <button type="submit" class="botao-reserva">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    Solicitar reserva
+                </button>
+            </form>
+
+            <p class="aviso-reserva">
+                <i class="fa-solid fa-shield-halved"></i>
+                Sua reserva só será confirmada após
+                o contato da nossa equipe.
+            </p>
+
+        </section>
+    </main>
+
+    <!-- Rodapé original -->
+    <footer>
+        <div class="informacao">
+            <div class="icone-footer local">
+                <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div>
+                <h4>Onde estamos</h4>
+                <p>Praia do Amor, Praia da Pipa/RN</p>
+            </div>
+        </div>
+
+        <div class="separador"></div>
+
+        <div class="informacao">
+            <div class="icone-footer instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </div>
+            <div>
+                <h4>Siga nosso Instagram</h4>
+                <p>@cabanadacarolrestaurantepipa</p>
+            </div>
+        </div>
+
+        <div class="separador"></div>
+
+        <div class="informacao">
+            <div class="icone-footer whatsapp">
+                <i class="fa-brands fa-whatsapp"></i>
+            </div>
+            <div>
+                <h4>Fale conosco</h4>
+                <p>(84) 98151-2346 – Cecília</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

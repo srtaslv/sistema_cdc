@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import banco_de_dados, Produto, Categoria
-from .forms import banco_de_dadosForm
+from .forms import banco_de_dadosForm, ReservaForm
 from django.db.models import Prefetch
 
 def listar_tabelas(request):
@@ -59,3 +59,20 @@ def cardapio_teste(request):
         'categorias': categorias
     })
 
+def cadastrar_reserva(request):
+    if request.method == 'POST':
+        form = ReservaForm(request.POST)
+
+        if form.is_valid():
+            form.save()
+            return redirect('reserva_sucesso')
+    else:
+        form = ReservaForm()
+
+    return render(request, 'reserva.html', {
+        'form': form
+    })
+
+
+def reserva_sucesso(request):
+    return render(request, 'reserva_sucesso.html')
