@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import banco_de_dados
+from .models import banco_de_dados, Produto, Categoria
 from .forms import banco_de_dadosForm
 
 def listar_tabelas(request):
@@ -27,11 +27,12 @@ def pagina_inicial(request):
 def pagina_contatos(request):
     return render (request, 'cont.html')
 
+
 def cardapio(request):
-    produtos = banco_de_dados.objects.all()
+    produtos = Produto.objects.select_related('categoria').all()
 
     contexto = {
-        'todos_bdd': produtos
+        'produtos': produtos
     }
 
     return render(request, 'cardapio.html', contexto)
@@ -41,4 +42,20 @@ def pagina_localizacao(request):
 
 def pagina_funcionario(request):
     return render (request, 'funcionario.html')
+
+
+def cardapio_teste(request):
+    categorias = Categoria.objects.prefetch_related(
+        'produtos'
+    ).all()
+
+    contexto = {
+        'categorias': categorias
+    }
+
+    return render(
+        request,
+        'cardapio_teste.html',
+        contexto
+    )
 

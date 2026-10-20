@@ -1,0 +1,344 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardápio | Cabana da Carol</title>
+    <link rel="stylesheet" href="{% static 'css/cardapio.css' %}">
+</head>
+<body>
+
+<header class="cabecalho">
+    <a href="/" class="logo">Cabana da Carol</a>
+    <a href="/" class="voltar">← Voltar ao início</a>
+</header>
+
+<main>
+    <section class="introducao">
+        <p class="subtitulo">SABORES À BEIRA-MAR</p>
+        <h1>Cabana da Carol</h1>
+        <p>Nosso Cardápio</p>
+    </section>
+
+    
+<!-- TESTE DE INTEGRAÇÃO COM O BANCO DE DADOS -->
+
+<section class="secao-cardapio" id="teste-banco">
+
+    <h2>Produtos cadastrados no banco de dados</h2>
+
+    <div class="produtos">
+
+        {% for categoria in categorias %}
+
+            {% for produto in categoria.produtos.all %}
+
+                <article class="produto">
+
+                    <h3>{{ produto.descricao }}</h3>
+
+                    <span>
+                        R$ {{ produto.valor_produto|floatformat:2 }}
+                    </span>
+
+                    <p>
+                        Categoria: {{ categoria.nome_categoria }}
+                    </p>
+
+                </article>
+
+            {% endfor %}
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+
+    <nav class="categorias" aria-label="Categorias do cardápio">
+        <a href="#refeicoes">1. Refeições</a>
+        <a href="#saladas">2. Saladas</a>
+        <a href="#massas">3. Massas individuais</a>
+        <a href="#caldos">4. Caldos e ensopados</a>
+        <a href="#porcoes">5. Porções extras</a>
+        <a href="#petiscos">6. Petiscos</a>
+        <a href="#cervejas600">7. Cervejas de 600 ml</a>
+        <a href="#longneck">8. Cervejas long neck</a>
+        <a href="#vinhos">9. Vinhos e espumantes</a>
+        <a href="#sucos">10. Sucos</a>
+        <a href="#drinks">11. Drinks</a>
+        <a href="#combos">12. Combos especiais</a>
+        <a href="#doses">13. Doses e shots</a>
+        <a href="#bebidas">14. Bebidas sem álcool e adicionais</a>
+        <a href="#servicos">15. Outros serviços</a>
+    </nav>
+
+    <section class="secao-cardapio" id="refeicoes">
+        <h2>1. Refeições</h2>
+        <p class="observacao">Acompanhamento geral: arroz, macaxeira ou fritas e salada.</p>
+        <div class="produtos">
+            <article class="produto"><h3>Camarão com casca</h3><span>R$ 158,00</span></article>
+            <article class="produto"><h3>Camarão sem casca</h3><span>R$ 164,00</span></article>
+            <article class="produto"><h3>Camarão à milanesa</h3><span>R$ 169,00</span></article>
+            <article class="produto"><h3>Isca de peixe à milanesa</h3><span>R$ 169,00</span></article>
+            <article class="produto"><h3>Posta de peixe</h3><span>R$ 164,00</span></article>
+            <article class="produto"><h3>Peixe inteiro</h3><span>Consultar</span></article>
+            <article class="produto">
+                <h3>Peixada com camarão</h3>
+                <span>R$ 194,00</span>
+                <p>Peixe cozido no leite de coco.</p>
+            </article>
+            <article class="produto">
+                <h3>Mistão do mar</h3>
+                <span>R$ 204,00</span>
+                <p>Peixe, camarão e lula à milanesa.</p>
+            </article>
+            <article class="produto">
+                <h3>Mistão do mar grelhado</h3>
+                <span>R$ 199,00</span>
+                <p>Descrição original: peixe, camarão e lula à milanesa.</p>
+            </article>
+            <article class="produto">
+                <h3>Mistão da terra</h3>
+                <span>R$ 195,00</span>
+                <p>Frango, carne de sol e calabresa.</p>
+            </article>
+            <article class="produto"><h3>Lula grelhada ou à milanesa</h3><span>R$ 185,00</span></article>
+            <article class="produto"><h3>Peixe com camarão frito ou grelhado</h3><span>R$ 194,00</span></article>
+            <article class="produto"><h3>Carne de sol</h3><span>R$ 158,00</span></article>
+            <article class="produto"><h3>Filé de frango frito ou grelhado</h3><span>R$ 145,00</span></article>
+            <article class="produto"><h3>Filé de frango à milanesa</h3><span>R$ 155,00</span></article>
+            <article class="produto">
+                <h3>Vegetariano</h3>
+                <span>R$ 155,00</span>
+                <p>Queijo coalho à milanesa ou grelhado.</p>
+            </article>
+        </div>
+    </section>
+
+    <section class="secao-cardapio" id="saladas">
+        <h2>2. Saladas</h2>
+        <div class="produtos">
+            <article class="produto"><h3>Salada simples</h3><span>R$ 45,00</span></article>
+            <article class="produto"><h3>Salada de camarão</h3><span>R$ 70,00</span></article>
+            <article class="produto"><h3>Salada de frango</h3><span>R$ 60,00</span></article>
+        </div>
+    </section>
+
+    <section class="secao-cardapio" id="massas">
+        <h2>3. Massas individuais</h2>
+        <div class="produtos">
+            <article class="produto"><h3>Massa grano duro com molho de tomate caseiro e camarões</h3><span>R$ 80,00</span></article>
+            <article class="produto"><h3>Fetuttine grano duro com molho de tomate caseiro</h3><span>R$ 60,00</span></article>
+        </div>
+    </section>
+
+    <section class="secao-cardapio" id="caldos">
+        <h2>4. Caldos e ensopados</h2>
+        <div class="produtos">
+            <article class="produto"><h3>Ensopado de camarão</h3><span>R$ 71,00</span></article>
+            <article class="produto"><h3>Ensopado de peixe</h3><span>R$ 71,00</span></article>
+            <article class="produto"><h3>Caldo individual de camarão ou peixe</h3><span>R$ 45,00</span></article>
+            <article class="produto"><h3>Caldo de feijão</h3><span>R$ 37,00</span></article>
+        </div>
+    </section>
+
+    <section class="secao-cardapio" id="porcoes">
+        <h2>5. Porções extras</h2>
+        <div class="produtos">
+            <article class="produto"><h3>Feijão / arroz</h3><span>R$ 20,00</span></article>
+            <article class="produto"><h3>Purê</h3><span>R$ 27,00</span></article>
+            <article class="produto"><h3>Pirão</h3><span>R$ 28,00</span></article>
+            <article class="produto"><h3>Batata grelhada</h3><span>R$ 24,00</span></article>
+            <article class="produto"><h3>Legumes cozidos</h3><span>R$ 24,00</span></article>
+            <article class="produto"><h3>Batata frita</h3><span>R$ 33,00</span></article>
+            <article class="produto"><h3>Macaxeira frita</h3><span>R$ 33,00</span></article>
+            <article class="produto"><h3>Farofa de banana</h3><span>R$ 21,00</span></article>
+            <article class="produto"><h3>Macaxeira cozida</h3><span>R$ 27,00</span></article>
+            <article class="produto"><h3>Pão</h3><span>R$ 13,00</span></article>
+        </div>
+    </section>
+
+    <section class="secao-cardapio" id="petiscos">
+        <h2>6. Petiscos</h2>
+        <div class="produtos">
+            <article class="produto"><h3>Camarão à milanesa com macaxeira</h3><span>R$ 124,00</span></article>
+            <article class="produto"><h3>Camarão com casca com macaxeira</h3><span>R$ 117,00</span></article>
+            <article class="produto"><h3>Camarão sem casca com macaxeira</h3><span>R$ 120,00</span></article>
+            <article class="produto"><h3>Isca de peixe com macaxeira</h3><span>R$ 124,00</span></article>
+            <article class="produto"><h3>Lula à milanesa com macaxeira</h3><span>R$ 124,00</span></article>
+            <article class="produto"><h3>Posta de filé de peixe com macaxeira</h3><span>R$ 120,00</span></article>
+            <article class="produto"><h3>Carne de sol com macaxeira</h3><span>R$ 120,00</span></article>
+            <article class="produto"><h3>Frango frito à milanesa com macaxeira</h3><span>R$ 120,00</span></article>
+            <article class="produto"><h3>Calabresa acebolada com macaxeira</h3><span>R$ 93,00</span></article>
+            <article class="produto"><h3>Azeitonas, queijo e salame</h3><span>R$ 93,00</span></article>
+            <article class="produto"><h3>Peixe inteiro com macaxeira</h3><span>Consultar</span></article>
+            <article class="produto"><h3>Caranguejo</h3><span>Consultar</span></article>
+            <article class="produto"><h3>Queijo à milanesa com macaxeira</h3><span>R$ 82,00</span></article>
+            <article class="produto"><h3>Mistão do mar com macaxeira</h3><span>R$ 162,00</span></article>
+            <article class="produto"><h3>Frango empanado recheado com queijo com macaxeira</h3><span>R$ 130,00</span></article>
+            <article class="produto"><h3>Mistão da terra com macaxeira</h3><span>R$ 162,00</span></article>
+            <article class="produto"><h3>Peixe com camarões com macaxeira</h3><span>R$ 155,00</span></article>
+        </div>
+    </section>
+
+    <section class="secao-cardapio" id="cervejas600">
+        <h2>7. Cervejas de 600 ml</h2>
+        <div class="produtos">
+            <article class="produto"><h3>Heineken</h3><span>R$ 26,00</span></article>
+            <article class="produto"><h3>Amstel</h3><span>R$ 19,00</span></article>
+            <article class="produto"><h3>Devassa</h3><span>R$ 18,00</span></article>
+            <article class="produto"><h3>Skol</h3><span>R$ 18,00</span></article>
+            <article class="produto"><h3>Brahma</h3><span>R$ 18,00</span></article>
+            <article class="produto"><h3>Petra</h3><span>R$ 19,00</span></article>
+            <article class="produto"><h3>Brahma Duplo Malte</h3><span>R$ 19,00</span></article>
+            <article class="produto"><h3>Original</h3><span>R$ 25,00</span></article>
+            <article class="produto"><h3>Stella</h3><span>R$ 25,00</span></article>
+            <article class="produto"><h3>Spaten</h3><span>R$ 22,00</span></article>
+            <article class="produto"><h3>Budweiser</h3><span>R$ 22,00</span></article>
+        </div>
+    </section>
+
+    <section class="secao-cardapio" id="longneck">
+        <h2>8. Cervejas long neck</h2>
+        <div class="produtos">
+            <article class="produto"><h3>Heineken</h3><span>R$ 19,00</span></article>
+            <article class="produto"><h3>Praya</h3><span>R$ 19,00</span><p>Sem glúten.</p></article>
+            <article class="produto"><h3>Amstel Ultra</h3><span>R$ 16,00</span><p>Sem glúten.</p></article>
+            <article class="produto"><h3>Stella</h3><span>R$ 18,00</span></article>
+            <article class="produto"><h3>Corona</h3><span>R$ 18,00</span></article>
+            <article class="produto"><h3>Cerveja artesanal</h3><span>R$ 19,00</span></article>
+        </div>
+    </section>
+
+    <section class="secao-cardapio" id="vinhos">
+        <h2>9. Vinhos e espumantes</h2>
+        <div class="produtos">
+            <article class="produto"><h3>Espumante Chandon</h3><span>R$ 171,00</span></article>
+            <article class="produto"><h3>Espumante nacional</h3><span>R$ 101,00</span></article>
+            <article class="produto"><h3>Vinho</h3><span>R$ 101,00</span></article>
+        </div>
+    </section>
+
+    <section class="secao-cardapio" id="sucos">
+        <h2>10. Sucos</h2>
+        <div class="produtos">
+            <article class="produto"><h3>Suco de 1 fruta</h3><span>R$ 16,00</span></article>
+            <article class="produto"><h3>Sucos mistos</h3><span>R$ 19,00</span></article>
+            <article class="produto"><h3>Sucos especiais</h3><span>R$ 18,00</span><p>Kiwi, morango, cajá ou caju.</p></article>
+            <article class="produto"><h3>Suco com leite</h3><span>R$ 21,00</span></article>
+        </div>
+    </section>
+
+    <section class="secao-cardapio" id="drinks">
+        <h2>11. Drinks</h2>
+        <div class="produtos">
+            <article class="produto"><h3>Caipirinha de Pitu / 51</h3><span>R$ 19,00</span></article>
+            <article class="produto"><h3>Caipirinha especial</h3><span>R$ 25,00</span></article>
+            <article class="produto"><h3>Caipiroska de Orloff / Smirnoff</h3><span>R$ 29,00</span></article>
+            <article class="produto"><h3>Caipiroska de tequila</h3><span>R$ 34,00</span></article>
+            <article class="produto"><h3>Caipisaquê</h3><span>R$ 35,00</span></article>
+            <article class="produto"><h3>Hula-hula</h3><span>R$ 39,00</span></article>
+            <article class="produto"><h3>Hula-hula com Absolut</h3><span>R$ 46,00</span></article>
+            <article class="produto"><h3>Hula-hula sem álcool</h3><span>R$ 33,00</span></article>
+            <article class="produto"><h3>Piña colada</h3><span>R$ 36,00</span></article>
+            <article class="produto"><h3>Cuba libre</h3><span>R$ 29,00</span></article>
+            <article class="produto"><h3>Hi-fi</h3><span>R$ 31,00</span></article>
+            <article class="produto"><h3>Coco-loco</h3><span>R$ 39,00</span></article>
+            <article class="produto"><h3>Coco-loco com Absolut</h3><span>R$ 46,00</span></article>
+            <article class="produto"><h3>Batida de 1 fruta</h3><span>R$ 33,00</span></article>
+            <article class="produto"><h3>Batida de 2 frutas</h3><span>R$ 36,00</span></article>
+            <article class="produto"><h3>Caipifruta de 1 fruta</h3><span>R$ 35,00</span></article>
+            <article class="produto"><h3>Caipifruta de 1 fruta com Absolut</h3><span>R$ 39,00</span></article>
+            <article class="produto"><h3>Caipifruta de kiwi / limão / hortelã</h3><span>R$ 38,00</span></article>
+            <article class="produto"><h3>Caipifruta de abacaxi / limão / hortelã</h3><span>R$ 38,00</span></article>
+            <article class="produto"><h3>Caipifruta de morango com maracujá</h3><span>R$ 37,00</span></article>
+            <article class="produto"><h3>Caipifruta de manga com maracujá</h3><span>R$ 37,00</span></article>
+            <article class="produto"><h3>Caipifruta mista com Absolut</h3><span>R$ 43,00</span></article>
+            <article class="produto"><h3>Cozumel</h3><span>R$ 27,00</span><p>Cerveja, limão, sal e gelo.</p></article>
+            <article class="produto"><h3>Mojito</h3><span>R$ 34,00</span></article>
+            <article class="produto"><h3>Daikiry</h3><span>R$ 34,00</span></article>
+            <article class="produto"><h3>Margarita frozen</h3><span>R$ 35,00</span></article>
+            <article class="produto"><h3>Sex on the beach</h3><span>R$ 35,00</span></article>
+            <article class="produto"><h3>Tropical gin nacional</h3><span>R$ 37,00</span></article>
+            <article class="produto"><h3>Gin tônica nacional</h3><span>R$ 36,00</span></article>
+            <article class="produto"><h3>Tropical gin importado</h3><span>R$ 44,00</span></article>
+            <article class="produto"><h3>Gin tônica importado</h3><span>R$ 44,00</span></article>
+            <article class="produto"><h3>Aperol spritz</h3><span>R$ 40,00</span></article>
+            <article class="produto"><h3>Negroni</h3><span>R$ 36,00</span></article>
+            <article class="produto"><h3>Tangiroska</h3><span>R$ 36,00</span></article>
+            <article class="produto"><h3>Mimosa</h3><span>R$ 36,00</span><p>Espumante e suco de laranja.</p></article>
+            <article class="produto"><h3>Tequila sunrise</h3><span>R$ 37,00</span></article>
+            <article class="produto"><h3>Da Biruta</h3><span>R$ 36,00</span><p>Cachaça especial, mel, limão, pó de guaraná e gelo.</p></article>
+        </div>
+    </section>
+
+    <section class="secao-cardapio" id="combos">
+        <h2>12. Combos especiais</h2>
+        <div class="produtos">
+            <article class="produto"><h3>1 Smirnoff + 4 Red Bulls</h3><span>R$ 216,00</span></article>
+            <article class="produto"><h3>1 Red Label + 4 Red Bulls</h3><span>R$ 206,00</span></article>
+            <article class="produto"><h3>1 gin Tanqueray + 4 Red Bulls</h3><span>R$ 311,00</span></article>
+            <article class="produto"><h3>1 Absolut + 4 Red Bulls</h3><span>R$ 291,00</span></article>
+        </div>
+    </section>
+
+    <section class="secao-cardapio" id="doses">
+        <h2>13. Doses e shots</h2>
+        <div class="produtos">
+            <article class="produto"><h3>Saquê</h3><span>R$ 18,00</span></article>
+            <article class="produto"><h3>Gin importado</h3><span>R$ 30,00</span></article>
+            <article class="produto"><h3>Gin nacional</h3><span>R$ 24,00</span></article>
+            <article class="produto"><h3>Cachaça (Pitu / 51 / Caranguejo)</h3><span>R$ 13,00</span></article>
+            <article class="produto"><h3>Cachaça especial</h3><span>R$ 15,00</span></article>
+            <article class="produto"><h3>Smirnoff / Orloff</h3><span>R$ 18,00</span></article>
+            <article class="produto"><h3>Absolut</h3><span>R$ 23,00</span></article>
+            <article class="produto"><h3>Rum Bacardi</h3><span>R$ 18,00</span></article>
+            <article class="produto"><h3>Campari</h3><span>R$ 18,00</span></article>
+            <article class="produto"><h3>Tequila</h3><span>R$ 24,00</span></article>
+            <article class="produto"><h3>Red Label</h3><span>R$ 24,00</span></article>
+            <article class="produto"><h3>Black Label</h3><span>R$ 29,00</span></article>
+            <article class="produto"><h3>Jack Daniel's</h3><span>R$ 29,00</span></article>
+            <article class="produto"><h3>Aperol</h3><span>R$ 20,00</span></article>
+        </div>
+    </section>
+
+    <section class="secao-cardapio" id="bebidas">
+        <h2>14. Bebidas sem álcool e adicionais</h2>
+        <div class="produtos">
+            <article class="produto"><h3>Água sem gás</h3><span>R$ 8,00</span></article>
+            <article class="produto"><h3>Água com gás</h3><span>R$ 9,00</span></article>
+            <article class="produto"><h3>Tônica</h3><span>R$ 12,00</span></article>
+            <article class="produto"><h3>Energético</h3><span>R$ 17,00</span></article>
+            <article class="produto"><h3>Coco</h3><span>R$ 10,00</span></article>
+            <article class="produto"><h3>Fys</h3><span>R$ 7,00</span><p>Refrigerante produzido pelo grupo Heineken.</p></article>
+            <article class="produto"><h3>Refrigerante lata</h3><span>R$ 10,00</span></article>
+            <article class="produto"><h3>Coca-Cola 1 litro</h3><span>R$ 20,00</span></article>
+            <article class="produto"><h3>Copo com gelo grande</h3><span>R$ 4,00</span></article>
+            <article class="produto"><h3>Limão espremido</h3><span>R$ 4,00</span></article>
+        </div>
+    </section>
+
+    <section class="secao-cardapio" id="servicos">
+        <h2>15. Outros serviços</h2>
+        <div class="produtos">
+            <article class="produto">
+                <h3>Aluguel de pranchas de surfe</h3>
+                <span>Consultar</span>
+                <p>O cardápio original não informa o valor.</p>
+            </article>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>Cabana da Carol · Sabores que combinam com o mar</p>
+</footer>
+
+</body>
+</html>
+
