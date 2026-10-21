@@ -31,76 +31,64 @@
 <body>
 
 
+    
     <!-- CABEÇALHO -->
     <header class="header">
-
 
         <!-- LOGO E NOME DA CABANA -->
         <div class="logo">
 
-
             <img src="{% static 'img/logo.png' %}" alt="Logo da Cabana da Carol">
-
 
             <div class="texto-logo">
                 <h1>Cabana da Carol</h1>
 
-
-                <p>
-                    <i class="fa-solid fa-location-dot"></i>
-                    Praia do Amor - Praia da Pipa
-                </p>
+                    <p>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Praia do Amor - Praia da Pipa
+                    </p>
             </div>
-
 
         </div>
 
-
         <!-- MENU DE NAVEGAÇÃO -->
         <nav>
-
 
             <a href="{% url 'pagina_inicial' %}">
                 <i class="fa-solid fa-house"></i>
                 Início
             </a>
 
-
             <a href="{% url 'cardapio' %}">
                 <i class="fa-solid fa-utensils"></i>
                 Cardápio Digital
             </a>
 
-
-            <a href="loc.html" class="ativo">
+            <a href="{% url 'pagina_localizacao' %}" class="ativo">
                 <i class="fa-solid fa-location-dot"></i>
                 Localização
             </a>
-
 
             <a href="{% url 'pagina_contatos' %}">
                 <i class="fa-solid fa-phone"></i>
                 Contato
             </a>
 
-
-            <a href="{% url 'pagina_reservas' %}">
+            <a href="#">
                 <i class="fa-solid fa-calendar-days"></i>
                 Reservas
             </a>
 
-
         </nav>
 
-
         <!-- BOTÃO ENTRAR -->
-        <a href="" class="entrar">
+        <a href="funcionario.html" class="entrar">
             <i class="fa-solid fa-user"></i>
-            Entrar
+            ENTRAR
         </a>
 
-
     </header>
+
 
 
     <!-- CONTEÚDO PRINCIPAL -->
