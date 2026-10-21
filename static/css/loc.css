@@ -144,6 +144,11 @@ body {
 .area-localizacao {
     min-height: 738px;
 
+    background-image: linear-gradient(
+        rgba(0,0,0,0.10),
+        rgba(0,0,0,0.20),
+    );
+
 
     background-image: url("/static/img/praia.jpg");
     background-size: cover;
