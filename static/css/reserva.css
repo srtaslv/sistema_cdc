@@ -16,7 +16,7 @@
 
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     gap: 35px;
 
     padding: 45px 20px;
@@ -157,40 +157,52 @@
         gap: 0;
     }
 }
-}
+
 
 .pagina-reservas {
     gap: 55px;
 }
 
 .texto-boas-vindas {
-    width: 350px;
-    flex-shrink: 0;
+    width: 500px;
+    max-width: 100%;
+    min-width: 0;
+    flex-shrink: 1;
     text-align: center;
+    box-sizing: border-box;
 }
 
 .texto-boas-vindas .bem-vindo {
     font-family: "Pacifico", cursive;
-    font-size: 32px;
+    font-size: 27px;
     color: #183d72;
+    text-shadow: 0 1px 5px rgba(255, 255, 255, 0.8);
 }
 
 .texto-boas-vindas h2 {
     font-family: "Pacifico", cursive;
-    font-size: 43px;
+    font-size: clamp(24px, 3vw, 40px);
     font-weight: 400;
     color: #e86d18;
     margin: 8px 0;
+    white-space: nowrap;
+    text-align: center;
+    position: static;
+    transform: none;
+    text-shadow: 0 1px 5px rgba(255, 255, 255, 0.8);
 }
 
-.decoracao-praia {
-    color: #183d72;
-    font-size: 32px;
-    margin: 12px 0;
+.icone-gaivota {
+    display: block;
+    width: 185px;
+    height: auto;
+    margin: 15px auto;
+    transform: translateX(-60px);
+    margin-right: 5px;
 }
 
 .descricao-boas-vindas {
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 700;
     line-height: 1.7;
     color: #183d72;
@@ -230,12 +242,8 @@
 }
 
 .sol-reserva {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    margin-top: 15px;
-
+    text-align: center;
+    margin-right: 20px;
     color: #ef8b28;
     font-size: 38px;
 }
@@ -276,4 +284,9 @@
 
 .mensagem-erro p {
     margin: 5px 0;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
 }

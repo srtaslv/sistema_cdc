@@ -17,56 +17,75 @@
  </head>
  <body>
      
-     <header class="header">
-         <div class="logo">
-            <img src="{% static 'img/logo.png' %}" alt="Cabana da Carol">
-         </div>
-         <div>
-             <h1>Cabana da Carol</h1>
-             <div class="localizacao">
-                 <i class="fa-solid fa-location-dot"></i>
-             
-                <p>Praia do Amor - Praia da Pipa</p>
-            </div>
-         </div>
+<!-- CABEÇALHO -->
+    <header class="header">
 
-         <nav>
-            <a href="#" class="ativo">
+
+        <!-- LOGO E NOME DA CABANA -->
+        <div class="logo">
+
+
+            <img src="{% static 'img/logo.png' %}" alt="Logo da Cabana da Carol">
+
+
+            <div class="texto-logo">
+                <h1>Cabana da Carol</h1>
+
+
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Praia do Amor - Praia da Pipa
+                </p>
+            </div>
+
+
+        </div>
+
+
+        <!-- MENU DE NAVEGAÇÃO -->
+        <nav>
+
+
+            <a href="{% url 'pagina_inicial' %}" class="ativo">
                 <i class="fa-solid fa-house"></i>
                 Início
             </a>
 
-           
+
             <a href="{% url 'cardapio' %}">
                 <i class="fa-solid fa-utensils"></i>
                 Cardápio Digital
             </a>
 
-            
-            <a href="{% url 'pagina_localizacao'%}">
+
+            <a href="{% url 'pagina_localizacao' %}">
                 <i class="fa-solid fa-location-dot"></i>
                 Localização
             </a>
-            
-            <a href="{% url 'cadastrar_reserva' %}">
-                <i class="fa-solid fa-calendar-days"></i>
-                Reservas
-            </a>  
-            
-            <a href="/contatos/">
+
+
+            <a href="{% url 'pagina_contatos' %}">
                 <i class="fa-solid fa-phone"></i>
                 Contato
             </a>
-            
-         </nav>
 
-         <a href="funcionario.html" class="entrar">
-            <i class="fa-solid fa-user">
-                Entrar
-            </i>
-         </a>
-     </header>
 
+            <a href="{% url 'cadastrar_reserva' %}">
+                <i class="fa-solid fa-calendar-days"></i>
+                Reservas
+            </a>
+
+
+        </nav>
+
+
+        <!-- BOTÃO ENTRAR -->
+        <a href="% url 'pagina_funcionario' %" class="entrar">
+            <i class="fa-solid fa-user"></i>
+            Entrar
+        </a>
+
+    </header>
      
      <main class="principal">
          <section class="banner">
@@ -84,6 +103,7 @@
                     Sinta o melhor da Praia do Amor com boa comida, <br>
                     bons drinks e uma vista inesquecível.
                 </p>
+                
                 <div class="sol">
                     ☼
                 </div>

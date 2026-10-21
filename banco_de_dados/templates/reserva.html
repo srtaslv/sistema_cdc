@@ -23,24 +23,28 @@
 
 <body>
 
-    <!-- Cabeçalho -->
-    <header class="header">
-        <div class="logo">
-            <img src="{% static 'img/logo.png' %}"
-                 alt="Cabana da Carol">
-        </div>
+<header class="header">
 
-        <div>
+    <div class="logo">
+
+        <img src="{% static 'img/logo.png' %}"
+             alt="Cabana da Carol">
+
+        <div class="texto-logo">
+
             <h1>Cabana da Carol</h1>
 
-            <div class="localizacao">
+            <p>
                 <i class="fa-solid fa-location-dot"></i>
-                <p>Praia do Amor - Praia da Pipa</p>
-            </div>
+                Praia do Amor - Praia da Pipa
+            </p>
+
         </div>
 
+    </div>
+
         <nav>
-            <a href="/">
+            <a href="{% url 'pagina_inicial' %}">
                 <i class="fa-solid fa-house"></i>
                 Início
             </a>
@@ -82,13 +86,10 @@
         <p class="bem-vindo">
           Bem-vindo à
         </p>
-
        <h2>Cabana da Carol!</h2>
-
-       <div class="decoracao-praia">
-         <i class="fa-solid fa-umbrella-beach"></i>
-       </div>
-
+         <svg class="icone-gaivota" viewBox="0 0 100 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+             <path d="M 5 28 C 20 10, 45 12, 50 20 C 55 12, 80 10, 95 28 C 75 16, 55 18, 50 24 C 45 18, 25 16, 5 28 Z" fill="#002b66"></path>
+         </svg>
       <p class="descricao-boas-vindas">
         Sinta o melhor da Praia do Amor<br>
         com boa comida, bons drinks e<br>
@@ -97,7 +98,7 @@
 
 
        <div class="sol-reserva">
-        <i class="fa-regular fa-sun"></i>
+        ☼
        </div>
 
     </div>
