@@ -135,39 +135,32 @@ nav .ativo::after {
 
 
 
-/* CONTEÚDO PRINCIPAL */
-.conteudo {
-    width: 100%;
-}
-
 
 /* FUNDO DA LOCALIZAÇÃO */
 .area-localizacao {
-    min-height: 738px;
+    min-height: calc(100vh - 90px);
 
-    background-image: linear-gradient(
-        rgba(0,0,0,0.10),
-        rgba(0,0,0,0.20),
-    );
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.10),
+            rgba(0, 0, 0, 0.20)
+        ),
+        url("../img/praia.jpg");
 
-
-    background-image: url("/static/img/praia.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-
     gap: 30px;
     padding: 40px 20px;
 
-
     position: relative;
 }
+
 
 
 /* TEXTO DE BOAS-VINDAS */
