@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco de Dados | Cabana da Carol</title>
+    <link rel="stylesheet" href="{% static 'css/cardapio.css' %}">
+</head>
+<body>
+
+<header class="cabecalho">
+    <a href="/" class="logo">Cabana da Carol</a>
+    <a href="/" class="voltar">← Voltar ao início</a>
+</header>
+
+<main>
+    <section class="introducao">
+        <p class="subtitulo">SABORES À BEIRA-MAR</p>
+        <h1>Cabana da Carol</h1>
+        <p>Nosso Banco de Dados</p>
+    </section>
+
+{% comment %}
+<section class="secao-cardapio" id="teste-banco">
+       {% endcomment %}
+
+    {% for categoria in categorias %}
+        <div class="categoria-cardapio">
+            <h3>{{ categoria.nome_categoria }}</h3>
+
+            <div class="produtos">
+                {% for produto in categoria.produtos.all %}
+                    {% if produto.disponivel %}
+                        <article class="produto">
+                            <h4>{{ produto.descricao }}</h4>
+
+                            {% if produto.detalhes %}
+                                <p>{{ produto.detalhes }}</p>
+                            {% endif %}
+
+                            {% if produto.preco_sob_consulta %}
+                                <span>Preço sob consulta</span>
+                            {% elif produto.valor_produto != None %}
+                                <span>
+                                    R$ {{ produto.valor_produto|floatformat:2 }}
+                                </span>
+                            {% else %}
+                                <span>Preço não informado</span>
+                            {% endif %}
+                        </article>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+</section>
+
+</main>
+
+<footer>
+    <p>Cabana da Carol · Sabores que combinam com o mar</p>
+</footer>
+
+</body>
+</html>

@@ -31,7 +31,7 @@
 
 
     <!-- CSS -->
-    <link rel="stylesheet" href="{% static 'cont.css' %}">
+    <link rel="stylesheet" href="{% static 'css/cont.css' %}">
 </head>
 <body>
 
@@ -91,7 +91,7 @@
             </a>
 
 
-            <a href="#">
+            <a href="{% url 'cadastrar_reserva' %}">
                 <i class="fa-solid fa-calendar-days"></i>
                 Reservas
             </a>
@@ -187,11 +187,67 @@
                     </h3>
                     <p>Praia do Amor — Praia da Pipa</p>
                 </div>
-
-
-        </div>
-    </section>
+            </div>
+       </section>
   </main>
+       <footer>
+         <div class="informacao">
+
+            <div class="icone-footer local">
+                <i class="fa-solid fa-location-dot"></i>
+            </div>
+
+            <div>
+                <h4>Onde estamos</h4>
+
+                <p>
+                    Praia do Amor<br>
+                    Praia da Pipa/RN
+                </p>
+            </div>
+
+           </div>
+
+
+          <div class="separador"></div>
+
+
+           <div class="informacao">
+
+            <div class="icone-footer instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </div>
+
+            <div>
+                <h4>Siga nosso Instagram</h4>
+
+                <p>
+                    @cabanadacarolrestaurantepipa
+                </p>
+            </div>
+
+           </div>
+
+
+          <div class="separador"></div>
+
+
+          <div class="informacao">
+
+            <div class="icone-footer whatsapp">
+                <i class="fa-brands fa-whatsapp"></i>
+            </div>
+
+            <div>
+                <h4>Fale conosco</h4>
+
+                <p>
+                    (84) 98151-2346 – Cecília
+                </p>
+            </div>
+
+            </div>
+        </footer>
 
 
    

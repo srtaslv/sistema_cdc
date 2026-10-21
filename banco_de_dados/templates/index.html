@@ -17,11 +17,8 @@
  </head>
  <body>
      
-     <!-- CABEÇALHO -->
     <header class="header">
 
-
-        <!-- LOGO E NOME DA CABANA -->
         <div class="logo">
 
 
@@ -57,8 +54,8 @@
                 Cardápio Digital
             </a>
 
-
             <a href="{% url 'pagina_localizacao'%}">
+
                 <i class="fa-solid fa-location-dot"></i>
                 Localização
             </a>
@@ -68,9 +65,15 @@
                 <i class="fa-solid fa-phone"></i>
                 Contato
             </a>
-
-
             <a href="#">
+             <i class="fa-solid fa-calendar-days"></i>
+             Reservas
+            </a>
+
+            </nav>
+
+
+            <a href="{% url 'cadastrar_reserva' %}">
                 <i class="fa-solid fa-calendar-days"></i>
                 Reservas
             </a>
@@ -79,15 +82,13 @@
         </nav>
 
 
-         </nav>
+        <!-- BOTÃO ENTRAR -->
+        <a href="% url 'pagina_funcionario' %" class="entrar">
+            <i class="fa-solid fa-user"></i>
+            Entrar
+        </a>
 
-         <a href="funcionario.html" class="entrar">
-            <i class="fa-solid fa-user">
-                Entrar
-            </i>
-         </a>
-     </header>
-
+    </header>
      
      <main class="principal">
          <section class="banner">

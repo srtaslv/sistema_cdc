@@ -1,0 +1,78 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Reserva Recebida | Cabana da Carol</title>
+
+    <link rel="stylesheet"
+          href="{% static 'css/reserva.css' %}">
+
+    <style>
+        .confirmacao {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background: #f8f4ed;
+        }
+
+        .cartao-confirmacao {
+            background: white;
+            max-width: 500px;
+            width: 100%;
+            padding: 45px 30px;
+            text-align: center;
+            border-radius: 18px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .cartao-confirmacao h1 {
+            color: #e86d18;
+            margin-bottom: 15px;
+        }
+
+        .cartao-confirmacao p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .voltar {
+            display: inline-block;
+            margin-top: 15px;
+            background: #e86d18;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="confirmacao">
+        <section class="cartao-confirmacao">
+
+            <h1>Solicitação recebida! 🌴</h1>
+
+            <p>
+                Sua solicitação de reserva foi
+                registrada com sucesso.
+            </p>
+
+            <p>
+                Aguarde a confirmação da equipe
+                da Cabana da Carol.
+            </p>
+
+            <a href="/" class="voltar">
+                Voltar à página inicial
+            </a>
+
+        </section>
+    </main>
+</body>
+</html>
