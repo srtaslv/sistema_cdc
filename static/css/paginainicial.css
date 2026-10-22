@@ -5,46 +5,59 @@
 }
 
 body {
-    font-family: "Montserrat", sans-serif;
-    background-color: white;
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+    background-color: #ffffff;
 }
 
 a {
     text-decoration: none;
 }
 
-
-
-
-/* CABEÇALHO */
 .header {
     width: 100%;
-    height: 90px;
+    min-height: 90px;
+    background-color: #ffffff;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
     padding: 0 25px;
-    background-color: white;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    overflow: visible;
 
-    position: relative;
-    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    border-bottom: 1px solid #817a7a;
 }
 
-/* LOGO */
+.header h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 28px;
+    color: #d4680f;
+}
+
+.header p {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    color: #555555;
+    margin-top: 3px;
+}
+
 .logo {
     display: flex;
     align-items: center;
     gap: 8px;
-    flex-shrink: 0;
+   flex-shrink: 0;
 }
 
+
 .logo img {
-    width: 65px;
-    height: 65px;
+    width: 60px;
+    height: 60px;
     object-fit: contain;
+    flex-shrink: 0;
 }
 
 .logo h1 {
@@ -61,35 +74,32 @@ a {
     color: #444;
 }
 
-/* MENU */
-nav {
+.texto-logo {
     display: flex;
-    align-items: center;
-    gap: 20px;
+    flex-direction: column;
 }
 
-nav a {
-    height: 90px;
-
+.header nav {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 25px;
+}
 
-    font-family: "Montserrat", sans-serif;
-    font-size: 12px;
-    font-weight: 600;
-
-    color: #333;
+.header nav a {
     text-decoration: none;
+    color: #333333;
+    font-size: 14px;
+    font-weight: 500;
     position: relative;
 }
 
-nav a i {
-    font-size: 13px;
+.header nav a i {
+    font-size: 15px;
 }
 
-nav a:hover {
-    color: #e86d18;
+.header nav a:hover,
+.header nav a.ativo {
+    color: #d4680f;
 }
 
 /* ITEM ATIVO */
@@ -108,7 +118,7 @@ nav .ativo::after {
     background-color: #e86d18;
 }
 
-/* BOTÃO ENTRAR */
+./* BOTÃO ENTRAR */
 .entrar {
     display: flex;
     align-items: center;
@@ -134,10 +144,6 @@ nav .ativo::after {
 }
 
 
-/* =========================
-   BANNER
-========================= */
-
 .principal {
     width: 100%;
 }
@@ -159,11 +165,6 @@ min-height: calc(100vh - 80px);
     padding-top: 35px;
 
 }
-
-
-/* =========================
-   TEXTO
-========================= */
 
 .texto {
     text-align: left;
@@ -200,8 +201,6 @@ min-height: calc(100vh - 80px);
   margin-left: 70px;
 }
 
-
-
 .descricao {
     margin-top: 4px;
 
@@ -223,11 +222,6 @@ min-height: calc(100vh - 80px);
 
     margin-top: 5px;
 }
-
-
-/* =========================
-   CARDS
-========================= */
 
 .cards {
     display: flex;
@@ -288,11 +282,6 @@ min-height: calc(100vh - 80px);
     margin-top: 4px;
 }
 
-
-/* =========================
-   ÍCONES
-========================= */
-
 .icone {
     width: 39px;
     height: 39px;
@@ -328,11 +317,6 @@ min-height: calc(100vh - 80px);
 .amarelo {
     background-color: #efa51c;
 }
-
-
-/* =========================
-   RODAPÉ
-========================= */
 
 footer {
     width: 100%;
@@ -413,11 +397,6 @@ footer {
     background-color: rgba(255, 255, 255, 0.4);
 }
 
-
-/* =========================
-   RESPONSIVIDADE
-========================= */
-
 @media (max-width: 900px) {
 
     nav {
@@ -437,7 +416,6 @@ footer {
     }
 
 }
-
 
 @media (max-width: 700px) {
 
@@ -485,17 +463,15 @@ footer {
         padding: 0 15px;
     }
 
+}
+footer {
+    flex-direction: column;
 
-    footer {
-        flex-direction: column;
+    align-items: flex-start;
 
-        align-items: flex-start;
-
-        padding: 20px;
+    padding: 20px;
     }
 
-    .separador {
+.separador {
         display: none;
     }
-
-}
