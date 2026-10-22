@@ -23,25 +23,24 @@
 
 <body>
 
-<header class="header">
+<!-- CABEÇALHO -->
+    <header class="header">
 
-    <div class="logo">
 
-        <img src="{% static 'img/logo.png' %}"
-             alt="Cabana da Carol">
 
-        <div class="texto-logo">
 
-            <h1>Cabana da Carol</h1>
+        <div class="logo">
+            <img src="{% static 'img/logo.png' %}" alt="Logo da Cabana da Carol">
 
-            <p>
-                <i class="fa-solid fa-location-dot"></i>
-                Praia do Amor - Praia da Pipa
-            </p>
+            <div class="texto-logo">
+                <h1>Cabana da Carol</h1>
 
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Praia do Amor - Praia da Pipa
+                </p>
+            </div>
         </div>
-
-    </div>
 
         <nav>
             <a href="{% url 'pagina_inicial' %}">
@@ -59,22 +58,23 @@
                 Localização
             </a>
 
-            <a href="{% url 'cadastrar_reserva' %}"
-               class="ativo">
-                <i class="fa-solid fa-calendar-days"></i>
-                Reservas
-            </a>
-
-            <a href="/contatos/">
+            <a href="{% url 'pagina_contatos' %}">
                 <i class="fa-solid fa-phone"></i>
                 Contato
             </a>
+
+            <a href="{% url 'cadastrar_reserva' %}"class="ativo">
+                <i class="fa-solid fa-calendar-days"></i>
+                Reservas
+            </a>
         </nav>
 
-        <a href="#" class="entrar">
-            <i class="fa-solid fa-user"></i>
-            Entrar
+        <a href="{% url 'pagina_funcionario' %}" class="entrar">
+            <i class="fa-solid fa-user">
+                Entrar
+            </i>
         </a>
+
     </header>
 
     <!-- Formulário -->

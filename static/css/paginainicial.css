@@ -118,7 +118,7 @@ nav .ativo::after {
     background-color: #e86d18;
 }
 
-./* BOTÃO ENTRAR */
+/* BOTÃO ENTRAR */
 .entrar {
     display: flex;
     align-items: center;
@@ -142,6 +142,7 @@ nav .ativo::after {
     background-color: #e86d18;
     color: white;
 }
+
 
 
 .principal {
