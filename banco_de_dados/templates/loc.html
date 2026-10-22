@@ -1,3 +1,4 @@
+
 {% load static %}
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -5,77 +6,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
     <title>Localização - Cabana da Carol</title>
 
-
-    <!-- FONTES -->
+    <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Pacifico&display=swap"
           rel="stylesheet">
 
-
-    <!-- ÍCONES -->
+    <!-- Ícones -->
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-
-    
-    <link rel="stylesheet" href="{% static 'css/loc.css' %}">
+    <!-- CSS compartilhado com a página inicial -->
     <link rel="stylesheet" href="{% static 'css/paginainicial.css' %}">
-</head>
 
+    <!-- CSS específico da localização -->
+    <link rel="stylesheet" href="{% static 'css/loc.css' %}">
+</head>
 
 <body>
 
-
-    
+    <!-- CABEÇALHO -->
     <header class="header">
 
         <div class="logo">
-
-
-            <img src="{% static 'img/logo.png' %}" alt="Logo da Cabana da Carol">
-
+            <img src="{% static 'img/logo.png' %}"
+                 alt="Logo da Cabana da Carol">
 
             <div class="texto-logo">
                 <h1>Cabana da Carol</h1>
-
 
                 <p>
                     <i class="fa-solid fa-location-dot"></i>
                     Praia do Amor - Praia da Pipa
                 </p>
             </div>
-
-
         </div>
-
 
         <!-- MENU DE NAVEGAÇÃO -->
         <nav>
-
-
             <a href="{% url 'pagina_inicial' %}">
                 <i class="fa-solid fa-house"></i>
                 Início
             </a>
-
 
             <a href="{% url 'cardapio' %}">
                 <i class="fa-solid fa-utensils"></i>
                 Cardápio Digital
             </a>
 
-            <a href="{% url 'pagina_localizacao'%}" class="ativo">
-
+            <a href="{% url 'pagina_localizacao' %}" class="ativo">
                 <i class="fa-solid fa-location-dot"></i>
                 Localização
             </a>
-
 
             <a href="{% url 'pagina_contatos' %}">
                 <i class="fa-solid fa-phone"></i>
@@ -86,210 +71,150 @@
                 <i class="fa-solid fa-calendar-days"></i>
                 Reservas
             </a>
-            
         </nav>
 
-
         <a href="{% url 'pagina_funcionario' %}" class="entrar">
-            <i class="fa-solid fa-user">
-                Entrar
-            </i>
+            <i class="fa-solid fa-user"></i>
+            Entrar
         </a>
 
     </header>
 
-
-
     <!-- CONTEÚDO PRINCIPAL -->
     <main class="conteudo">
 
-
         <section class="area-localizacao">
-
 
             <!-- TEXTO DE BOAS-VINDAS -->
             <div class="texto-boas-vindas">
 
-
                 <p class="bem-vindo">Bem-vindo à</p>
-
 
                 <h2>Cabana da Carol!</h2>
 
+                <svg class="icone-gaivota"
+                     viewBox="0 0 100 35"
+                     fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path d="M 5 28 C 20 10, 45 12, 50 20 C 55 12, 80 10, 95 28 C 75 16, 55 18, 50 24 C 45 18, 25 16, 5 28 Z"
+                          fill="#002b66" />
+                </svg>
 
                 <p class="descricao">
                     Sinta o melhor da Praia do Amor com boa comida,
                     bons drinks e uma vista inesquecível.
                 </p>
 
-
                 <div class="sol">☼</div>
-
 
             </div>
 
-
             <!-- CARTÃO DE LOCALIZAÇÃO -->
             <div class="cartao-localizacao">
-
 
                 <div class="icone-localizacao">
                     <i class="fa-solid fa-location-dot"></i>
                 </div>
 
-
                 <h2>Nossa Localização</h2>
 
-
                 <div class="detalhe-titulo"></div>
-
 
                 <p class="descricao-localizacao">
                     Encontre a Cabana da Carol na Praia do Amor,
                     Praia da Pipa – RN.
                 </p>
 
-
                 <!-- ENDEREÇO -->
                 <div class="endereco">
 
-
                     <i class="fa-solid fa-location-dot"></i>
-
 
                     <div>
                         <h3>Praia do Amor, Praia de Pipa</h3>
-
-
-                        <p>
-                            Tibau do Sul – RN, 59178-000
-                        </p>
+                        <p>Tibau do Sul – RN, 59178-000</p>
                     </div>
-
 
                 </div>
 
-
                 <!-- MAPA -->
                 <div class="mapa">
-
-
                     <iframe
                         src="https://maps.google.com/maps?q=Praia%20do%20Amor%2C%20Pipa%2C%20RN&t=&z=14&ie=UTF8&iwloc=&output=embed"
                         title="Mapa da Praia do Amor, Praia da Pipa"
                         loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
-
-
                 </div>
 
-
                 <!-- BOTÃO DO GOOGLE MAPS -->
-                <a
-                    href="https://www.google.com/maps/search/?api=1&query=Praia+do+Amor%2C+Pipa%2C+RN"
-                    class="botao-mapa"
-                    target="_blank"
-                    rel="noopener noreferrer">
-
+                <a href="https://www.google.com/maps/search/?api=1&query=Praia+do+Amor%2C+Pipa%2C+RN"
+                   class="botao-mapa"
+                   target="_blank"
+                   rel="noopener noreferrer">
 
                     <i class="fa-solid fa-location-dot"></i>
                     Abrir no Google Maps
                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
 
-
                 </a>
 
-
             </div>
-
 
         </section>
 
-
     </main>
 
+    <!-- RODAPÉ NO ESTILO DA PÁGINA INICIAL -->
+    <footer>
 
-    <!-- RODAPÉ -->
-    <footer class="rodape">
+        <div class="informacao">
 
-
-        <!-- LOCALIZAÇÃO -->
-        <div class="rodape-item">
-
-
-            <i class="fa-solid fa-location-dot"></i>
-
-
-            <div>
-                <h3>Onde estamos</h3>
-                <p>Praia do Amor,<br>Praia de Pipa/RN</p>
+            <div class="icone-footer local">
+                <i class="fa-solid fa-location-dot"></i>
             </div>
 
-
-        </div>
-
-
-        <!-- INSTAGRAM -->
-        <div class="rodape-item">
-
-
-            <i class="fa-brands fa-instagram"></i>
-
-
             <div>
-                <h3>Siga nosso Instagram</h3>
-
-
-                <a href="https://www.instagram.com/cabanadacarolbeachbarpipa/"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                    @cabanadacarolbeachbarpipa
-                </a>
+                <h4>Onde estamos</h4>
+                <p>
+                    Praia do Amor<br>
+                    Praia da Pipa/RN
+                </p>
             </div>
 
-
         </div>
 
+        <div class="separador"></div>
 
-        <!-- WHATSAPP -->
-        <div class="rodape-item">
+        <div class="informacao">
 
-
-            <i class="fa-brands fa-whatsapp"></i>
-
-
-            <div>
-                <h3>Fale conosco</h3>
-
-
-                <a href="https://wa.me/5584981512346"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                    (84) 98151-2346 – Cecília
-                </a>
+            <div class="icone-footer instagram">
+                <i class="fa-brands fa-instagram"></i>
             </div>
 
+            <div>
+                <h4>Siga nosso Instagram</h4>
+                <p>@cabanadacarolrestaurantepipa</p>
+            </div>
 
         </div>
 
+        <div class="separador"></div>
 
-        <!-- DIREITOS AUTORAIS -->
-        <div class="direitos">
+        <div class="informacao">
 
+            <div class="icone-footer whatsapp">
+                <i class="fa-brands fa-whatsapp"></i>
+            </div>
 
-            <span>〰〰〰</span>
-            Sistema CDC - Cabana da Carol
-            <span>|</span>
-            Todos os direitos reservados © 2026
-            <span>〰〰〰</span>
-
+            <div>
+                <h4>Fale conosco</h4>
+                <p>(84) 98151-2346 – Cecília</p>
+            </div>
 
         </div>
-
 
     </footer>
-
 
 </body>
 </html>

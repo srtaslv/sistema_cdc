@@ -1,3 +1,8 @@
+
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -5,7 +10,7 @@
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     min-height: 100vh;
     background-color: #ffffff;
 }
@@ -13,6 +18,11 @@ body {
 a {
     text-decoration: none;
 }
+
+
+/* =========================
+   CABEÇALHO
+========================= */
 
 .header {
     width: 100%;
@@ -31,7 +41,7 @@ a {
 }
 
 .header h1 {
-    font-family: 'Pacifico', cursive;
+    font-family: "Pacifico", cursive;
     font-size: 28px;
     color: #d4680f;
 }
@@ -40,18 +50,23 @@ a {
     display: flex;
     align-items: center;
     gap: 5px;
+
     font-size: 12px;
     color: #555555;
     margin-top: 3px;
 }
 
+
+/* =========================
+   LOGO
+========================= */
+
 .logo {
     display: flex;
     align-items: center;
     gap: 8px;
-   flex-shrink: 0;
+    flex-shrink: 0;
 }
-
 
 .logo img {
     width: 60px;
@@ -71,13 +86,18 @@ a {
     font-family: "Montserrat", sans-serif;
     font-size: 10px;
     font-weight: 600;
-    color: #444;
+    color: #444444;
 }
 
 .texto-logo {
     display: flex;
     flex-direction: column;
 }
+
+
+/* =========================
+   MENU DE NAVEGAÇÃO
+========================= */
 
 .header nav {
     display: flex;
@@ -88,8 +108,10 @@ a {
 .header nav a {
     text-decoration: none;
     color: #333333;
+
     font-size: 14px;
     font-weight: 500;
+
     position: relative;
 }
 
@@ -102,23 +124,28 @@ a {
     color: #d4680f;
 }
 
-/* ITEM ATIVO */
-nav .ativo {
+.header nav .ativo {
     color: #e86d18;
 }
 
-nav .ativo::after {
+.header nav .ativo::after {
     content: "";
+
     position: absolute;
     bottom: 0;
     left: 0;
 
     width: 100%;
     height: 3px;
+
     background-color: #e86d18;
 }
 
-/* BOTÃO ENTRAR */
+
+/* =========================
+   BOTÃO ENTRAR
+========================= */
+
 .entrar {
     display: flex;
     align-items: center;
@@ -126,6 +153,7 @@ nav .ativo::after {
 
     border: 1px solid #e86d18;
     border-radius: 5px;
+
     padding: 10px 16px;
 
     color: #e86d18;
@@ -134,6 +162,7 @@ nav .ativo::after {
     font-family: "Montserrat", sans-serif;
     font-size: 12px;
     font-weight: 600;
+
     text-decoration: none;
     white-space: nowrap;
 }
@@ -144,13 +173,21 @@ nav .ativo::after {
 }
 
 
+/* =========================
+   ÁREA PRINCIPAL
+========================= */
 
 .principal {
     width: 100%;
 }
 
+
+/* =========================
+   BANNER E IMAGEM DA PRAIA
+========================= */
+
 .banner {
-min-height: calc(100vh - 80px);
+    min-height: calc(100vh - 90px);
 
     background-image:
         linear-gradient(
@@ -164,8 +201,12 @@ min-height: calc(100vh - 80px);
     background-repeat: no-repeat;
 
     padding-top: 35px;
-
 }
+
+
+/* =========================
+   TEXTO DO BANNER
+========================= */
 
 .texto {
     text-align: left;
@@ -179,56 +220,50 @@ min-height: calc(100vh - 80px);
 
 .bem-vindo {
     font-family: "Pacifico", cursive;
-
     font-size: 27px;
-
     color: #183d72;
 }
 
 .texto h2 {
     font-family: "Pacifico", cursive;
-
     font-size: 47px;
     font-weight: 400;
 
     color: #ed6c18;
-
     margin-top: -5px;
 }
 
 .icone-gaivota {
-  width: 185px;
-  height: auto;
-  margin-left: 70px;
+    width: 185px;
+    height: auto;
+    margin-left: 70px;
 }
 
 .descricao {
     margin-top: 4px;
 
     font-size: 12px;
-
     font-weight: 600;
-
     line-height: 1.5;
 
     color: white;
-
-    text-shadow: 1px 1px 3px #555;
+    text-shadow: 1px 1px 3px #555555;
 }
 
 .sol {
     color: #ef8b28;
-
     font-size: 35px;
-
     margin-top: 5px;
 }
 
+
+/* =========================
+   CARDS
+========================= */
+
 .cards {
     display: flex;
-
     justify-content: center;
-
     gap: 14px;
 
     margin-top: 25px;
@@ -239,22 +274,17 @@ min-height: calc(100vh - 80px);
     height: 140px;
 
     background-color: rgba(255, 255, 255, 0.95);
-
     border-radius: 11px;
 
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
     justify-content: center;
 
     text-align: center;
-
     padding: 12px;
 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
-
     transition: 0.3s;
 }
 
@@ -264,24 +294,25 @@ min-height: calc(100vh - 80px);
 
 .card h3 {
     font-family: "Pacifico", cursive;
-
     font-size: 15px;
     font-weight: 400;
 
     color: #45352c;
-
     margin-top: 7px;
 }
 
 .card p {
     font-size: 8px;
-
     line-height: 1.5;
 
-    color: #555;
-
+    color: #555555;
     margin-top: 4px;
 }
+
+
+/* =========================
+   ÍCONES DOS CARDS
+========================= */
 
 .icone {
     width: 39px;
@@ -290,12 +321,10 @@ min-height: calc(100vh - 80px);
     border-radius: 50%;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
     color: white;
-
     font-size: 17px;
 }
 
@@ -319,20 +348,24 @@ min-height: calc(100vh - 80px);
     background-color: #efa51c;
 }
 
+
+/* =========================
+   RODAPÉ
+========================= */
+
 footer {
     width: 100%;
-
     min-height: 92px;
 
     background-color: #351d0d;
 
     display: flex;
+    flex-direction: row;
 
     justify-content: center;
     align-items: center;
 
     gap: 28px;
-
     padding: 10px 30px;
 
     color: white;
@@ -340,9 +373,7 @@ footer {
 
 .informacao {
     display: flex;
-
     align-items: center;
-
     gap: 10px;
 
     min-width: 220px;
@@ -355,11 +386,11 @@ footer {
     border-radius: 50%;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
     font-size: 18px;
+    flex-shrink: 0;
 }
 
 .local {
@@ -376,36 +407,61 @@ footer {
 
 .informacao h4 {
     font-family: "Pacifico", cursive;
-
     font-size: 12px;
-
     font-weight: 400;
 }
 
 .informacao p {
     font-size: 8px;
-
     line-height: 1.5;
-
     margin-top: 3px;
 }
 
 .separador {
     width: 1px;
-
     height: 45px;
 
     background-color: rgba(255, 255, 255, 0.4);
+    flex-shrink: 0;
 }
+
+
+/* =========================
+   RESPONSIVIDADE
+   TELAS DE ATÉ 900 PIXELS
+========================= */
 
 @media (max-width: 900px) {
 
-    nav {
+    .header {
+        padding: 0 15px;
         gap: 12px;
     }
 
-    nav a {
-        font-size: 8px;
+    .header nav {
+        gap: 12px;
+    }
+
+    .header nav a {
+        font-size: 10px;
+    }
+
+    .header nav a i {
+        font-size: 11px;
+    }
+
+    .logo h1 {
+        font-size: 21px;
+    }
+
+    .logo img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .entrar {
+        padding: 8px 10px;
+        font-size: 10px;
     }
 
     .cards {
@@ -416,31 +472,42 @@ footer {
         width: 135px;
     }
 
+    footer {
+        gap: 15px;
+        padding: 10px 15px;
+    }
+
+    .informacao {
+        min-width: 0;
+        flex: 1;
+    }
 }
+
+
+/* =========================
+   RESPONSIVIDADE
+   TELAS DE ATÉ 700 PIXELS
+========================= */
 
 @media (max-width: 700px) {
 
     .header {
         height: auto;
-
         flex-direction: column;
-
         gap: 10px;
-
         padding: 15px;
     }
 
-    nav {
+    .header nav {
         flex-wrap: wrap;
-
         justify-content: center;
     }
 
-    nav a {
+    .header nav a {
         height: 30px;
     }
 
-    nav .ativo::after {
+    .header nav .ativo::after {
         display: none;
     }
 
@@ -448,6 +515,11 @@ footer {
         display: none;
     }
 
+    .banner {
+        min-height: calc(100vh - 90px);
+        padding-top: 25px;
+        padding-bottom: 30px;
+    }
 
     .texto h2 {
         font-size: 35px;
@@ -457,22 +529,34 @@ footer {
         font-size: 22px;
     }
 
+    .texto {
+        margin-left: 6%;
+        margin-right: 6%;
+    }
+
+    .icone-gaivota {
+        max-width: 150px;
+    }
 
     .cards {
         flex-wrap: wrap;
-
         padding: 0 15px;
     }
 
-}
-footer {
-    flex-direction: column;
-
-    align-items: flex-start;
-
-    padding: 20px;
+    footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+        padding: 20px;
     }
 
-.separador {
+    .informacao {
+        width: 100%;
+        min-width: 0;
+        flex: none;
+    }
+
+    .separador {
         display: none;
     }
+}

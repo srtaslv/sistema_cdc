@@ -490,6 +490,7 @@ nav .ativo::after {
 }
 
 
+
 /* ADAPTAÇÃO PARA TELAS MENORES */
 @media (max-width: 1100px) {
 
@@ -599,39 +600,116 @@ nav .ativo::after {
     }
 
 
+    /* RODAPÉ */
+.rodape {
+    width: 100%;
+    min-height: 92px;
+    background-color: #351d0d;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+
+    padding: 10px 30px;
+}
+
+/* ITENS DO RODAPÉ */
+.rodape-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 220px;
+}
+
+/* ÍCONES */
+.rodape-item > i {
+    width: 37px;
+    height: 37px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+/* CORES DOS ÍCONES */
+.rodape-item:nth-child(2) > i {
+    background-color: #e1306c;
+}
+
+.rodape-item:nth-child(3) > i {
+    background-color: #20b957;
+}
+
+/* ÍCONE DE LOCALIZAÇÃO */
+.rodape-item:first-child > i {
+    background-color: #ed741c;
+}
+
+/* TEXTOS */
+.rodape-item h3 {
+    font-family: "Pacifico", cursive;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.rodape-item p,
+.rodape-item a {
+    color: #dddddd;
+    font-size: 8px;
+    line-height: 1.5;
+    margin-top: 3px;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+}
+
+/* EFEITO NOS LINKS */
+.rodape-item a:hover {
+    color: #f5a15f;
+}
+
+/* DIREITOS AUTORAIS */
+.direitos {
+    width: 100%;
+    padding: 10px;
+    background-color: #281609;
+    color: #dddddd;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    text-align: center;
+    font-size: 9px;
+}
+
+.direitos span {
+    color: #ed741c;
+}
+
+/* ADAPTAÇÃO PARA CELULARES */
+@media (max-width: 700px) {
     .rodape {
         flex-direction: column;
         align-items: flex-start;
-        padding: 20px 15px 0;
+        gap: 20px;
+        padding: 20px 15px;
     }
-
 
     .rodape-item {
         width: 100%;
-        padding: 5px;
+        min-width: 0;
     }
-
 
     .direitos {
         line-height: 1.8;
     }
-
-
-}
-
-
-/* AJUSTES PARA TELAS MUITO PEQUENAS */
-@media (max-width: 500px) {
-
-
-    .cartao-localizacao {
-        padding: 25px 20px;
-    }
-
-
-    .cartao-localizacao h2 {
-        font-size: 20px;
-    }
-
-
 }
