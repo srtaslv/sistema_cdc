@@ -118,29 +118,32 @@ nav .ativo::after {
     background-color: #e86d18;
 }
 
+/* BOTÃO ENTRAR */
 .entrar {
     display: flex;
     align-items: center;
-    gap: 7px;
+    gap: 5px;
 
-    border: 1px solid #d4680f;
-    border-radius: 20px;
-    padding: 10px 18px;
+    border: 1px solid #e86d18;
+    border-radius: 5px;
+    padding: 10px 16px;
 
-    color: white;
-    background-color: #d4680f;
+    color: #e86d18;
+    background-color: white;
 
     font-family: "Montserrat", sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
     text-decoration: none;
     white-space: nowrap;
-    flex-shrink: 0;
 }
 
 .entrar:hover {
-    background-color: #d4680f;
+    background-color: #e86d18;
+    color: white;
 }
+
+
 
 .principal {
     width: 100%;
