@@ -170,7 +170,7 @@ nav .ativo::after {
 .texto-boas-vindas {
     position: absolute;
     left: 4%;
-    top: 18%;
+    top: 50%;
     transform: translateY(-50%);
 
 
@@ -600,7 +600,9 @@ nav .ativo::after {
     }
 
 
-    /* RODAPÉ */
+} 
+
+/* RODAPÉ */
 .rodape {
     width: 100%;
     min-height: 92px;
@@ -712,4 +714,21 @@ nav .ativo::after {
     .direitos {
         line-height: 1.8;
     }
+}
+
+.icone-gaivota {
+    position: relative;
+    left: -40px;
+}
+
+footer.rodape .rodape-item .icone.local {
+    background-color: #e98b39;
+}
+
+footer.rodape .rodape-item .icone.instagram {
+    background-color: #d95787;
+}
+
+footer.rodape .rodape-item .icone.whatsapp {
+    background-color: #4caf68;
 }
