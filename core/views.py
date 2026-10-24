@@ -76,3 +76,6 @@ def cadastrar_reserva(request):
 
 def reserva_sucesso(request):
     return render(request, 'reserva_sucesso.html')
+
+def promocoes(request):
+    return render(request, 'promocoes.html')
