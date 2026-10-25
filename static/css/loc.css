@@ -1,146 +1,32 @@
 
+/* CONFIGURACAO GERAL */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    width: 100%;
+}
+
 body {
+    width: 100%;
+    margin: 0;
     font-family: "Montserrat", sans-serif;
-    background-color: white;
+    background-color: #ffffff;
+    overflow-x: hidden;
 }
 
 a {
     text-decoration: none;
 }
 
+/* AREA PRINCIPAL */
 
-/* CABEÇALHO */
-.header {
-    width: 100%;
-    height: 90px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 0 25px;
-    background-color: white;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-
-    position: relative;
-    z-index: 10;
-}
-
-/* LOGO */
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex-shrink: 0;
-}
-
-.logo img {
-    width: 65px;
-    height: 65px;
-    object-fit: contain;
-}
-
-.logo h1 {
-    font-family: "Pacifico", cursive;
-    font-size: 25px;
-    font-weight: 400;
-    color: #4b2c20;
-}
-
-.logo p {
-    font-family: "Montserrat", sans-serif;
-    font-size: 10px;
-    font-weight: 600;
-    color: #444;
-}
-
-/* MENU */
-nav {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-nav a {
-    height: 90px;
-
-    display: flex;
-    align-items: center;
-    gap: 6px;
-
-    font-family: "Montserrat", sans-serif;
-    font-size: 12px;
-    font-weight: 600;
-
-    color: #333;
-    text-decoration: none;
-    position: relative;
-}
-
-nav a i {
-    font-size: 13px;
-}
-
-nav a:hover {
-    color: #e86d18;
-}
-
-/* ITEM ATIVO */
-nav .ativo {
-    color: #e86d18;
-}
-
-nav .ativo::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-
-    width: 100%;
-    height: 3px;
-    background-color: #e86d18;
-}
-
-/* BOTÃO ENTRAR */
-.entrar {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-
-    border: 1px solid #e86d18;
-    border-radius: 5px;
-    padding: 10px 16px;
-
-    color: #e86d18;
-    background-color: white;
-
-    font-family: "Montserrat", sans-serif;
-    font-size: 12px;
-    font-weight: 600;
-    text-decoration: none;
-    white-space: nowrap;
-}
-
-.entrar:hover {
-    background-color: #e86d18;
-    color: white;
-}
-
-
-.principal {
-    width: 100%;
-}
-
-
-
-/* FUNDO DA LOCALIZAÇÃO */
 .area-localizacao {
+    width: 100%;
     min-height: calc(100vh - 90px);
 
     background-image:
@@ -155,101 +41,119 @@ nav .ativo::after {
     background-repeat: no-repeat;
 
     display: flex;
-    justify-content: center;
     align-items: center;
-
-    gap: 30px;
-    padding: 40px 20px;
+    justify-content: center;
 
     position: relative;
+    padding: 45px 30px;
 }
-
-
 
 /* TEXTO DE BOAS-VINDAS */
+
 .texto-boas-vindas {
+    width: 300px;
+    max-width: 30%;
+    text-align: center;
+
     position: absolute;
     left: 4%;
-    top: 50%;
+    top: 30%;
     transform: translateY(-50%);
-
-
-    width: 340px;
-    text-align: center;
 }
 
-
-/* BEM-VINDO À */
 .texto-boas-vindas .bem-vindo {
-    display: block;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 22px;
-    font-weight: 500;
-    color: #092b6b;
-    margin-bottom: 4px;
-}
-
-
-/* NOME DA CABANA */
-.texto-boas-vindas h2 {
-    font-family: 'Pacifico', cursive;
-    font-size: 38px;
-    font-weight: normal;
-    line-height: 1.4;
-    color: #d4680f;
-    margin-bottom: 18px;
-}
-
-
-/* DESCRIÇÃO */
-.texto-boas-vindas .descricao {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
+    font-family: "Pacifico", cursive;
+    font-size: 27px;
     font-weight: 400;
-    line-height: 1.8;
-    color: #092b6b;
+    color: #183d72;
+
+    text-shadow:
+        0 0 3px #ffffff,
+        0 0 6px #ffffff,
+        0 0 10px rgba(255, 255, 255, 0.95);
 }
 
+.texto-boas-vindas h2 {
+    font-family: "Pacifico", cursive;
+    font-size: clamp(24px, 3vw, 40px);
+    font-weight: 400;
+    line-height: 1.4;
+    color: #e86d18;
 
-/* SOL */
+    margin: 2px 0;
+    white-space: nowrap;
+    text-align: center;
+
+    text-shadow:
+        0 0 3px #ffffff,
+        0 0 6px #ffffff,
+        0 0 10px rgba(255, 255, 255, 0.95);
+}
+
+/* ICONE DE GAIVOTA */
+
+.icone-gaivota {
+    display: block;
+    width: 185px;
+    height: auto;
+    margin: -5px auto 5px;
+    transform: translateX(0);
+}
+
+/* DESCRICAO DE BOAS-VINDAS */
+
+.texto-boas-vindas .descricao {
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 1.8;
+    color: #183d72;
+    margin-top: 0;
+
+    text-shadow:
+        0 0 3px #ffffff,
+        0 0 6px #ffffff,
+        0 0 9px rgba(255, 255, 255, 0.95);
+}
+
+/* SOL DECORATIVO */
+
 .texto-boas-vindas .sol {
+    text-align: center;
     margin-top: 18px;
-    color: #d4680f;
+    color: #ef8b28;
     font-size: 38px;
     line-height: 1;
 }
 
+/* CARTAO DE LOCALIZACAO */
 
-/* CARTÃO DE LOCALIZAÇÃO */
 .cartao-localizacao {
-    background-color: #ffffff;
     width: 390px;
     max-width: 100%;
-
+    flex-shrink: 0;
 
     padding: 24px 20px;
+
+    background-color: #ffffff;
     border-radius: 15px;
-
-
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-
 
     position: relative;
     z-index: 1;
+    margin: 0;
 }
 
+/* ICONE DO CARTAO */
 
-/* ÍCONE DE LOCALIZAÇÃO */
 .icone-localizacao {
     width: 48px;
     height: 48px;
     margin: 0 auto 10px;
 
-
     display: flex;
     align-items: center;
     justify-content: center;
-
 
     background-color: #fff0e5;
     color: #d94b0b;
@@ -257,17 +161,16 @@ nav .ativo::after {
     font-size: 23px;
 }
 
+/* TITULO DO CARTAO */
 
-/* TÍTULO DO CARTÃO */
 .cartao-localizacao h2 {
     text-align: center;
+    font-family: "Montserrat", sans-serif;
     font-size: 22px;
     color: #333333;
     margin-bottom: 5px;
 }
 
-
-/* DETALHE ABAIXO DO TÍTULO */
 .detalhe-titulo {
     width: 45px;
     height: 3px;
@@ -276,9 +179,10 @@ nav .ativo::after {
     margin: 8px auto 14px;
 }
 
+/* DESCRICAO DA LOCALIZACAO */
 
-/* DESCRIÇÃO DO ENDEREÇO */
 .descricao-localizacao {
+    font-family: "Montserrat", sans-serif;
     font-size: 12px;
     line-height: 1.7;
     color: #444444;
@@ -286,49 +190,45 @@ nav .ativo::after {
     text-align: center;
 }
 
+/* ENDERECO */
 
-/* BLOCO DO ENDEREÇO */
 .endereco {
     display: flex;
     align-items: flex-start;
     gap: 10px;
 
-
     padding: 13px 12px;
     margin-bottom: 12px;
-
 
     background-color: #fffaf6;
     border: 1px solid #eeeeee;
     border-radius: 10px;
-
-
     text-align: left;
 }
-
 
 .endereco > i {
     color: #e95a19;
     font-size: 18px;
     margin-top: 2px;
+    flex-shrink: 0;
 }
 
-
 .endereco h3 {
+    font-family: "Montserrat", sans-serif;
     font-size: 12px;
     color: #333333;
     margin-bottom: 5px;
 }
 
-
 .endereco p {
+    font-family: "Montserrat", sans-serif;
     font-size: 11px;
     line-height: 1.5;
     color: #555555;
 }
 
-
 /* MAPA */
+
 .mapa {
     width: 100%;
     height: 170px;
@@ -338,7 +238,6 @@ nav .ativo::after {
     margin-bottom: 14px;
 }
 
-
 .mapa iframe {
     width: 100%;
     height: 100%;
@@ -346,287 +245,65 @@ nav .ativo::after {
     border: 0;
 }
 
+/* BOTAO DO MAPA */
 
-/* BOTÃO GOOGLE MAPS */
-.botao-mapa {
+.cartao-localizacao .botao-mapa {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 9px;
 
-
     width: 100%;
     padding: 13px 10px;
 
-
-    background-color: #e94705;
+    background-color: #ed741c;
     color: #ffffff;
-    text-decoration: none;
-
-
+    border: none;
     border-radius: 8px;
+
+    font-family: "Montserrat", sans-serif;
     font-size: 12px;
     font-weight: 600;
-
-
-    transition: 0.3s;
-}
-
-
-.botao-mapa:hover {
-    background-color: #c93a00;
-}
-
-
-/* RODAPÉ */
-.rodape {
-    background-color: #101c25;
-    color: #ffffff;
-
-
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-around;
-    gap: 20px;
-
-
-    padding: 8px 15px 0;
-    position: relative;
-    z-index: 2;
-    width: 100%;
-}
-
-
-/* ITENS DO RODAPÉ */
-.rodape-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-
-
-    padding: 2px 5px;
-}
-
-
-.rodape-item > i {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-
-    background-color: #e95a0c;
-    color: #ffffff;
-    font-size: 15px;
-    flex-shrink: 0;
-}
-
-
-/* COR DOS ÍCONES */
-.rodape-item:nth-child(2) > i {
-    background-color: #c92b9b;
-}
-
-
-.rodape-item:nth-child(3) > i {
-    background-color: #128c37;
-}
-
-
-/* TEXTOS DO RODAPÉ */
-.rodape-item h3 {
-    font-family: 'Pacifico', cursive;
-    font-size: 11px;
-    font-weight: normal;
-    margin-bottom: 1px;
-}
-
-
-.rodape-item p,
-.rodape-item a {
-    color: #dddddd;
-    font-size: 9px;
-    line-height: 1.3;
-    text-decoration: none;
-    overflow-wrap: anywhere;
-}
-
-
-.rodape-item a:hover {
-    color: #f5a15f;
-}
-
-
-/* DIREITOS AUTORAIS */
-.direitos {
-    width: 100%;
-    border-top: 1px solid #29343c;
-
-
-    padding: 6px 5px;
-    margin-top: 2px;
-
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 6px;
-
-
-    color: #bbbbbb;
     text-align: center;
-    font-size: 9px;
+    text-decoration: none;
+
+    transition: background-color 0.3s;
 }
 
-
-.direitos span {
-    color: #e95a0c;
+.cartao-localizacao .botao-mapa:hover {
+    background-color: #c85b10;
+    color: #ffffff;
 }
 
+/* RODAPE */
 
-
-/* ADAPTAÇÃO PARA TELAS MENORES */
-@media (max-width: 1100px) {
-
-
-    .header {
-        padding: 10px 25px;
-        flex-wrap: wrap;
-    }
-
-
-    .header nav {
-        gap: 15px;
-        flex-wrap: wrap;
-    }
-
-
-    .area-localizacao {
-        padding: 35px 4%;
-    }
-
-
-    .texto-boas-vindas {
-        width: 300px;
-        left: 2%;
-    }
-
-
-}
-
-
-/* CELULARES */
-@media (max-width: 700px) {
-
-
-    .header {
-        flex-direction: column;
-        justify-content: center;
-        gap: 15px;
-        padding: 15px;
-    }
-
-
-    .logo {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-
-    .logo img {
-        width: 75px;
-        height: 75px;
-    }
-
-
-    .header h1 {
-        font-size: 24px;
-    }
-
-
-    .header nav {
-        justify-content: center;
-        gap: 14px;
-        flex-wrap: wrap;
-    }
-
-
-    .header nav a {
-        font-size: 12px;
-    }
-
-
-    .entrar {
-        align-self: center;
-    }
-
-
-    .area-localizacao {
-        min-height: auto;
-        flex-direction: column;
-        justify-content: center;
-        gap: 30px;
-        padding: 45px 18px;
-        background-position: center;
-    }
-
-
-    .texto-boas-vindas {
-        position: relative;
-        top: auto;
-        left: auto;
-        transform: none;
-
-
-        width: 100%;
-        max-width: 340px;
-    }
-
-
-    .texto-boas-vindas h2 {
-        font-size: 32px;
-    }
-
-
-    .cartao-localizacao {
-        width: 390px;
-        max-width: 100%;
-    }
-
-
-} 
-
-/* RODAPÉ */
-.rodape {
+.rodape-localizacao {
     width: 100%;
     min-height: 92px;
+
     background-color: #351d0d;
-    color: white;
+    color: #ffffff;
 
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 28px;
 
+    gap: 28px;
     padding: 10px 30px;
 }
 
-/* ITENS DO RODAPÉ */
-.rodape-item {
+/* INFORMACOES DO RODAPE */
+
+.rodape-localizacao .informacao {
     display: flex;
     align-items: center;
     gap: 10px;
     min-width: 220px;
 }
 
-/* ÍCONES */
-.rodape-item > i {
+/* ICONES DO RODAPE */
+
+.rodape-localizacao .icone-footer {
     width: 37px;
     height: 37px;
     border-radius: 50%;
@@ -635,100 +312,130 @@ nav .ativo::after {
     align-items: center;
     justify-content: center;
 
-    color: white;
+    color: #ffffff;
     font-size: 18px;
     flex-shrink: 0;
 }
 
-/* CORES DOS ÍCONES */
-.rodape-item:nth-child(2) > i {
-    background-color: #e1306c;
-}
-
-.rodape-item:nth-child(3) > i {
-    background-color: #20b957;
-}
-
-/* ÍCONE DE LOCALIZAÇÃO */
-.rodape-item:first-child > i {
+.rodape-localizacao .icone-footer.local {
     background-color: #ed741c;
 }
 
-/* TEXTOS */
-.rodape-item h3 {
+.rodape-localizacao .icone-footer.instagram {
+    background-color: #e1306c;
+}
+
+.rodape-localizacao .icone-footer.whatsapp {
+    background-color: #20b957;
+}
+
+/* TEXTOS DO RODAPE */
+
+.rodape-localizacao .informacao h4 {
     font-family: "Pacifico", cursive;
     font-size: 12px;
     font-weight: 400;
+    margin: 0;
 }
 
-.rodape-item p,
-.rodape-item a {
+.rodape-localizacao .informacao p {
+    font-family: "Montserrat", sans-serif;
     color: #dddddd;
     font-size: 8px;
     line-height: 1.5;
     margin-top: 3px;
-    text-decoration: none;
     overflow-wrap: anywhere;
 }
 
-/* EFEITO NOS LINKS */
-.rodape-item a:hover {
-    color: #f5a15f;
+/* SEPARADORES DO RODAPE */
+
+.rodape-localizacao .separador {
+    width: 1px;
+    height: 45px;
+    background-color: rgba(255, 255, 255, 0.4);
+    flex-shrink: 0;
 }
 
-/* DIREITOS AUTORAIS */
-.direitos {
-    width: 100%;
-    padding: 10px;
-    background-color: #281609;
-    color: #dddddd;
+/* TELAS MEDIAS */
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 8px;
+@media (max-width: 1100px) {
+    .area-localizacao {
+        gap: 25px;
+        padding: 40px 20px;
+    }
 
-    text-align: center;
-    font-size: 9px;
+    .texto-boas-vindas {
+        width: 290px;
+    }
+
+    .cartao-localizacao {
+        width: 390px;
+    }
+
+    .rodape-localizacao {
+        gap: 18px;
+        padding: 10px 15px;
+    }
+
+    .rodape-localizacao .informacao {
+        min-width: 0;
+    }
 }
 
-.direitos span {
-    color: #ed741c;
-}
+/* CELULARES */
 
-/* ADAPTAÇÃO PARA CELULARES */
 @media (max-width: 700px) {
-    .rodape {
+    .area-localizacao {
+        min-height: 0;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        padding: 35px 18px;
+    }
+
+    .texto-boas-vindas {
+        position: relative;
+        top: -5px;
+        left: auto;
+        transform: none;
+        width: 100%;
+        max-width: 340px;
+    }
+
+    .texto-boas-vindas h2 {
+        font-size: 32px;
+        white-space: normal;
+    }
+
+    .texto-boas-vindas .bem-vindo {
+        font-size: 25px;
+    }
+
+    .texto-boas-vindas .descricao {
+        font-size: 13px;
+    }
+
+    .cartao-localizacao {
+        width: 390px;
+        max-width: 100%;
+        flex-shrink: 1;
+        margin: 0 auto;
+    }
+
+    .rodape-localizacao {
         flex-direction: column;
         align-items: flex-start;
         gap: 20px;
-        padding: 20px 15px;
+        padding: 20px;
     }
 
-    .rodape-item {
+    .rodape-localizacao .informacao {
         width: 100%;
         min-width: 0;
     }
 
-    .direitos {
-        line-height: 1.8;
+    .rodape-localizacao .separador {
+        display: none;
     }
-}
-
-.icone-gaivota {
-    position: relative;
-    left: -40px;
-}
-
-footer.rodape .rodape-item .icone.local {
-    background-color: #e98b39;
-}
-
-footer.rodape .rodape-item .icone.instagram {
-    background-color: #d95787;
-}
-
-footer.rodape .rodape-item .icone.whatsapp {
-    background-color: #4caf68;
 }

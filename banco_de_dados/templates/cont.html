@@ -1,3 +1,4 @@
+
 {% load static %}
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -5,52 +6,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
-
-
-    <title>Contato-Cabana da Carol</title>
-
-
-
+    <title>Contato | Cabana da Carol</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Pacifico&display=swap"
+          rel="stylesheet">
 
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
-
-
-
-
-    <!-- Ícones -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-
-
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="{% static 'css/cont.css' %}">
     <link rel="stylesheet" href="{% static 'css/paginainicial.css' %}">
+    <link rel="stylesheet" href="{% static 'css/cont.css' %}">
 </head>
 <body>
 
-
-
-
-    <!-- CABEÇALHO -->
+    <!-- CABECALHO -->
     <header class="header">
 
-
-
-
         <div class="logo">
-            <img src="{% static 'img/logo.png' %}" alt="Logo da Cabana da Carol">
+            <img src="{% static 'img/logo.png' %}"
+                 alt="Logo da Cabana da Carol">
 
             <div class="texto-logo">
                 <h1>Cabana da Carol</h1>
-
                 <p>
                     <i class="fa-solid fa-location-dot"></i>
                     Praia do Amor - Praia da Pipa
@@ -85,156 +65,159 @@
             </a>
         </nav>
 
-        <a href="{% url 'pagina_funcionario' %}" class="entrar">
-            <i class="fa-solid fa-user">
-                Entrar
-            </i>
+        <a href="{% url 'pagina_inicial' %}" class="entrar">
+            <i class="fa-solid fa-arrow-left"></i>
+            Voltar
         </a>
 
     </header>
 
-
-   
+    <!-- CONTEUDO PRINCIPAL -->
     <main class="conteudo">
+
         <section class="area-contato">
 
-
+            <!-- TEXTO DE BOAS-VINDAS -->
             <div class="texto-boas-vindas">
-                <p>Bem-vindo à</p>
 
+                <p class="bem-vindo">Bem-vindo à</p>
 
                 <h2>Cabana da Carol!</h2>
-                <p>Venha aproveitar o melhor da Praia do Amor,
-                    na Praia da Pipa.</p>
 
+                <svg class="icone-gaivota"
+                     viewBox="0 0 100 35"
+                     fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 28 C20 10 45 12 50 20 C55 12 80 10 95 28 C75 16 55 18 50 24 C45 18 25 16 5 28 Z"
+                          fill="#002b66"></path>
+                </svg>
+
+                <p class="descricao">
+                    Sinta o melhor da Praia do Amor<br>
+                    com boa comida, bons drinks e<br>
+                    uma vista inesquecível.
+                </p>
 
                 <div class="sol">☼</div>
+
             </div>
 
+            <!-- CARTAO DE CONTATOS -->
+            <section class="cartao-contato">
 
-                <div class="cartao-contato">
-
-
-                <button class="fechar-contato" aria-label="Fechar">×</button>
-
-
-                <h2>
+                <div class="icone-contato">
                     <i class="fa-solid fa-phone"></i>
-                    Contatos da Cabana da Carol
-                </h2>
+                </div>
 
+                <h2>Contatos da Cabana da Carol</h2>
 
+                <div class="detalhe-titulo"></div>
+
+                <p class="descricao-contato">
+                    Entre em contato conosco pelas nossas redes.
+                </p>
+
+                <!-- WHATSAPP -->
                 <div class="contato-item">
+
                     <h3 class="titulo-whatsapp">
                         <i class="fa-brands fa-whatsapp"></i>
                         WhatsApp
                     </h3>
 
-
                     <p>(84) 98151-2346</p>
                     <p>Cecília</p>
 
-
                     <a href="https://wa.me/5584981512346"
-                        class="botao-whatsapp"
-                        target="_blank"
-                        rel="noopener noreferrer">
+                       class="botao-whatsapp"
+                       target="_blank"
+                       rel="noopener noreferrer">
                         <i class="fa-brands fa-whatsapp"></i>
                         Abrir WhatsApp
                     </a>
+
                 </div>
 
-
+                <!-- INSTAGRAM -->
                 <div class="contato-item">
+
                     <h3 class="titulo-instagram">
                         <i class="fa-brands fa-instagram"></i>
                         Instagram
                     </h3>
 
-
                     <p>@cabanadacarolbeachbarpipa</p>
 
-
                     <a href="https://www.instagram.com/cabanadacarolbeachbarpipa/"
-                        class="botao-instagram"
-                        target="_blank"
-                        rel="noopener noreferrer">
+                       class="botao-instagram"
+                       target="_blank"
+                       rel="noopener noreferrer">
                         <i class="fa-brands fa-instagram"></i>
                         Abrir Instagram
                     </a>
+
                 </div>
 
-
+                <!-- ENDERECO -->
                 <div class="contato-item endereco-contato">
+
                     <h3>
                         <i class="fa-solid fa-location-dot"></i>
                         Localização
                     </h3>
-                    <p>Praia do Amor — Praia da Pipa</p>
-                </div>
-            </div>
-       </section>
-  </main>
-       <footer>
-         <div class="informacao">
 
+                    <p>Praia do Amor - Praia da Pipa</p>
+                    <p>Tibau do Sul - RN</p>
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+    <!-- RODAPE -->
+    <footer class="rodape-localizacao">
+
+        <div class="informacao">
             <div class="icone-footer local">
                 <i class="fa-solid fa-location-dot"></i>
             </div>
 
-            <div>
+            <div class="texto-footer">
                 <h4>Onde estamos</h4>
-
-                <p>
-                    Praia do Amor<br>
-                    Praia da Pipa/RN
-                </p>
+                <p>Praia do Amor<br>Praia da Pipa/RN</p>
             </div>
+        </div>
 
-           </div>
+        <div class="separador"></div>
 
-
-          <div class="separador"></div>
-
-
-           <div class="informacao">
-
+        <div class="informacao">
             <div class="icone-footer instagram">
                 <i class="fa-brands fa-instagram"></i>
             </div>
 
-            <div>
+            <div class="texto-footer">
                 <h4>Siga nosso Instagram</h4>
-
-                <p>
-                    @cabanadacarolrestaurantepipa
-                </p>
+                <p>@cabanadacarolbeachbarpipa</p>
             </div>
+        </div>
 
-           </div>
+        <div class="separador"></div>
 
-
-          <div class="separador"></div>
-
-
-          <div class="informacao">
-
+        <div class="informacao">
             <div class="icone-footer whatsapp">
                 <i class="fa-brands fa-whatsapp"></i>
             </div>
 
-            <div>
+            <div class="texto-footer">
                 <h4>Fale conosco</h4>
-
-                <p>
-                    (84) 98151-2346 – Cecília
-                </p>
+                <p>(84) 98151-2346 - Cecília</p>
             </div>
+        </div>
 
-            </div>
-        </footer>
+    </footer>
 
-
-   
 </body>
 </html>
