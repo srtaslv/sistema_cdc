@@ -1,0 +1,248 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Promoções | Cabana da Carol</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Pacifico&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="{% static 'css/promocoes.css' %}">
+</head>
+
+<body>
+
+
+
+    <header class="header">
+
+        <div class="logo">
+             <img src="{% static 'img/logo.png' %}" alt="Logo Cabana da Carol">
+
+            <div class="logo-texto">
+                <h1>Cabana da Carol</h1>
+
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Praia de Amor - Praia da Pipa
+                </p>
+            </div>
+        </div>
+
+        
+<nav>
+
+    <a href="{% url 'pagina_inicial' %}">
+        <i class="fa-solid fa-house"></i>
+        Início
+    </a>
+
+    <a href="{% url 'cardapio' %}">
+        <i class="fa-solid fa-utensils"></i>
+        Cardápio Digital
+    </a>
+
+    <a href="{% url 'promocoes' %}" class="ativo">
+        <i class="fa-solid fa-percent"></i>
+        Promoções
+    </a>
+
+    <a href="{% url 'cadastrar_reserva' %}">
+        <i class="fa-regular fa-calendar-days"></i>
+        Reservas
+    </a>
+
+    <a href="{% url 'pagina_contatos' %}">
+        <i class="fa-solid fa-phone"></i>
+        Contato
+    </a>
+</nav>
+
+<a href="#" class="entrar">
+    <i class="fa-solid fa-user"></i>
+    Entrar
+</a>
+</header>
+
+
+    <!-- CONTEÚDO DE PROMOÇÕES -->
+
+    <main class="pagina-promocoes">
+
+        <section class="promocoes-conteudo">
+
+            <div class="promocoes-titulo">
+
+                <h2>Promoções</h2>
+
+                <div class="titulo-sublinhado"></div>
+
+                <p>
+                    Sabores incríveis, preços especiais<br>
+                    para você aproveitar ainda mais!
+                </p>
+
+                <div class="sol-promocoes">
+                    <span>〰</span>
+                    <i class="fa-regular fa-sun"></i>
+                    <span>〰</span>
+                </div>
+
+            </div>
+
+
+            <div class="promocoes-cards">
+
+                <!-- PROMOÇÃO 1 -->
+
+                <article class="promocao-card">
+
+                    <img
+                        src="img/cervejas.jpg"
+                        alt="Cervejas servidas com gelo">
+
+                    <div class="faixa-promocao faixa-amarela">
+
+                        <i class="fa-solid fa-beer-mug-empty"></i>
+
+                        <h3>3 Cervejas Leva 1</h3>
+
+                    </div>
+
+                    <p>
+                        Peça 3 cervejas e ganhe mais 1!
+                        Porque bons momentos merecem
+                        ser brindados.
+                    </p>
+
+                    <span class="enfeite amarelo">〰〰〰</span>
+
+                </article>
+
+
+                <!-- PROMOÇÃO 2 -->
+
+                <article class="promocao-card">
+
+                    <img
+                        src="img/caipirinhas.jpg"
+                        alt="Sucos de limão e caipirinhas">
+
+                    <div class="faixa-promocao faixa-verde">
+
+                        <i class="fa-solid fa-glass-water"></i>
+
+                        <h3>2 Sucos de Limão<br>ou 2 Caipirinhas</h3>
+
+                    </div>
+
+                    <p>
+                        Na compra de uma refeição para
+                        2 pessoas, leve 2 sucos de limão
+                        ou 2 caipirinhas para acompanhar!
+                    </p>
+
+                    <span class="enfeite verde-enfeite">〰〰〰</span>
+
+                </article>
+
+
+                <!-- PROMOÇÃO 3 -->
+
+                <article class="promocao-card">
+
+                    <img
+                        src="img/refeicao.jpg"
+                        alt="Refeição servida com peixe e acompanhamentos">
+
+                    <div class="faixa-promocao faixa-rosa">
+
+                        <i class="fa-solid fa-utensils"></i>
+
+                        <h3>Refeições Especiais</h3>
+
+                    </div>
+
+                    <p>
+                        Peça uma de nossas refeições
+                        e ganhe um refri ou uma água
+                        na compra de qualquer prato
+                        do cardápio.
+                    </p>
+
+                    <span class="enfeite rosa-enfeite">〰〰〰</span>
+
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- RODAPÉ COMPARTILHADO -->
+
+    <footer id="contato">
+
+        <div class="informacao">
+
+            <div class="icone-footer local">
+                <i class="fa-solid fa-location-dot"></i>
+            </div>
+
+            <div>
+                <h4>Onde estamos</h4>
+                <p>
+                    Praia de Amor<br>
+                    Praia da Pipa/RN
+                </p>
+            </div>
+
+        </div>
+
+        <div class="separador"></div>
+
+        <div class="informacao">
+
+            <div class="icone-footer instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </div>
+
+            <div>
+                <h4>Siga nosso Instagram</h4>
+                <p>@cabanadacarolrestaurantepipa</p>
+            </div>
+
+        </div>
+
+        <div class="separador"></div>
+
+        <div class="informacao">
+
+            <div class="icone-footer whatsapp">
+                <i class="fa-brands fa-whatsapp"></i>
+            </div>
+
+            <div>
+                <h4>Fale conosco</h4>
+                <p>(84) 98151-2346 - Cecília</p>
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

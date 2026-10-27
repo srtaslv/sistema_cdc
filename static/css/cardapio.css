@@ -241,3 +241,60 @@ footer {
         font-size: 23px;
     }
 }
+
+/* Cardápio dinâmico */
+
+#teste-banco {
+    padding: 40px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+#teste-banco h2 {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+#teste-banco .categoria-cardapio {
+    margin-bottom: 40px;
+}
+
+#teste-banco .categoria-cardapio h3 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #d4a373;
+    padding-bottom: 10px;
+}
+
+#teste-banco .produtos {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(250px, 1fr)
+    );
+    gap: 20px;
+}
+
+#teste-banco .produto {
+    background: #fffaf3;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+#teste-banco .produto h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+#teste-banco .produto p {
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+#teste-banco .produto span {
+    display: block;
+    font-weight: bold;
+    color: #8b5e34;
+    margin-top: 12px;
+}

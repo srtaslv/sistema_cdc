@@ -1,0 +1,479 @@
+
+/* CONFIGURACAO GERAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+}
+
+body {
+    width: 100%;
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    background-color: #ffffff;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* AREA PRINCIPAL DE CONTATOS */
+
+.area-contato {
+    width: 100%;
+    min-height: calc(100vh - 90px);
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.10),
+            rgba(0, 0, 0, 0.20)
+        ),
+        url("../img/praia.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    padding: 45px 30px;
+}
+
+/* TEXTO DE BOAS-VINDAS */
+
+.texto-boas-vindas {
+    width: 300px;
+    max-width: 30%;
+    text-align: center;
+
+    position: absolute;
+    left: 4%;
+    top: 30%;
+    transform: translateY(-50%);
+}
+
+.texto-boas-vindas .bem-vindo {
+    font-family: "Pacifico", cursive;
+    font-size: 27px;
+    font-weight: 400;
+    color: #183d72;
+
+    text-shadow:
+        0 0 3px #ffffff,
+        0 0 6px #ffffff,
+        0 0 10px rgba(255, 255, 255, 0.95);
+}
+
+.texto-boas-vindas h2 {
+    font-family: "Pacifico", cursive;
+    font-size: clamp(24px, 3vw, 40px);
+    font-weight: 400;
+    line-height: 1.4;
+    color: #e86d18;
+
+    margin: 2px 0;
+    white-space: nowrap;
+    text-align: center;
+
+    text-shadow:
+        0 0 3px #ffffff,
+        0 0 6px #ffffff,
+        0 0 10px rgba(255, 255, 255, 0.95);
+}
+
+/* ICONE DE GAIVOTA */
+
+.icone-gaivota {
+    display: block;
+    width: 185px;
+    height: auto;
+    margin: -5px auto 5px;
+    transform: translateX(0);
+}
+
+/* DESCRICAO DE BOAS-VINDAS */
+
+.texto-boas-vindas .descricao {
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 1.8;
+    color: #183d72;
+    margin-top: 0;
+
+    text-shadow:
+        0 0 3px #ffffff,
+        0 0 6px #ffffff,
+        0 0 9px rgba(255, 255, 255, 0.95);
+}
+
+/* SOL DECORATIVO */
+
+.texto-boas-vindas .sol {
+    text-align: center;
+    margin-top: 18px;
+    color: #ef8b28;
+    font-size: 38px;
+    line-height: 1;
+}
+
+/* CARTAO DE CONTATOS */
+
+.cartao-contato {
+    width: 390px;
+    max-width: 100%;
+    flex-shrink: 0;
+
+    padding: 24px 20px;
+
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+
+    position: relative;
+    z-index: 1;
+    margin: 0;
+}
+
+/* ICONE DO CARTAO */
+
+.icone-contato {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #fff0e5;
+    color: #d94b0b;
+    border-radius: 50%;
+    font-size: 23px;
+}
+
+/* TITULO DO CARTAO */
+
+.cartao-contato > h2 {
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    line-height: 1.4;
+    color: #333333;
+    margin-bottom: 5px;
+}
+
+/* DETALHE DO TITULO */
+
+.detalhe-titulo {
+    width: 45px;
+    height: 3px;
+    background-color: #e95a19;
+    border-radius: 5px;
+    margin: 8px auto 12px;
+}
+
+/* DESCRICAO DO CARTAO */
+
+.descricao-contato {
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    line-height: 1.6;
+    color: #444444;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* BLOCOS DE CONTATO */
+
+.contato-item {
+    margin-top: 14px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.contato-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+/* TITULOS DOS CONTATOS */
+
+.contato-item h3 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    color: #333333;
+    margin-bottom: 7px;
+}
+
+/* INFORMACOES DOS CONTATOS */
+
+.contato-item p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #555555;
+    margin-bottom: 4px;
+    overflow-wrap: anywhere;
+}
+
+/* ICONE DO WHATSAPP */
+
+.titulo-whatsapp i {
+    color: #25d366;
+    font-size: 21px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+/* ICONE DO INSTAGRAM */
+
+.titulo-instagram i {
+    color: #e1306c;
+    font-size: 21px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+/* ICONE DE LOCALIZACAO */
+
+.endereco-contato h3 i {
+    color: #e95a19;
+    font-size: 18px;
+    margin-right: 8px;
+}
+
+/* BOTAO DO WHATSAPP */
+
+.botao-whatsapp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    width: 100%;
+    padding: 10px 12px;
+    margin-top: 8px;
+
+    background-color: #25d366;
+    color: #ffffff;
+    border-radius: 8px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+
+    transition: background-color 0.3s;
+}
+
+.botao-whatsapp:hover {
+    background-color: #1da851;
+}
+
+/* BOTAO DO INSTAGRAM */
+
+.botao-instagram {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    width: 100%;
+    padding: 10px 12px;
+    margin-top: 8px;
+
+    background-color: #d62976;
+    color: #ffffff;
+    border-radius: 8px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+
+    transition: background-color 0.3s;
+}
+
+.botao-instagram:hover {
+    background-color: #ad1d5d;
+}
+
+/* RODAPE IGUAL AO DA LOCALIZACAO */
+
+.rodape-localizacao {
+    width: 100%;
+    min-height: 92px;
+
+    background-color: #351d0d;
+    color: #ffffff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 28px;
+    padding: 10px 30px;
+}
+
+/* INFORMACOES DO RODAPE */
+
+.rodape-localizacao .informacao {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 220px;
+}
+
+/* ICONES DO RODAPE */
+
+.rodape-localizacao .icone-footer {
+    width: 37px;
+    height: 37px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.rodape-localizacao .icone-footer.local {
+    background-color: #ed741c;
+}
+
+.rodape-localizacao .icone-footer.instagram {
+    background-color: #e1306c;
+}
+
+.rodape-localizacao .icone-footer.whatsapp {
+    background-color: #20b957;
+}
+
+/* TEXTOS DO RODAPE */
+
+.rodape-localizacao .informacao h4 {
+    font-family: "Pacifico", cursive;
+    font-size: 12px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.rodape-localizacao .informacao p {
+    font-family: "Montserrat", sans-serif;
+    color: #dddddd;
+    font-size: 8px;
+    line-height: 1.5;
+    margin-top: 3px;
+    overflow-wrap: anywhere;
+}
+
+/* SEPARADORES DO RODAPE */
+
+.rodape-localizacao .separador {
+    width: 1px;
+    height: 45px;
+    background-color: rgba(255, 255, 255, 0.4);
+    flex-shrink: 0;
+}
+
+/* TELAS MEDIAS */
+
+@media (max-width: 1100px) {
+    .area-contato {
+        gap: 25px;
+        padding: 40px 20px;
+    }
+
+    .texto-boas-vindas {
+        width: 290px;
+    }
+
+    .cartao-contato {
+        width: 390px;
+    }
+
+    .rodape-localizacao {
+        gap: 18px;
+        padding: 10px 15px;
+    }
+
+    .rodape-localizacao .informacao {
+        min-width: 0;
+    }
+}
+
+/* CELULARES */
+
+@media (max-width: 700px) {
+    .area-contato {
+        min-height: 0;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        padding: 35px 18px;
+    }
+
+    .texto-boas-vindas {
+        position: relative;
+        top: -5px;
+        left: auto;
+        transform: none;
+        width: 100%;
+        max-width: 340px;
+    }
+
+    .texto-boas-vindas h2 {
+        font-size: 32px;
+        white-space: normal;
+    }
+
+    .texto-boas-vindas .bem-vindo {
+        font-size: 25px;
+    }
+
+    .texto-boas-vindas .descricao {
+        font-size: 13px;
+    }
+
+    .cartao-contato {
+        width: 390px;
+        max-width: 100%;
+        flex-shrink: 1;
+        margin: 0 auto;
+        padding: 24px 20px;
+    }
+
+    .cartao-contato > h2 {
+        font-size: 19px;
+    }
+
+    .rodape-localizacao {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .rodape-localizacao .informacao {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .rodape-localizacao .separador {
+        display: none;
+    }
+}

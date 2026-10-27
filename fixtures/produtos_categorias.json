@@ -1,0 +1,184 @@
+[
+{
+    "model": "core.categoria",
+    "pk": 1,
+    "fields": {
+        "nome_categoria": "Bebidas"
+    }
+},
+{
+    "model": "core.categoria",
+    "pk": 2,
+    "fields": {
+        "nome_categoria": "Refeições"
+    }
+},
+{
+    "model": "core.produto",
+    "pk": 5,
+    "fields": {
+        "descricao": "Camarão com casca",
+        "detalhes": "Acompanha arroz, macaxeira ou fritas e salada.",
+        "valor_produto": "158.00",
+        "preco_sob_consulta": false,
+        "disponivel": true,
+        "categoria": 2
+    }
+},
+{
+    "model": "core.produto",
+    "pk": 6,
+    "fields": {
+        "descricao": "Camarão sem casca",
+        "detalhes": "Acompanha arroz, macaxeira ou fritas e salada.",
+        "valor_produto": "164.00",
+        "preco_sob_consulta": false,
+        "disponivel": true,
+        "categoria": 2
+    }
+},
+{
+    "model": "core.produto",
+    "pk": 7,
+    "fields": {
+        "descricao": "Camarão à milanesa",
+        "detalhes": "Acompanha arroz, macaxeira ou fritas e salada.",
+        "valor_produto": "169.00",
+        "preco_sob_consulta": false,
+        "disponivel": true,
+        "categoria": 2
+    }
+},
+{
+    "model": "core.produto",
+    "pk": 8,
+    "fields": {
+        "descricao": "Isca de peixe à milanesa",
+        "detalhes": "Acompanha arroz, macaxeira ou fritas e salada.",
+        "valor_produto": "169.00",
+        "preco_sob_consulta": false,
+        "disponivel": true,
+        "categoria": 2
+    }
+},
+{
+    "model": "core.produto",
+    "pk": 9,
+    "fields": {
+        "descricao": "Posta de peixe",
+        "detalhes": "Acompanha arroz, macaxeira ou fritas e salada.",
+        "valor_produto": "164.00",
+        "preco_sob_consulta": false,
+        "disponivel": true,
+        "categoria": 2
+    }
+},
+{
+    "model": "core.produto",
+    "pk": 10,
+    "fields": {
+        "descricao": "Peixe inteiro",
+        "detalhes": "Acompanha arroz, macaxeira ou fritas e salada.",
+        "valor_produto": null,
+        "preco_sob_consulta": true,
+        "disponivel": true,
+        "categoria": 2
+    }
+},
+{
+    "model": "core.produto",
+    "pk": 11,
+    "fields": {
+        "descricao": "Mistão do Mar",
+        "detalhes": "(Peixe, camarão e lula à milanesa)\r\nAcompanha arroz, macaxeira ou fritas e salada.",
+        "valor_produto": "204.00",
+        "preco_sob_consulta": false,
+        "disponivel": true,
+        "categoria": 2
+    }
+},
+{
+    "model": "core.produto",
+    "pk": 12,
+    "fields": {
+        "descricao": "Mistão do Mar Grelhado",
+        "detalhes": "(Peixe, camarão e lula à milanesa)\r\nAcompanha arroz, macaxeira ou fritas e salada.",
+        "valor_produto": "199.00",
+        "preco_sob_consulta": false,
+        "disponivel": true,
+        "categoria": 2
+    }
+},
+{
+    "model": "core.produto",
+    "pk": 13,
+    "fields": {
+        "descricao": "Peixada com Camarão",
+        "detalhes": "(Peixe cozido no leite de coco)\r\nAcompanha arroz, macaxeira ou fritas e salada.",
+        "valor_produto": "194.00",
+        "preco_sob_consulta": false,
+        "disponivel": true,
+        "categoria": 2
+    }
+},
+{
+    "model": "core.produto",
+    "pk": 14,
+    "fields": {
+        "descricao": "Mistão da Terra",
+        "detalhes": "(Frango, carne de sol e calabresa)\r\nAcompanha arroz, macaxeira ou fritas e salada.",
+        "valor_produto": "195.00",
+        "preco_sob_consulta": false,
+        "disponivel": true,
+        "categoria": 2
+    }
+},
+{
+    "model": "core.produto",
+    "pk": 15,
+    "fields": {
+        "descricao": "Carne de Sol",
+        "detalhes": "Acompanha arroz, macaxeira ou fritas e salada.",
+        "valor_produto": "158.00",
+        "preco_sob_consulta": false,
+        "disponivel": true,
+        "categoria": 2
+    }
+},
+{
+    "model": "core.produto",
+    "pk": 16,
+    "fields": {
+        "descricao": "Filé de Frango Frito ou Grelhado",
+        "detalhes": "Acompanha arroz, macaxeira ou fritas e salada.",
+        "valor_produto": "145.00",
+        "preco_sob_consulta": false,
+        "disponivel": true,
+        "categoria": 2
+    }
+},
+{
+    "model": "core.produto",
+    "pk": 17,
+    "fields": {
+        "descricao": "Filé de Frango à Milanesa",
+        "detalhes": "Acompanha arroz, macaxeira ou fritas e salada.",
+        "valor_produto": "155.00",
+        "preco_sob_consulta": false,
+        "disponivel": true,
+        "categoria": 2
+    }
+},
+{
+    "model": "core.produto",
+    "pk": 18,
+    "fields": {
+        "descricao": "Vegetariano",
+        "detalhes": "(Queijo coalho à milanesa ou grelhado)\r\nAcompanha arroz, macaxeira ou fritas e salada.",
+        "valor_produto": "155.00",
+        "preco_sob_consulta": false,
+        "disponivel": true,
+        "categoria": 2
+    }
+}
+]

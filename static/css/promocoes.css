@@ -1,0 +1,401 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #173e60;
+}
+
+.header {
+    width: 100%;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 10px 25px;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.logo img {
+    width: 58px;
+    height: 58px;
+    object-fit: contain;
+}
+
+.logo-texto h1 {
+    margin: 0;
+    font-size: 22px;
+    color: #173e60;
+}
+
+.logo-texto p {
+    margin: 4px 0 0;
+    font-size: 12px;
+    color: #555;
+}
+
+.header nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.header nav a {
+    text-decoration: none;
+    color: #173e60;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+.header nav a:hover,
+.header nav a.ativo {
+    color: #e96b24;
+    font-weight: bold;
+}
+
+.entrar {
+    text-decoration: none;
+    background-color: #173e60;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+.entrar:hover {
+    background-color: #e96b24;
+}
+
+.pagina-promocoes {
+    min-height: 750px;
+    padding: 15px 5% 30px;
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.04),
+            rgba(0, 0, 0, 0.08)
+        ),
+        url("../img/praia.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.promocoes-conteudo {
+    width: 100%;
+    max-width: 1350px;
+    margin: 0 auto;
+}
+
+.promocoes-titulo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.promocoes-titulo h2 {
+    font-family: "Pacifico", cursive;
+    font-size: clamp(48px, 6vw, 82px);
+    font-weight: 400;
+    color: #ed6b18;
+    line-height: 1.3;
+    text-shadow: 1px 2px 2px rgba(255, 255, 255, 0.35);
+    margin: 0;
+}
+
+.titulo-sublinhado {
+    width: 230px;
+    height: 8px;
+    border-top: 7px solid #4a7cbe;
+    border-radius: 50%;
+    margin: 0 auto 8px;
+    transform: rotate(-2deg);
+}
+
+.promocoes-titulo > p {
+    font-family: "Pacifico", cursive;
+    font-size: clamp(19px, 2.5vw, 30px);
+    color: #dee1e6;
+    line-height: 1.4;
+    margin: 10px 0;
+}
+
+.sol-promocoes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 8px;
+    color: #ed8a28;
+    font-size: 32px;
+}
+
+.sol-promocoes span {
+    font-size: 30px;
+}
+
+.promocoes-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    align-items: stretch;
+}
+
+.promocao-card {
+    background: #fffaf0;
+    border: 5px solid rgba(255, 255, 255, 0.95);
+    border-radius: 22px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 8px 10px 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.22);
+    transition: transform 0.25s ease;
+}
+
+.promocao-card:hover {
+    transform: translateY(-5px);
+}
+
+.promocao-card > img {
+    display: block;
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.faixa-promocao {
+    width: 100%;
+    min-height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 8px 0 10px;
+    padding: 6px 8px;
+    border-radius: 45% 12% 42% 15% / 20% 30% 20% 35%;
+}
+
+.faixa-promocao i {
+    font-size: 30px;
+    flex-shrink: 0;
+}
+
+.faixa-promocao h3 {
+    font-family: "Pacifico", cursive;
+    font-size: clamp(17px, 1.7vw, 25px);
+    font-weight: 400;
+    line-height: 1.3;
+    color: #1a0155;
+    margin: 0;
+}
+
+.faixa-amarela {
+    background: #ffd05b;
+}
+
+.faixa-amarela i {
+    color: #563714;
+}
+
+.faixa-verde {
+    background: #b8e96e;
+}
+
+.faixa-verde i {
+    color: #23421d;
+}
+
+.faixa-rosa {
+    background: #f58ca5;
+}
+
+.faixa-rosa i {
+    color: #503039;
+}
+
+.promocao-card > p {
+    max-width: 340px;
+    margin: 8px auto 12px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #173e60;
+}
+
+.enfeite {
+    margin-top: auto;
+    padding-top: 4px;
+    font-size: 24px;
+    letter-spacing: 3px;
+}
+
+.amarelo {
+    color: #e99427;
+}
+
+.verde-enfeite {
+    color: #31a54b;
+}
+
+.rosa-enfeite {
+    color: #ed7597;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 25px;
+    background-color: white;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.informacao {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.icone-footer {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.icone-footer.local {
+    background-color: #fff0d8;
+    color: #e99427;
+}
+
+.icone-footer.instagram {
+    background-color: #ffe4ed;
+    color: #dc4b80;
+}
+
+.icone-footer.whatsapp {
+    background-color: #e1f5dc;
+    color: #31a54b;
+}
+
+.informacao h4 {
+    margin: 0 0 5px;
+    color: #173e60;
+}
+
+.informacao p {
+    margin: 0;
+    font-size: 13px;
+    color: #555;
+}
+
+.separador {
+    width: 1px;
+    height: 45px;
+    background-color: #ddd;
+}
+
+@media (max-width: 950px) {
+    .promocoes-cards {
+        gap: 12px;
+    }
+
+    .promocao-card {
+        padding: 7px;
+    }
+
+    .promocao-card > img {
+        height: 150px;
+    }
+
+    .promocao-card > p {
+        font-size: 13px;
+    }
+
+    .faixa-promocao {
+        gap: 6px;
+    }
+
+    .header {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .header nav {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 700px) {
+    .header {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .header nav {
+        gap: 12px;
+    }
+
+    .header nav a {
+        font-size: 13px;
+    }
+
+    .pagina-promocoes {
+        padding: 25px 16px;
+    }
+
+    .promocoes-cards {
+        grid-template-columns: 1fr;
+        max-width: 430px;
+        margin: 0 auto;
+        gap: 22px;
+    }
+
+    .promocao-card > img {
+        height: 220px;
+    }
+
+    .faixa-promocao h3 {
+        font-size: 23px;
+    }
+
+    .promocao-card > p {
+        font-size: 14px;
+    }
+
+    .promocoes-titulo > p br {
+        display: none;
+    }
+
+    footer {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .separador {
+        display: none;
+    }
+}
+

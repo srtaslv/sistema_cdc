@@ -17,56 +17,70 @@
  </head>
  <body>
      
-     <header class="header">
-         <div class="logo">
-            <img src="{% static 'img/logo.png' %}" alt="Cabana da Carol">
-         </div>
-         <div>
-             <h1>Cabana da Carol</h1>
-             <div class="localizacao">
-                 <i class="fa-solid fa-location-dot"></i>
-             
-                <p>Praia do Amor - Praia da Pipa</p>
-            </div>
-         </div>
+    <header class="header">
 
-         <nav>
-            <a href="#" class="ativo">
+        <div class="logo">
+
+
+            <img src="{% static 'img/logo.png' %}" alt="Logo da Cabana da Carol">
+
+
+            <div class="texto-logo">
+                <h1>Cabana da Carol</h1>
+
+
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Praia do Amor - Praia da Pipa
+                </p>
+            </div>
+
+
+        </div>
+
+
+        <!-- MENU DE NAVEGAÇÃO -->
+        <nav>
+
+
+            <a href="{% url 'pagina_inicial' %}" class="ativo">
                 <i class="fa-solid fa-house"></i>
                 Início
             </a>
 
-           
+
             <a href="{% url 'cardapio' %}">
                 <i class="fa-solid fa-utensils"></i>
                 Cardápio Digital
             </a>
 
-            
             <a href="{% url 'pagina_localizacao'%}">
+
                 <i class="fa-solid fa-location-dot"></i>
                 Localização
             </a>
-            
-            <a href="#">
-                <i class="fa-solid fa-calendar-days"></i>
-                Reservas
-            </a>  
-            
-            <a href="/contatos/">
+
+
+            <a href="{% url 'pagina_contatos' %}">
                 <i class="fa-solid fa-phone"></i>
                 Contato
             </a>
-            
-         </nav>
 
-         <a href="funcionario.html" class="entrar">
+            <a href="{% url 'cadastrar_reserva' %}">
+                <i class="fa-solid fa-calendar-days"></i>
+                Reservas
+            </a>
+            
+        </nav>
+
+
+         <a href="{% url 'pagina_funcionario' %}" class="entrar">
             <i class="fa-solid fa-user">
                 Entrar
             </i>
-         </a>
-     </header>
+        </a>
 
+    </header>
      
      <main class="principal">
          <section class="banner">
@@ -112,7 +126,7 @@
                     </p>
                  </a>
 
-                 <a href="#" class="card">
+                 <a href="{% url 'promocoes' %}" class="card">
                     <div class="icone rosa">
                         <i class="fa-solid fa-percent"></i>
                     </div>
@@ -123,7 +137,7 @@
                     </p>
                  </a>
 
-                 <a href="#" class="card">
+                 <a href="{% url 'pagina_localizacao' %}" class="card">
                     <div class="icone azul">
                         <i class="fa-solid fa-location-dot"></i>
                     </div>
@@ -148,66 +162,36 @@
          </section>
     </main>
 
-<footer>
 
-        <div class="informacao">
+<footer class="rodape">
+    <div class="rodape-container">
 
-            <div class="icone-footer local">
-                <i class="fa-solid fa-location-dot"></i>
-            </div>
-
-            <div>
-                <h4>Onde estamos</h4>
-
-                <p>
-                    Praia do Amor<br>
-                    Praia da Pipa/RN
-                </p>
-            </div>
-
+        <div class="rodape-item">
+            <div class="icone local">📍</div>
+            <h3>Onde estamos</h3>
+            <p>Praia do Amor</p>
+            <p>Praia da Pipa/RN</p>
         </div>
 
-
-        <div class="separador"></div>
-
-
-        <div class="informacao">
-
-            <div class="icone-footer instagram">
-                <i class="fa-brands fa-instagram"></i>
-            </div>
-
-            <div>
-                <h4>Siga nosso Instagram</h4>
-
-                <p>
-                    @cabanadacarolrestaurantepipa
-                </p>
-            </div>
-
+        <div class="rodape-item">
+            <div class="icone instagram">◎</div>
+            <h3>Siga nosso Instagram</h3>
+            <p>@cabanadacarolrestaurantepipa</p>
         </div>
 
-
-        <div class="separador"></div>
-
-
-        <div class="informacao">
-
-            <div class="icone-footer whatsapp">
-                <i class="fa-brands fa-whatsapp"></i>
-            </div>
-
-            <div>
-                <h4>Fale conosco</h4>
-
-                <p>
-                    (84) 98151-2346 – Cecília
-                </p>
-            </div>
-
+        <div class="rodape-item">
+            <div class="icone whatsapp">✆</div>
+            <h3>Fale conosco</h3>
+            <p>WhatsApp - Cecília</p>
         </div>
 
-    </footer>
+    </div>
+
+    <div class="rodape-final">
+        © 2026 Cabana da Carol. Todos os direitos reservados.
+    </div>
+</footer>
+
 
  </body>
  </html>

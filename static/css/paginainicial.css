@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -5,153 +6,137 @@
 }
 
 body {
-    font-family: "Montserrat", sans-serif;
-    background-color: white;
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+    background-color: #ffffff;
 }
 
 a {
     text-decoration: none;
 }
 
-
-/* =========================
-   CABEÇALHO
-========================= */
-
 .header {
     width: 100%;
-    height: 80px;
+    min-height: 90px;
+    background-color: #ffffff;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
     padding: 0 25px;
-
-    background-color: white;
+    overflow: visible;
 
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-
-    position: relative;
-    z-index: 10;
+    border-bottom: 1px solid #817a7a;
 }
 
-.localizacao {
+.header h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 28px;
+    color: #d4680f;
+}
+
+.header p {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 5px;
+    font-size: 12px;
+    color: #555555;
+    margin-top: 3px;
 }
-
-.localizacao i {
-    color: #6a168f;
-    font-size: 18px;
-}
-
-.localizacao p {
-    margin: 0;
-}
-
-
-/* LOGO */
 
 .logo {
     display: flex;
     align-items: center;
-
     gap: 8px;
+   flex-shrink: 0;
 }
 
-.logo img {
-    width: 58px;
-    height: 58px;
 
+.logo img {
+    width: 60px;
+    height: 60px;
     object-fit: contain;
+    flex-shrink: 0;
 }
 
 .logo h1 {
     font-family: "Pacifico", cursive;
-
-    font-size: 22px;
+    font-size: 25px;
     font-weight: 400;
-
     color: #4b2c20;
 }
 
 .logo p {
-    font-size: 8px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 10px;
     font-weight: 600;
-
     color: #444;
 }
 
+.texto-logo {
+    display: flex;
+    flex-direction: column;
+}
 
-/* =========================
-   MENU
-========================= */
-
-nav {
+.header nav {
     display: flex;
     align-items: center;
-
     gap: 25px;
 }
 
-nav a {
-    height: 80px;
-
-    display: flex;
-    align-items: center;
-
-    gap: 5px;
-
-    font-size: 10px;
-    font-weight: 600;
-
-    color: #333;
-
+.header nav a {
+    text-decoration: none;
+    color: #333333;
+    font-size: 14px;
+    font-weight: 500;
     position: relative;
 }
 
-nav a i {
-    font-size: 11px;
+.header nav a i {
+    font-size: 15px;
 }
 
-nav a:hover {
-    color: #e86d18;
+.header nav a:hover,
+.header nav a.ativo {
+    color: #d4680f;
 }
 
+/* ITEM ATIVO */
 nav .ativo {
     color: #e86d18;
 }
 
 nav .ativo::after {
     content: "";
-
     position: absolute;
-
     bottom: 0;
     left: 0;
 
     width: 100%;
     height: 3px;
-
     background-color: #e86d18;
 }
 
-
 /* BOTÃO ENTRAR */
-
 .entrar {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
     border: 1px solid #e86d18;
-
     border-radius: 5px;
-
-    padding: 9px 16px;
+    padding: 10px 16px;
 
     color: #e86d18;
+    background-color: white;
 
-    font-size: 10px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
     font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
 }
 
 .entrar:hover {
@@ -160,9 +145,6 @@ nav .ativo::after {
 }
 
 
-/* =========================
-   BANNER
-========================= */
 
 .principal {
     width: 100%;
@@ -185,11 +167,6 @@ min-height: calc(100vh - 80px);
     padding-top: 35px;
 
 }
-
-
-/* =========================
-   TEXTO
-========================= */
 
 .texto {
     text-align: left;
@@ -226,8 +203,6 @@ min-height: calc(100vh - 80px);
   margin-left: 70px;
 }
 
-
-
 .descricao {
     margin-top: 4px;
 
@@ -249,11 +224,6 @@ min-height: calc(100vh - 80px);
 
     margin-top: 5px;
 }
-
-
-/* =========================
-   CARDS
-========================= */
 
 .cards {
     display: flex;
@@ -314,11 +284,6 @@ min-height: calc(100vh - 80px);
     margin-top: 4px;
 }
 
-
-/* =========================
-   ÍCONES
-========================= */
-
 .icone {
     width: 39px;
     height: 39px;
@@ -356,172 +321,111 @@ min-height: calc(100vh - 80px);
 }
 
 
-/* =========================
-   RODAPÉ
-========================= */
+/* RODAPÉ */
 
-footer {
+footer.rodape {
     width: 100%;
-
-    min-height: 92px;
-
+    min-height: 130px;
     background-color: #351d0d;
-
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    gap: 28px;
-
-    padding: 10px 30px;
-
+    padding: 30px;
     color: white;
+    box-sizing: border-box;
 }
 
-.informacao {
-    display: flex;
-
+/* ORGANIZA AS TRÊS INFORMAÇÕES */
+.rodape-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     align-items: center;
-
-    gap: 10px;
-
-    min-width: 220px;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.icone-footer {
-    width: 37px;
-    height: 37px;
+/* CADA INFORMAÇÃO */
+.rodape-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 0;
+    gap: 5px;
+}
 
+/* ÍCONES */
+.rodape-item .icone {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+
+/* TÍTULOS - FONTE ORIGINAL */
+.rodape-item h3 {
+    font-family: "Pacifico", cursive;
+    font-size: 19px;
+    font-weight: 400;
+    color: white;
+    margin: 5px 0;
+}
+
+/* DESCRIÇÕES */
+.rodape-item p {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+
+/* DIREITOS AUTORAIS */
+.rodape-final {
+    text-align: center;
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255,255,255,0.3);
+    font-size: 12px;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 700px) {
+    .rodape-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+}
+
+
+/* Círculos coloridos dos ícones do rodapé */
+
+.rodape .rodape-item .icone {
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
-    font-size: 18px;
+    margin: 0 auto 12px;
+    font-size: 25px;
+    color: white;
 }
 
-.local {
-    background-color: #ed741c;
+/* Localização - laranja */
+.rodape .rodape-item .icone.local {
+    background-color: #e98b39;
 }
 
-.instagram {
-    background-color: #e1306c;
+/* Instagram - rosa */
+.rodape .rodape-item .icone.instagram {
+    background-color: #d95787;
 }
 
-.whatsapp {
-    background-color: #20b957;
-}
-
-.informacao h4 {
-    font-family: "Pacifico", cursive;
-
-    font-size: 12px;
-
-    font-weight: 400;
-}
-
-.informacao p {
-    font-size: 8px;
-
-    line-height: 1.5;
-
-    margin-top: 3px;
-}
-
-.separador {
-    width: 1px;
-
-    height: 45px;
-
-    background-color: rgba(255, 255, 255, 0.4);
-}
-
-
-/* =========================
-   RESPONSIVIDADE
-========================= */
-
-@media (max-width: 900px) {
-
-    nav {
-        gap: 12px;
-    }
-
-    nav a {
-        font-size: 8px;
-    }
-
-    .cards {
-        gap: 7px;
-    }
-
-    .card {
-        width: 135px;
-    }
-
-}
-
-
-@media (max-width: 700px) {
-
-    .header {
-        height: auto;
-
-        flex-direction: column;
-
-        gap: 10px;
-
-        padding: 15px;
-    }
-
-    nav {
-        flex-wrap: wrap;
-
-        justify-content: center;
-    }
-
-    nav a {
-        height: 30px;
-    }
-
-    nav .ativo::after {
-        display: none;
-    }
-
-    .entrar {
-        display: none;
-    }
-
-
-    .texto h2 {
-        font-size: 35px;
-    }
-
-    .bem-vindo {
-        font-size: 22px;
-    }
-
-
-    .cards {
-        flex-wrap: wrap;
-
-        padding: 0 15px;
-    }
-
-
-    footer {
-        flex-direction: column;
-
-        align-items: flex-start;
-
-        padding: 20px;
-    }
-
-    .separador {
-        display: none;
-    }
-
+/* WhatsApp - verde */
+.rodape .rodape-item .icone.whatsapp {
+    background-color: #4caf68;
 }
