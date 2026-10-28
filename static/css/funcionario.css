@@ -358,6 +358,60 @@ body {
     outline-offset: 4px;
 }
 
+/* RODAPE */
+
+.rodape-localizacao {
+    width: 100%;
+    min-height: 92px;
+
+    background-color: #351d0d;
+    color: #ffffff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 28px;
+    padding: 10px 30px;
+}
+
+/* INFORMACOES DO RODAPE */
+
+.rodape-localizacao .informacao {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 220px;
+}
+
+/* ICONES DO RODAPE */
+
+.rodape-localizacao .icone-footer {
+    width: 37px;
+    height: 37px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.rodape-localizacao .icone-footer.local {
+    background-color: #ed741c;
+}
+
+.rodape-localizacao .icone-footer.instagram {
+    background-color: #e1306c;
+}
+
+.rodape-localizacao .icone-footer.whatsapp {
+    background-color: #20b957;
+}
+
 /* TEXTOS DO RODAPE */
 
 .rodape-localizacao .informacao h4 {
