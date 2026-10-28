@@ -1,57 +1,51 @@
-/* RESET */
+/* CONFIGURACAO GERAL */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
-
+html {
+    width: 100%;
+}
 
 body {
-    font-family: 'Montserrat', sans-serif;
-    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
     background-color: #ffffff;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
 }
 
 
 
-
-/* CABEÇALHO */
-.header {
+/* NOME DA CABANA */
+header {
     width: 100%;
     min-height: 90px;
     background-color: #ffffff;
-
-
-
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-
-
-
-    padding: 5px 50px;
+    padding: 0 25px;
     overflow: visible;
 
-
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     border-bottom: 1px solid #817a7a;
 }
 
-
-
-
-/* NOME DA CABANA */
 .header h1 {
     font-family: 'Pacifico', cursive;
     font-size: 28px;
     color: #d4680f;
 }
-
-
-
 
 .header p {
     display: flex;
@@ -62,29 +56,40 @@ body {
     margin-top: 3px;
 }
 
-
-
-
-/* LOGO */
 .logo {
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 8px;
+   flex-shrink: 0;
 }
 
 
 .logo img {
-    width: 100px;
-    height: 100px;
+    width: 60px;
+    height: 60px;
     object-fit: contain;
     flex-shrink: 0;
 }
 
+.logo h1 {
+    font-family: "Pacifico", cursive;
+    font-size: 25px;
+    font-weight: 400;
+    color: #4b2c20;
+}
+
+.logo p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    color: #444;
+}
 
 .texto-logo {
     display: flex;
     flex-direction: column;
 }
+
 
 
 
