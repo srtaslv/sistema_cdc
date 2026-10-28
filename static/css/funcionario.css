@@ -170,3 +170,301 @@ body {
 .entrar:hover {
     background-color: #d4680f;
 }
+
+/* AREA PRINCIPAL */
+
+.funcionario-principal {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 70vh;
+    padding: 48px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #e9f3f5;
+
+    /* Coloque a foto de fundo em static/img/praia.jpg */
+    background-image:
+        linear-gradient(
+            rgba(0, 35, 55, 0.12),
+            rgba(0, 35, 55, 0.12)
+        ),
+        url("../img/praia.jpg");
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    font-family: "Montserrat", sans-serif;
+}
+
+.funcionario-principal *,
+.funcionario-principal *::before,
+.funcionario-principal *::after {
+    box-sizing: border-box;
+}
+
+/* CARTAO DE LOGIN */
+
+.funcionario-cartao {
+    width: 100%;
+    max-width: 390px;
+    margin: 0;
+    padding: 30px 28px 34px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: #fffdfb;
+    border: 1px solid #eadfd6;
+    border-radius: 18px;
+
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
+}
+
+.funcionario-logo {
+    display: block;
+    width: 88px;
+    height: 88px;
+    margin: 0 0 18px;
+    object-fit: contain;
+}
+
+.funcionario-cartao h2 {
+    margin: 0 0 12px;
+    color: #48291f;
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 1.3;
+    text-align: center;
+}
+
+.funcionario-descricao,
+.funcionario-instrucao {
+    margin: 0;
+    color: #555;
+    font-size: 12px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.funcionario-instrucao {
+    margin-top: 3px;
+}
+
+/* FORMULARIO */
+
+.funcionario-formulario {
+    width: 100%;
+    margin-top: 26px;
+}
+
+.funcionario-campo {
+    margin-bottom: 20px;
+}
+
+.funcionario-campo label {
+    display: block;
+    margin-bottom: 8px;
+    color: #352b27;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.funcionario-entrada {
+    min-height: 48px;
+    padding: 0 14px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    background-color: #fff;
+    border: 1px solid #d8d5d2;
+    border-radius: 7px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.funcionario-entrada > i {
+    flex-shrink: 0;
+    color: #777;
+    font-size: 16px;
+}
+
+.funcionario-entrada input {
+    width: 100%;
+    min-width: 0;
+    height: 46px;
+    margin: 0;
+    padding: 0;
+
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    outline: none;
+    box-shadow: none;
+
+    color: #292929;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.funcionario-entrada input::placeholder {
+    color: #888;
+    opacity: 1;
+}
+
+.funcionario-entrada:focus-within {
+    border-color: #e65300;
+    box-shadow: 0 0 0 3px rgba(230, 83, 0, 0.15);
+}
+
+/* BOTAO */
+
+.funcionario-botao {
+    display: block;
+    width: 100%;
+    min-height: 46px;
+    margin-top: 8px;
+    padding: 12px 18px;
+
+    background-color: #e65300;
+    border: 0;
+    border-radius: 7px;
+
+    color: #fff;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+
+    cursor: pointer;
+
+    transition: background-color 0.2s ease;
+}
+
+.funcionario-botao:hover {
+    background-color: #c94700;
+}
+
+.funcionario-botao:focus-visible {
+    outline: 3px solid #48291f;
+    outline-offset: 4px;
+}
+
+/* TEXTOS DO RODAPE */
+
+.rodape-localizacao .informacao h4 {
+    font-family: "Pacifico", cursive;
+    font-size: 12px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.rodape-localizacao .informacao p {
+    font-family: "Montserrat", sans-serif;
+    color: #dddddd;
+    font-size: 8px;
+    line-height: 1.5;
+    margin-top: 3px;
+    overflow-wrap: anywhere;
+}
+
+/* SEPARADORES DO RODAPE */
+
+.rodape-localizacao .separador {
+    width: 1px;
+    height: 45px;
+    background-color: rgba(255, 255, 255, 0.4);
+    flex-shrink: 0;
+}
+
+/* TELAS MEDIAS */
+
+@media (max-width: 1100px) {
+    .area-localizacao {
+        gap: 25px;
+        padding: 40px 20px;
+    }
+
+    .texto-boas-vindas {
+        width: 290px;
+    }
+
+    .cartao-localizacao {
+        width: 390px;
+    }
+
+    .rodape-localizacao {
+        gap: 18px;
+        padding: 10px 15px;
+    }
+
+    .rodape-localizacao .informacao {
+        min-width: 0;
+    }
+}
+
+/* CELULARES */
+
+@media (max-width: 700px) {
+    .area-localizacao {
+        min-height: 0;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        padding: 35px 18px;
+    }
+
+    .texto-boas-vindas {
+        position: relative;
+        top: -5px;
+        left: auto;
+        transform: none;
+        width: 100%;
+        max-width: 340px;
+    }
+
+    .texto-boas-vindas h2 {
+        font-size: 32px;
+        white-space: normal;
+    }
+
+    .texto-boas-vindas .bem-vindo {
+        font-size: 25px;
+    }
+
+    .texto-boas-vindas .descricao {
+        font-size: 13px;
+    }
+
+    .cartao-localizacao {
+        width: 390px;
+        max-width: 100%;
+        flex-shrink: 1;
+        margin: 0 auto;
+    }
+
+    .rodape-localizacao {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .rodape-localizacao .informacao {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .rodape-localizacao .separador {
+        display: none;
+    }
+}

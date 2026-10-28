@@ -5,322 +5,180 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Localizacao | Cabana da Carol</title>
 
-    <title>Tela do Funcionário - Cabana da Carol</title>
-
-
-    <!-- FONTES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Pacifico&display=swap"
           rel="stylesheet">
 
-
-    <!-- ÍCONES -->
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-
-    
+    <link rel="stylesheet" href="{% static 'css/paginainicial.css' %}">
     <link rel="stylesheet" href="{% static 'css/funcionario.css' %}">
 </head>
-
-
 <body>
 
-
-    <!-- CABEÇALHO -->
+    <!-- CABECALHO -->
     <header class="header">
 
-
-        <!-- LOGO E NOME DA CABANA -->
         <div class="logo">
-
-
-            <img src="{% static 'img/logo.png' %}" alt="Logo da Cabana da Carol">
-
+            <img src="{% static 'img/logo.png' %}"
+                 alt="Logo da Cabana da Carol">
 
             <div class="texto-logo">
                 <h1>Cabana da Carol</h1>
-
-
                 <p>
                     <i class="fa-solid fa-location-dot"></i>
                     Praia do Amor - Praia da Pipa
                 </p>
             </div>
-
-
         </div>
 
-
-        <!-- MENU DE NAVEGAÇÃO -->
         <nav>
-
-
             <a href="{% url 'pagina_inicial' %}">
                 <i class="fa-solid fa-house"></i>
-                Início
+                Inicio
             </a>
-
 
             <a href="{% url 'cardapio' %}">
                 <i class="fa-solid fa-utensils"></i>
-                Cardápio Digital
+                Cardapio Digital
             </a>
 
-
-            <a href="loc.html" class="ativo">
+            <a href="{% url 'pagina_localizacao' %}">
                 <i class="fa-solid fa-location-dot"></i>
-                Localização
+                Localizacao
             </a>
-
 
             <a href="{% url 'pagina_contatos' %}">
                 <i class="fa-solid fa-phone"></i>
                 Contato
             </a>
 
-
             <a href="{% url 'cadastrar_reserva' %}">
                 <i class="fa-solid fa-calendar-days"></i>
                 Reservas
             </a>
-
-
         </nav>
 
-
-        <!-- BOTÃO ENTRAR -->
-        <a href="{% url 'pagina_funcionario' %}" class="entrar">
-            <i class="fa-solid fa-user"></i>
+        <a href="{% url 'pagina_inicial' %}" class="entrar">
+            <i class="fa-solid fa-arrow-left"></i>
             Voltar
         </a>
 
-
     </header>
 
-    {% block content %}
-<main class="funcionario">
-    <div class="funcionario__conteudo">
+    <!-- AREA DO FUNCIONARIO -->
+    <main class="funcionario-principal">
 
-        <section
-            class="boas-vindas"
-            aria-labelledby="titulo-boas-vindas"
-        >
-            <h1 id="titulo-boas-vindas" class="boas-vindas__titulo">
-                <span class="boas-vindas__introducao">Bem-vindo à</span>
-                <span class="boas-vindas__nome">Cabana da Carol!</span>
-            </h1>
+        <section class="funcionario-cartao"
+                 aria-labelledby="titulo-funcionario">
 
-            <div class="boas-vindas__onda" aria-hidden="true"></div>
+            <img class="funcionario-logo"
+                 src="{% static 'img/logo.png' %}"
+                 alt="Logo da Cabana da Carol">
 
-            <p class="boas-vindas__descricao">
-                Sinta o melhor da Praia do Amor<br>
-                com boa comida, bons drinks e<br>
-                uma vista inesquecível.
+            <h2 id="titulo-funcionario">Login do Funcionario</h2>
+
+            <p class="funcionario-descricao">
+                Acesso restrito para funcionarios
             </p>
 
-            <span class="boas-vindas__sol" aria-hidden="true">☀</span>
-        </section>
-
-        <section class="login-funcionario" aria-labelledby="titulo-login">
-            <img
-                class="login-funcionario__logo"
-                src="{% static 'img/logo.png' %}"
-                alt="Logo da Cabana da Carol"
-                width="76"
-                height="76"
-            >
-
-            <h2 id="titulo-login" class="login-funcionario__titulo">
-                Login do Funcionário
-            </h2>
-
-            <p class="login-funcionario__descricao">
-                Acesso restrito para funcionários.<br>
-                Entre com suas credenciais para continuar.
+            <p class="funcionario-instrucao">
+                Entre com seu usuario e senha
             </p>
 
-            {% if form.errors %}
-                <div class="login-funcionario__erro" role="alert">
-                    Não foi possível entrar. Confira seu usuário e sua senha.
-                </div>
-            {% endif %}
-
-            <form method="post" class="login-formulario">
+            <form class="funcionario-formulario" method="post">
                 {% csrf_token %}
 
-                {% if next %}
-                    <input type="hidden" name="next" value="{{ next }}">
-                {% endif %}
+                <div class="funcionario-campo">
+                    <label for="usuario">Usuario</label>
 
-                <div class="login-formulario__grupo">
-                    <label for="usuario">Usuário</label>
+                    <div class="funcionario-entrada">
+                        <i class="fa-regular fa-user"
+                           aria-hidden="true"></i>
 
-                    <div class="login-formulario__campo">
-                        <svg
-                            class="login-formulario__icone"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="1.7"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            aria-hidden="true"
-                            focusable="false"
-                        >
-                            <circle cx="12" cy="8" r="4"></circle>
-                            <path d="M4 21v-2a8 8 0 0 1 16 0v2z"></path>
-                        </svg>
-
-                        <input
-                            type="text"
-                            id="usuario"
-                            name="username"
-                            placeholder="Digite seu usuário"
-                            value="{{ form.username.value|default_if_none:'' }}"
-                            autocomplete="username"
-                            autocapitalize="none"
-                            spellcheck="false"
-                            required
-                        >
+                        <input type="text"
+                               id="usuario"
+                               name="username"
+                               placeholder="Digite seu usuario"
+                               autocomplete="username"
+                               autocapitalize="none"
+                               spellcheck="false"
+                               required>
                     </div>
                 </div>
 
-                <div class="login-formulario__grupo">
+                <div class="funcionario-campo">
                     <label for="senha">Senha</label>
 
-                    <div class="login-formulario__campo">
-                        <svg
-                            class="login-formulario__icone"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="1.7"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            aria-hidden="true"
-                            focusable="false"
-                        >
-                            <rect
-                                x="5"
-                                y="10"
-                                width="14"
-                                height="11"
-                                rx="2"
-                            ></rect>
-                            <path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
-                            <path d="M12 14v3"></path>
-                        </svg>
+                    <div class="funcionario-entrada">
+                        <i class="fa-solid fa-lock"
+                           aria-hidden="true"></i>
 
-                        <input
-                            type="password"
-                            id="senha"
-                            name="password"
-                            placeholder="Digite sua senha"
-                            autocomplete="current-password"
-                            required
-                        >
+                        <input type="password"
+                               id="senha"
+                               name="password"
+                               placeholder="Digite sua senha"
+                               autocomplete="current-password"
+                               required>
                     </div>
                 </div>
 
-                <p class="login-formulario__ajuda">
-                    Esqueceu sua senha? Procure a administração.
-                </p>
-
-                <button type="submit" class="login-formulario__botao">
+                <button class="funcionario-botao" type="submit">
                     Entrar
                 </button>
+
             </form>
+
         </section>
 
-    </div>
-</main>
-{% endblock %}
-</body>
     </main>
-  <link rel="stylesheet" href="{% static 'css/funcionario.css' %}">
-  <footer class="rodape">
+    
+<!-- RODAPE -->
+    <footer class="rodape-localizacao">
 
-
-        <!-- rodape -->
-        <div class="rodape-item">
-
-
-            <i class="fa-solid fa-location-dot"></i>
-
-
-            <div>
-                <h3>Onde estamos</h3>
-                <p>Praia do Amor,<br>Praia de Pipa/RN</p>
+        <div class="informacao">
+            <div class="icone-footer local">
+                <i class="fa-solid fa-location-dot"></i>
             </div>
 
-
+            <div class="texto-footer">
+                <h4>Onde estamos</h4>
+                <p>Praia do Amor<br>Praia da Pipa/RN</p>
+            </div>
         </div>
 
+        <div class="separador"></div>
 
-        <!-- INSTAGRAM -->
-        <div class="rodape-item">
-
-
-            <i class="fa-brands fa-instagram"></i>
-
-
-            <div>
-                <h3>Siga nosso Instagram</h3>
-
-
-                <a href="https://www.instagram.com/cabanadacarolbeachbarpipa/"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                    @cabanadacarolbeachbarpipa
-                </a>
+        <div class="informacao">
+            <div class="icone-footer instagram">
+                <i class="fa-brands fa-instagram"></i>
             </div>
 
-
+            <div class="texto-footer">
+                <h4>Siga nosso Instagram</h4>
+                <p>@cabanadacarolbeachbarpipa</p>
+            </div>
         </div>
 
+        <div class="separador"></div>
 
-        <!-- WHATSAPP -->
-        <div class="rodape-item">
-
-
-            <i class="fa-brands fa-whatsapp"></i>
-
-
-            <div>
-                <h3>Fale conosco</h3>
-
-
-                <a href="https://wa.me/5584981512346"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                    (84) 98151-2346 – Cecília
-                </a>
+        <div class="informacao">
+            <div class="icone-footer whatsapp">
+                <i class="fa-brands fa-whatsapp"></i>
             </div>
 
-
+            <div class="texto-footer">
+                <h4>Fale conosco</h4>
+                <p>(84) 98151-2346 - Cecilia</p>
+            </div>
         </div>
-
-
-        <!-- DIREITOS AUTORAIS -->
-        <div class="direitos">
-
-
-            <span>〰〰〰</span>
-            Sistema CDC - Cabana da Carol
-            <span>|</span>
-            Todos os direitos reservados © 2026
-            <span>〰〰〰</span>
-
-
-        </div>
-
 
     </footer>
 
 </body>
-</html>
+  
