@@ -42,7 +42,10 @@ def pagina_localizacao(request):
     return render (request, 'loc.html')
 
 def pagina_funcionario(request):
-    return render (request, 'funcionario.html')
+    if request.method == 'POST':
+        return redirect('inicio_funcionario')
+
+    return render(request, 'funcionario.html')
 
 
 def cardapio_teste(request):
@@ -79,3 +82,6 @@ def reserva_sucesso(request):
 
 def promocoes(request):
     return render(request, 'promocoes.html')
+
+def inicio_funcionario(request):
+    return render(request, 'inicio_funcionario.html')
