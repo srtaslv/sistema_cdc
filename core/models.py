@@ -98,6 +98,7 @@ class Reserva(models.Model):
         choices=[
             ('pendente', 'Pendente'),
             ('confirmada', 'Confirmada'),
+            ('rejeitada', 'Rejeitada'),
             ('cancelada', 'Cancelada')
         ],
         default='pendente'
