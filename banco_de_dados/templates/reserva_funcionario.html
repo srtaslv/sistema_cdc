@@ -1,0 +1,378 @@
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gerenciar Reservas - Cabana da Carol</title>
+
+    <link rel="stylesheet" href="{% static 'css/reserva_funcionario.css' %}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Pacifico&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<div class="estrutura-painel">
+
+    <!-- MENU LATERAL -->
+    <aside class="menu-lateral">
+
+        <div class="identidade-marca">
+            <img src="{% static 'img/logo.png' %}" alt="Logo da Cabana da Carol">
+            <h2>Cabana da Carol</h2>
+            <p>Praia do Amor</p>
+        </div>
+
+        <nav class="navegacao">
+            <a href="{% url 'inicio_funcionario' %}" class="item-menu">
+                <i class="fa-solid fa-house"></i>
+                <span>Painel</span>
+            </a>
+
+            <a href="#funcionarios" class="item-menu">
+                <i class="fa-solid fa-users"></i>
+                <span>Funcionários</span>
+            </a>
+
+            <a href="{% url 'reserva_funcionario' %}" class="item-menu ativo">
+                <i class="fa-solid fa-calendar-check"></i>
+                <span>Reservas</span>
+            </a>
+
+            <a href="#cardapio" class="item-menu">
+                <i class="fa-solid fa-utensils"></i>
+                <span>Cardápio</span>
+            </a>
+
+            <a href="#fotos-pratos" class="item-menu">
+                <i class="fa-solid fa-images"></i>
+                <span>Fotos dos Pratos</span>
+            </a>
+
+            <a href="{% url 'promocoes' %}" class="item-menu">
+                <i class="fa-solid fa-tags"></i>
+                <span>Promoções</span>
+            </a>
+        </nav>
+
+        <div class="rodape-menu">
+            <i class="fa-solid fa-umbrella-beach"></i>
+            <p>Sistema CDC</p>
+        </div>
+
+    </aside>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="conteudo-principal">
+
+        <header class="cabecalho">
+            <div class="titulo-cabecalho">
+                <h1>Gerenciar Reservas</h1>
+                <p>Visualize, confirme e gerencie as reservas dos clientes.</p>
+            </div>
+
+            <div class="acoes-cabecalho">
+                <a href="{% url 'inicio_funcionario' %}" class="botao-voltar">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Voltar ao painel
+                </a>
+
+                <a href="{% url 'pagina_inicial' %}" class="botao-sair">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Sair
+                </a>
+            </div>
+        </header>
+
+
+        <section class="area-reservas">
+
+            <!-- FILTROS -->
+            <div class="filtros-reservas">
+                <a href="?status=todas"
+                   class="filtro {% if filtro == 'todas' %}selecionado{% endif %}">
+                    Todas <span>{{ contagens.todas }}</span>
+                </a>
+
+                <a href="?status=pendentes"
+                   class="filtro {% if filtro == 'pendentes' %}selecionado{% endif %}">
+                    Pendentes <span>{{ contagens.pendentes }}</span>
+                </a>
+
+                <a href="?status=aprovadas"
+                   class="filtro {% if filtro == 'aprovadas' %}selecionado{% endif %}">
+                    Aprovadas <span>{{ contagens.aprovadas }}</span>
+                </a>
+
+                <a href="?status=rejeitadas"
+                   class="filtro {% if filtro == 'rejeitadas' %}selecionado{% endif %}">
+                    Rejeitadas <span>{{ contagens.rejeitadas }}</span>
+                </a>
+
+                <a href="?status=canceladas"
+                   class="filtro {% if filtro == 'canceladas' %}selecionado{% endif %}">
+                    Canceladas <span>{{ contagens.canceladas }}</span>
+                </a>
+            </div>
+
+
+            <!-- TABELA E DETALHES -->
+            <div class="layout-reservas">
+
+                <section class="painel-lista">
+
+                    <div class="topo-lista">
+                        <div>
+                            <h2><i class="fa-solid fa-calendar-days"></i> Reservas</h2>
+                            <p>Consulte os dados e atualize o status dos pedidos.</p>
+                        </div>
+
+                        <form method="get" class="form-busca">
+                            <input type="hidden" name="status" value="{{ filtro }}">
+
+                            <i class="fa-solid fa-magnifying-glass"></i>
+
+                            <input type="text"
+                                   name="busca"
+                                   placeholder="Buscar por nome ou e-mail..."
+                                   value="{{ busca }}">
+
+                            <button type="submit">Buscar</button>
+                        </form>
+                    </div>
+
+
+                    <div class="tabela-responsiva">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Cliente</th>
+                                    <th>Data</th>
+                                    <th>Horário</th>
+                                    <th>Pessoas</th>
+                                    <th>Status</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                {% for reserva in reservas %}
+                                <tr {% if reserva_selecionada.pk == reserva.pk %}class="linha-selecionada"{% endif %}>
+                                    <td>
+                                        <div class="cliente">
+                                            <span class="avatar-cliente">
+                                                <i class="fa-solid fa-user"></i>
+                                            </span>
+                                            <span>{{ reserva.nome_reserva }}</span>
+                                        </div>
+                                    </td>
+
+                                    <td>{{ reserva.data_reserva|date:"d/m/Y" }}</td>
+                                    <td>{{ reserva.horario|time:"H:i" }}</td>
+                                    <td>{{ reserva.qtnde_pessoas }}</td>
+
+                                    <td>
+                                        <span class="status status-{{ reserva.status }}">
+                                            {{ reserva.get_status_display }}
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <div class="acoes-tabela">
+                                            <a class="acao-icone ver"
+                                               href="?status={{ filtro }}&busca={{ busca|urlencode }}&reserva={{ reserva.pk }}"
+                                               title="Ver detalhes"
+                                               aria-label="Ver detalhes">
+                                                <i class="fa-solid fa-eye"></i>
+                                            </a>
+
+                                            {% if reserva.status == 'pendente' %}
+                                            <form method="post" action="{% url 'acao_reserva' reserva.pk %}">
+                                                {% csrf_token %}
+                                                <button class="acao-icone aprovar"
+                                                        type="submit"
+                                                        name="acao"
+                                                        value="aprovar"
+                                                        title="Aprovar"
+                                                        aria-label="Aprovar">
+                                                    <i class="fa-solid fa-check"></i>
+                                                </button>
+                                            </form>
+
+                                            <form method="post" action="{% url 'acao_reserva' reserva.pk %}">
+                                                {% csrf_token %}
+                                                <button class="acao-icone rejeitar"
+                                                        type="submit"
+                                                        name="acao"
+                                                        value="rejeitar"
+                                                        title="Rejeitar"
+                                                        aria-label="Rejeitar">
+                                                    <i class="fa-solid fa-xmark"></i>
+                                                </button>
+                                            </form>
+                                            {% endif %}
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                {% empty %}
+                                <tr>
+                                    <td colspan="6" class="sem-reservas">
+                                        <i class="fa-regular fa-calendar-xmark"></i>
+                                        <p>Nenhuma reserva encontrada.</p>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="rodape-tabela">
+                        <span>
+                            {% if reservas %}
+                                Reservas encontradas: {{ reservas|length }}
+                            {% else %}
+                                Nenhuma reserva para exibir
+                            {% endif %}
+                        </span>
+                    </div>
+
+                </section>
+
+
+                <!-- PAINEL DE DETALHES -->
+                <aside class="painel-detalhes">
+
+                    <div class="titulo-detalhes">
+                        <i class="fa-solid fa-address-card"></i>
+                        <h2>Detalhes da Reserva</h2>
+                    </div>
+
+                    {% if reserva_selecionada %}
+
+                        <div class="nome-status">
+                            <h3>{{ reserva_selecionada.nome_reserva }}</h3>
+
+                            <span class="status status-{{ reserva_selecionada.status }}">
+                                {{ reserva_selecionada.get_status_display }}
+                            </span>
+                        </div>
+
+                        <div class="informacao-detalhe">
+                            <i class="fa-solid fa-envelope"></i>
+                            <div>
+                                <strong>E-mail</strong>
+                                <p>{{ reserva_selecionada.email }}</p>
+                            </div>
+                        </div>
+
+                        <div class="informacao-detalhe">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <div>
+                                <strong>Telefone</strong>
+                                <p>{{ reserva_selecionada.telefone }}</p>
+                            </div>
+                        </div>
+
+                        <div class="informacao-detalhe">
+                            <i class="fa-solid fa-users"></i>
+                            <div>
+                                <strong>Número de pessoas</strong>
+                                <p>{{ reserva_selecionada.qtnde_pessoas }}</p>
+                            </div>
+                        </div>
+
+                        <div class="informacao-detalhe">
+                            <i class="fa-regular fa-calendar"></i>
+                            <div>
+                                <strong>Data da reserva</strong>
+                                <p>{{ reserva_selecionada.data_reserva|date:"d/m/Y" }}</p>
+                            </div>
+                        </div>
+
+                        <div class="informacao-detalhe">
+                            <i class="fa-regular fa-clock"></i>
+                            <div>
+                                <strong>Horário</strong>
+                                <p>{{ reserva_selecionada.horario|time:"H:i" }}</p>
+                            </div>
+                        </div>
+
+                        <div class="informacao-detalhe observacoes">
+                            <i class="fa-solid fa-clipboard-list"></i>
+                            <div>
+                                <strong>Observações / Preferências</strong>
+                                <p>{{ reserva_selecionada.observacao|default:"Nenhuma observação informada." }}</p>
+                            </div>
+                        </div>
+
+                        {% if reserva_selecionada.status == 'pendente' %}
+                        <div class="botoes-detalhes">
+                            <form method="post" action="{% url 'acao_reserva' reserva_selecionada.pk %}">
+                                {% csrf_token %}
+                                <button type="submit" name="acao" value="aprovar" class="botao-aprovar">
+                                    <i class="fa-solid fa-check"></i> Aprovar
+                                </button>
+                            </form>
+
+                            <form method="post" action="{% url 'acao_reserva' reserva_selecionada.pk %}">
+                                {% csrf_token %}
+                                <button type="submit" name="acao" value="rejeitar" class="botao-rejeitar">
+                                    <i class="fa-solid fa-xmark"></i> Rejeitar
+                                </button>
+                            </form>
+                        </div>
+                        {% endif %}
+
+                        {% if reserva_selecionada.status != 'cancelada' %}
+                        <form method="post" action="{% url 'acao_reserva' reserva_selecionada.pk %}" class="form-cancelar">
+                            {% csrf_token %}
+                            <button type="submit" name="acao" value="cancelar">
+                                Cancelar reserva
+                            </button>
+                        </form>
+                        {% endif %}
+
+                    {% else %}
+
+                        <div class="detalhes-vazios">
+                            <i class="fa-regular fa-hand-pointer"></i>
+                            <h3>Selecione uma reserva</h3>
+                            <p>Clique no ícone de visualização de uma reserva para consultar seus detalhes.</p>
+                        </div>
+
+                    {% endif %}
+
+                </aside>
+
+            </div>
+
+        </section>
+
+
+        <footer class="rodape">
+            <p>
+                Sistema CDC - Cabana da Carol
+                <span>|</span>
+                Todos os direitos reservados © 2026
+            </p>
+        </footer>
+
+    </main>
+
+</div>
+
+</body>
+</html>

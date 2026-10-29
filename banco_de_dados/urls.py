@@ -31,7 +31,7 @@ urlpatterns = [
     path('localizacao/', pagina_localizacao, name='pagina_localizacao'),
     path('promocoes/', promocoes, name='promocoes'),
     path('pagina-func/', inicio_funcionario, name='inicio_funcionario'),
-    path('funcionario/reservas/', reserva_funcionario, name='gerenciar_reservas'),
+    path('funcionario/reservas/', reserva_funcionario, name='reserva_funcionario'),
     path('funcionario/reservas/<int:reserva_id>/acao/', acao_reserva, name='acao_reserva'),
 
     path('admin/', admin.site.urls),

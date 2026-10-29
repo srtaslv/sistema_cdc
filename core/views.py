@@ -158,10 +158,10 @@ def acao_reserva(request, reserva_id):
         reserva.status = 'cancelada'
 
     else:
-        return redirect('gerenciar_reservas')
+        return redirect('reserva_funcionario')
 
     reserva.save(update_fields=['status'])
 
     return redirect(
-        f'/funcionario/reserva/?reserva={reserva.pk}'
+        f'/funcionario/reservas/?reserva={reserva.pk}'
     )
