@@ -41,6 +41,7 @@ class ReservaForm(forms.ModelForm):
             raise forms.ValidationError(
                 "Não é possível reservar uma data que já passou."
             )
+        return data
     def clean_qtnde_pessoas(self):
         quantidade = self.cleaned_data.get('qtnde_pessoas')
 
