@@ -29,6 +29,7 @@ a {
 
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     border-bottom: 1px solid #817a7a;
+
 }
 
 .header h1 {
@@ -184,6 +185,11 @@ min-height: calc(100vh - 80px);
     font-size: 27px;
 
     color: #183d72;
+
+    text-shadow:
+        0 0 3px #ffffff,
+        0 0 6px #ffffff,
+        0 0 10px rgba(255, 255, 255, 0.95);
 }
 
 .texto h2 {
@@ -195,12 +201,22 @@ min-height: calc(100vh - 80px);
     color: #ed6c18;
 
     margin-top: -5px;
+
+    text-shadow:
+        0 0 3px #ffffff,
+        0 0 6px #ffffff,
+        0 0 10px rgba(255, 255, 255, 0.95);
 }
 
 .icone-gaivota {
   width: 185px;
   height: auto;
   margin-left: 70px;
+
+  text-shadow:
+        0 0 3px #ffffff,
+        0 0 6px #ffffff,
+        0 0 10px rgba(255, 255, 255, 0.95);
 }
 
 .descricao {
@@ -214,7 +230,6 @@ min-height: calc(100vh - 80px);
 
     color: white;
 
-    text-shadow: 1px 1px 3px #555;
 }
 
 .sol {
@@ -223,6 +238,11 @@ min-height: calc(100vh - 80px);
     font-size: 35px;
 
     margin-top: 5px;
+
+    text-shadow:
+        0 0 3px #ffffff,
+        0 0 6px #ffffff,
+        0 0 10px rgba(255, 255, 255, 0.95);
 }
 
 .cards {

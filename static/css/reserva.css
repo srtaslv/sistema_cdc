@@ -290,3 +290,168 @@ body {
     margin: 0;
     overflow-x: hidden;
 }
+
+/* RODAPE */
+
+.rodape-localizacao {
+    width: 100%;
+    min-height: 92px;
+
+    background-color: #351d0d;
+    color: #ffffff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 28px;
+    padding: 10px 30px;
+}
+
+/* INFORMACOES DO RODAPE */
+
+.rodape-localizacao .informacao {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 220px;
+}
+
+/* ICONES DO RODAPE */
+
+.rodape-localizacao .icone-footer {
+    width: 37px;
+    height: 37px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.rodape-localizacao .icone-footer.local {
+    background-color: #ed741c;
+}
+
+.rodape-localizacao .icone-footer.instagram {
+    background-color: #e1306c;
+}
+
+.rodape-localizacao .icone-footer.whatsapp {
+    background-color: #20b957;
+}
+
+/* TEXTOS DO RODAPE */
+
+.rodape-localizacao .informacao h4 {
+    font-family: "Pacifico", cursive;
+    font-size: 12px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.rodape-localizacao .informacao p {
+    font-family: "Montserrat", sans-serif;
+    color: #dddddd;
+    font-size: 8px;
+    line-height: 1.5;
+    margin-top: 3px;
+    overflow-wrap: anywhere;
+}
+
+/* SEPARADORES DO RODAPE */
+
+.rodape-localizacao .separador {
+    width: 1px;
+    height: 45px;
+    background-color: rgba(255, 255, 255, 0.4);
+    flex-shrink: 0;
+}
+
+/* TELAS MEDIAS */
+
+@media (max-width: 1100px) {
+    .area-localizacao {
+        gap: 25px;
+        padding: 40px 20px;
+    }
+
+    .texto-boas-vindas {
+        width: 290px;
+    }
+
+    .cartao-localizacao {
+        width: 390px;
+    }
+
+    .rodape-localizacao {
+        gap: 18px;
+        padding: 10px 15px;
+    }
+
+    .rodape-localizacao .informacao {
+        min-width: 0;
+    }
+}
+
+/* CELULARES */
+
+@media (max-width: 700px) {
+    .area-localizacao {
+        min-height: 0;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        padding: 35px 18px;
+    }
+
+    .texto-boas-vindas {
+        position: relative;
+        top: -5px;
+        left: auto;
+        transform: none;
+        width: 100%;
+        max-width: 340px;
+    }
+
+    .texto-boas-vindas h2 {
+        font-size: 32px;
+        white-space: normal;
+    }
+
+    .texto-boas-vindas .bem-vindo {
+        font-size: 25px;
+    }
+
+    .texto-boas-vindas .descricao {
+        font-size: 13px;
+    }
+
+    .cartao-localizacao {
+        width: 390px;
+        max-width: 100%;
+        flex-shrink: 1;
+        margin: 0 auto;
+    }
+
+    .rodape-localizacao {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .rodape-localizacao .informacao {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .rodape-localizacao .separador {
+        display: none;
+    }
+}
