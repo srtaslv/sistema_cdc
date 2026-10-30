@@ -36,10 +36,13 @@ a {
     width: 260px;
     min-width: 260px;
     min-height: 100vh;
+
     display: flex;
     flex-direction: column;
+
     background-color: #172630;
     color: #ffffff;
+
     padding: 25px 16px 18px;
 }
 
@@ -49,6 +52,7 @@ a {
 .identidade-marca {
     text-align: center;
     padding: 5px 8px 28px;
+
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
@@ -87,13 +91,17 @@ a {
     display: flex;
     align-items: center;
     gap: 13px;
+
     min-height: 48px;
     padding: 13px 15px;
+
     border-radius: 8px;
+
     color: #e6e9eb;
     font-size: 14px;
     font-weight: 500;
-    transition: background-color 0.2s, color 0.2s;
+
+    transition: 0.2s;
 }
 
 .item-menu i {
@@ -118,6 +126,7 @@ a {
 .rodape-menu {
     margin-top: auto;
     padding-top: 25px;
+
     text-align: center;
     color: #c9d0d4;
     font-size: 12px;
@@ -136,8 +145,10 @@ a {
     flex: 1;
     min-width: 0;
     min-height: 100vh;
+
     display: flex;
     flex-direction: column;
+
     background-color: #f5eee3;
 }
 
@@ -146,26 +157,25 @@ a {
 
 .cabecalho {
     min-height: 105px;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     gap: 20px;
     padding: 22px 35px;
+
     background-color: #ffffff;
+
     border-bottom: 1px solid #e7ddd0;
+
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .titulo-cabecalho h1 {
     font-size: 25px;
     font-weight: 700;
-    color: #26343d;
-}
-
-.titulo-cabecalho p {
-    margin-top: 7px;
-    color: #777777;
-    font-size: 13px;
+    color: #172630;
 }
 
 .acoes-cabecalho {
@@ -180,16 +190,19 @@ a {
     align-items: center;
     justify-content: center;
     gap: 9px;
+
     padding: 12px 16px;
     border-radius: 7px;
+
     font-size: 13px;
     font-weight: 600;
-    transition: background-color 0.2s;
+
+    transition: 0.2s;
 }
 
 .botao-funcionarios {
     background-color: #f2e5d5;
-    color: #75451f;
+    color: #4b2c20;
 }
 
 .botao-funcionarios:hover {
@@ -213,18 +226,29 @@ a {
     padding: 32px 35px 40px;
 }
 
+
+/* BOAS-VINDAS */
+
 .boas-vindas {
     margin-bottom: 27px;
 }
 
 .boas-vindas h2 {
-    font-size: 23px;
-    font-weight: 700;
-    color: #26343d;
+    font-family: "Pacifico", cursive;
+    font-size: 34px;
+    font-weight: 400;
+    margin-bottom: 9px;
+}
+
+.palavra-azul {
+    color: #172630;
+}
+
+.palavra-marrom {
+    color: #172630;
 }
 
 .boas-vindas p {
-    margin-top: 9px;
     font-size: 14px;
     line-height: 1.7;
     color: #6f6a64;
@@ -236,27 +260,37 @@ a {
 .grade-cartoes {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+
     gap: 20px;
     align-items: stretch;
 }
 
 .cartao {
     position: relative;
+
     display: flex;
     align-items: flex-start;
     gap: 17px;
+
     min-height: 155px;
     padding: 25px 23px;
+
     background-color: #ffffff;
+
     border: 1px solid #e9dfd2;
     border-radius: 12px;
+
     box-shadow: 0 4px 12px rgba(65, 47, 29, 0.05);
-    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+
+    transition: transform 0.2s,
+                box-shadow 0.2s,
+                border-color 0.2s;
 }
 
 .cartao:hover {
     transform: translateY(-3px);
     border-color: #d4680f;
+
     box-shadow: 0 7px 18px rgba(65, 47, 29, 0.10);
 }
 
@@ -265,16 +299,52 @@ a {
 
 .icone-cartao {
     flex-shrink: 0;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 52px;
-    height: 52px;
-    border-radius: 10px;
-    background-color: #fff0df;
-    color: #d4680f;
-    font-size: 22px;
+
+    width: 66px;
+    height: 66px;
+
+    border-radius: 50%;
+
+    color: #ffffff;
+    font-size: 29px;
 }
+
+/* FUNCIONÁRIOS - LARANJA */
+
+.icone-funcionarios {
+    background-color: #e96b18;
+}
+
+/* RESERVAS - MARROM */
+
+.icone-reservas {
+    background-color: #5b3219;
+}
+
+/* FOTOS - VERDE */
+
+.icone-fotos {
+    background-color: #68764f;
+}
+
+/* CARDÁPIO - AMARELO */
+
+.icone-cardapio {
+    background-color: #e6a83c;
+}
+
+/* PROMOÇÕES - ROSA/MARROM */
+
+.icone-promocoes {
+    background-color: #805568;
+}
+
+
+/* INFORMAÇÕES DOS QUADRINHOS */
 
 .informacoes-cartao {
     flex: 1;
@@ -283,10 +353,13 @@ a {
 }
 
 .informacoes-cartao h3 {
+    font-family: "Pacifico", cursive;
+    font-size: 22px;
+    font-weight: 400;
+
+    color: #4b2c20;
+
     margin: 2px 0 10px;
-    font-size: 17px;
-    font-weight: 700;
-    color: #26343d;
 }
 
 .informacoes-cartao p {
@@ -295,35 +368,30 @@ a {
     color: #77716a;
 }
 
+
+/* SETAS */
+
 .seta-cartao {
     position: absolute;
+
     right: 18px;
     bottom: 18px;
+
     color: #d4680f;
-    font-size: 14px;
+    font-size: 19px;
+
+    transition: transform 0.2s;
 }
 
-
-/* RODAPÉ PRINCIPAL */
-
-.rodape {
-    padding: 20px 25px;
-    text-align: center;
-    background-color: #172630;
-    color: #e4e7e9;
-    font-size: 11px;
-    line-height: 1.8;
-}
-
-.rodape span {
-    padding: 0 5px;
-    color: #e68a3b;
+.cartao:hover .seta-cartao {
+    transform: translateX(5px);
 }
 
 
 /* TELAS MENORES */
 
 @media (max-width: 1100px) {
+
     .menu-lateral {
         width: 230px;
         min-width: 230px;
@@ -343,13 +411,19 @@ a {
     }
 
     .icone-cartao {
-        width: 45px;
-        height: 45px;
-        font-size: 19px;
+        width: 58px;
+        height: 58px;
+        font-size: 25px;
+    }
+
+    .informacoes-cartao h3 {
+        font-size: 20px;
     }
 }
 
+
 @media (max-width: 800px) {
+
     .estrutura-painel {
         flex-direction: column;
     }
@@ -410,7 +484,9 @@ a {
     }
 }
 
+
 @media (max-width: 600px) {
+
     .cabecalho {
         align-items: flex-start;
         flex-direction: column;
@@ -436,7 +512,7 @@ a {
     }
 
     .boas-vindas h2 {
-        font-size: 21px;
+        font-size: 28px;
     }
 
     .grade-cartoes {
@@ -448,8 +524,13 @@ a {
         min-height: 135px;
     }
 
-    .rodape {
-        padding: 18px 12px;
-        font-size: 10px;
+    .icone-cartao {
+        width: 55px;
+        height: 55px;
+        font-size: 23px;
+    }
+
+    .informacoes-cartao h3 {
+        font-size: 19px;
     }
 }

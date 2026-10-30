@@ -2,6 +2,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,51 +29,73 @@
         <aside class="menu-lateral">
 
             <div class="identidade-marca">
+
                 <img src="{% static 'img/logo.png' %}"
                      alt="Logo da Cabana da Carol">
 
                 <h2>Cabana da Carol</h2>
+
                 <p>Praia do Amor</p>
+
             </div>
 
+
+            <!-- NAVEGAÇÃO -->
             <nav class="navegacao">
 
                 <a href="{% url 'inicio_funcionario' %}"
                    class="item-menu ativo">
+
                     <i class="fa-solid fa-house"></i>
                     <span>Painel</span>
+
                 </a>
 
                 <a href="#funcionarios" class="item-menu">
+
                     <i class="fa-solid fa-users"></i>
                     <span>Funcionários</span>
+
                 </a>
 
                 <a href="{% url 'reserva_funcionario' %}" class="item-menu">
+
                     <i class="fa-solid fa-calendar-check"></i>
                     <span>Reservas</span>
+
                 </a>
 
                 <a href="#cardapio" class="item-menu">
+
                     <i class="fa-solid fa-utensils"></i>
                     <span>Cardápio</span>
+
                 </a>
 
                 <a href="#fotos-pratos" class="item-menu">
+
                     <i class="fa-solid fa-images"></i>
                     <span>Fotos dos Pratos</span>
+
                 </a>
 
                 <a href="{% url 'promocoes' %}" class="item-menu">
-                    <i class="fa-solid fa-tags"></i>
+
+                    <i class="fa-solid fa-bullhorn"></i>
                     <span>Promoções</span>
+
                 </a>
 
             </nav>
 
+
+            <!-- RODAPÉ DO MENU -->
             <div class="rodape-menu">
+
                 <i class="fa-solid fa-umbrella-beach"></i>
+
                 <p>Sistema CDC</p>
+
             </div>
 
         </aside>
@@ -81,24 +104,34 @@
         <!-- ÁREA PRINCIPAL -->
         <main class="conteudo-principal">
 
+
             <!-- CABEÇALHO -->
             <header class="cabecalho">
 
                 <div class="titulo-cabecalho">
+
                     <h1>Painel do Funcionário</h1>
-                    <p>Praia do Amor - Praia da Pipa</p>
+
                 </div>
+
 
                 <div class="acoes-cabecalho">
 
                     <a href="#funcionarios" class="botao-funcionarios">
+
                         <i class="fa-solid fa-user-gear"></i>
+
                         <span>Funcionários</span>
+
                     </a>
 
+
                     <a href="{% url 'pagina_inicial' %}" class="botao-sair">
+
                         <i class="fa-solid fa-right-from-bracket"></i>
+
                         <span>Sair</span>
+
                     </a>
 
                 </div>
@@ -109,126 +142,155 @@
             <!-- CONTEÚDO DO PAINEL -->
             <section class="area-painel">
 
+
+                <!-- BOAS-VINDAS -->
                 <div class="boas-vindas">
-                    <h2>Bem-vindo ao painel!</h2>
+
+                    <h2>
+                        <span class="palavra-azul">Bem-vindo</span>
+                        <span class="palavra-marrom">ao painel!</span>
+                    </h2>
 
                     <p>
                         Escolha uma opção abaixo para gerenciar
                         as informações da Cabana da Carol.
                     </p>
+
                 </div>
 
 
-                <!-- QUADRINHOS DO PAINEL -->
+                <!-- CARDS DO PAINEL -->
                 <div class="grade-cartoes">
+
 
                     <!-- FUNCIONÁRIOS -->
                     <a href="#funcionarios" class="cartao">
-                        <div class="icone-cartao">
+
+                        <div class="icone-cartao icone-funcionarios">
+
                             <i class="fa-solid fa-users"></i>
+
                         </div>
 
                         <div class="informacoes-cartao">
+
                             <h3>Funcionários</h3>
 
                             <p>
                                 Adicione novos funcionários, edite
                                 informações e gerencie o acesso da equipe.
                             </p>
+
                         </div>
 
                         <i class="fa-solid fa-arrow-right seta-cartao"></i>
+
                     </a>
 
 
                     <!-- RESERVAS -->
                     <a href="{% url 'reserva_funcionario' %}" class="cartao">
-                        <div class="icone-cartao">
-                            <i class="fa-solid fa-calendar-check"></i>
+
+                        <div class="icone-cartao icone-reservas">
+
+                            <i class="fa-solid fa-calendar-days"></i>
+
                         </div>
 
                         <div class="informacoes-cartao">
+
                             <h3>Reservas</h3>
 
                             <p>
                                 Visualize, confirme, cancele e gerencie
                                 reservas dos clientes.
                             </p>
+
                         </div>
 
                         <i class="fa-solid fa-arrow-right seta-cartao"></i>
+
                     </a>
 
 
                     <!-- FOTOS DOS PRATOS -->
                     <a href="#fotos-pratos" class="cartao">
-                        <div class="icone-cartao">
-                            <i class="fa-solid fa-images"></i>
+
+                        <div class="icone-cartao icone-fotos">
+
+                            <i class="fa-regular fa-image"></i>
+
                         </div>
 
                         <div class="informacoes-cartao">
+
                             <h3>Fotos dos Pratos</h3>
 
                             <p>
                                 Envie e gerencie as fotos dos pratos
                                 e do ambiente da barraca.
                             </p>
+
                         </div>
 
                         <i class="fa-solid fa-arrow-right seta-cartao"></i>
+
                     </a>
 
 
                     <!-- PRODUTOS DO CARDÁPIO -->
                     <a href="#cardapio" class="cartao">
-                        <div class="icone-cartao">
+
+                        <div class="icone-cartao icone-cardapio">
+
                             <i class="fa-solid fa-utensils"></i>
+
                         </div>
 
                         <div class="informacoes-cartao">
+
                             <h3>Produtos do Cardápio</h3>
 
                             <p>
                                 Adicione novos produtos e edite preços,
                                 categorias e descrições do cardápio.
                             </p>
+
                         </div>
 
                         <i class="fa-solid fa-arrow-right seta-cartao"></i>
+
                     </a>
 
 
                     <!-- PROMOÇÕES -->
                     <a href="{% url 'promocoes' %}" class="cartao">
-                        <div class="icone-cartao">
-                            <i class="fa-solid fa-tags"></i>
+
+                        <div class="icone-cartao icone-promocoes">
+
+                            <i class="fa-solid fa-bullhorn"></i>
+
                         </div>
 
                         <div class="informacoes-cartao">
+
                             <h3>Promoções</h3>
 
                             <p>
                                 Adicione, edite e remova promoções
                                 dos produtos e serviços da barraca.
                             </p>
+
                         </div>
 
                         <i class="fa-solid fa-arrow-right seta-cartao"></i>
+
                     </a>
+
 
                 </div>
 
             </section>
-
-
-            <!-- RODAPÉ -->
-            <footer class="rodape">
-                <p>
-                    Sistema CDC - Cabana da Carol
-                    <span>|</span>
-                    Todos os direitos reservados © 2026
-                </p>
-            </footer>
 
         </main>
 
