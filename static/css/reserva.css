@@ -176,7 +176,10 @@
     font-family: "Pacifico", cursive;
     font-size: 27px;
     color: #183d72;
-    text-shadow: 0 1px 5px rgba(255, 255, 255, 0.8);
+    text-shadow:
+        0 0 3px #ffffff,
+        0 0 6px #ffffff,
+        0 0 10px rgba(255, 255, 255, 0.95);
 }
 
 .texto-boas-vindas h2 {
@@ -189,16 +192,18 @@
     text-align: center;
     position: static;
     transform: none;
-    text-shadow: 0 1px 5px rgba(255, 255, 255, 0.8);
+    text-shadow:
+        0 0 3px #ffffff,
+        0 0 6px #ffffff,
+        0 0 10px rgba(255, 255, 255, 0.95);
 }
 
 .icone-gaivota {
     display: block;
     width: 185px;
     height: auto;
-    margin: 15px auto;
-    transform: translateX(-60px);
-    margin-right: 5px;
+    margin: -15px auto 10px;
+    transform: none;
 }
 
 .descricao-boas-vindas {
@@ -206,7 +211,10 @@
     font-weight: 700;
     line-height: 1.7;
     color: #183d72;
-    text-shadow: 0 1px 5px rgba(255, 255, 255, 0.8);
+    text-shadow:
+        0 0 3px #ffffff,
+        0 0 6px #ffffff,
+        0 0 10px rgba(255, 255, 255, 0.95);
 }
 
 /* Adaptação para telas menores */
@@ -243,9 +251,13 @@
 
 .sol-reserva {
     text-align: center;
-    margin-right: 20px;
+    margin: 15px auto 10px;
     color: #ef8b28;
     font-size: 38px;
+    text-shadow:
+        0 0 3px #ffffff,
+        0 0 6px #ffffff,
+        0 0 10px rgba(255, 255, 255, 0.95);
 }
 
 @media (max-width: 550px) {

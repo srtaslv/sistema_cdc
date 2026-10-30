@@ -1,9 +1,9 @@
-from django.shortcuts import render, redirect
-from .models import banco_de_dados, Produto, Categoria, Reserva
+from django.shortcuts import render, redirect, get_object_or_404
+from .models import banco_de_dados, Produto, Categoria, Reserva, Imagem
 from .forms import banco_de_dadosForm, ReservaForm
 from django.db.models import Prefetch, Q
-from django.shortcuts import get_object_or_404
 from django.views.decorators.http import require_POST
+from django.contrib.auth.decorators import login_required
 
 def listar_tabelas(request):
     bdd = banco_de_dados.objects.all()
@@ -165,3 +165,21 @@ def acao_reserva(request, reserva_id):
     return redirect(
         f'/funcionario/reservas/?reserva={reserva.pk}'
     )
+
+
+@login_required
+def fotos_pratos(request):
+    produtos = Produto.objects.select_related(
+        'categoria'
+    ).prefetch_related('imagens').all()
+
+    categorias = Categoria.objects.all()
+
+    contexto = {
+        'produtos': produtos,
+        'categorias': categorias
+    }
+
+    return render(request, 'fotos_pratos.html', contexto)
+
+

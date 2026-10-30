@@ -152,7 +152,7 @@ nav .ativo::after {
 }
 
 .banner {
-min-height: calc(100vh - 80px);
+    min-height: calc(100vh - 90px);
 
     background-image:
         linear-gradient(
@@ -165,13 +165,25 @@ min-height: calc(100vh - 80px);
     background-position: center;
     background-repeat: no-repeat;
 
-    padding-top: 35px;
+    position: relative;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+
+    padding: 35px 20px 45px;
 }
 
 .texto {
-    text-align: left;
-    margin-left: 8%;
+    width: 300px;
+    max-width: 30%;
+    text-align: center;
+
+    position: absolute;
+    left: 4%;
+    top: 40%;
+    transform: translateY(-50%);
 }
 
 .texto .sol {
@@ -202,6 +214,8 @@ min-height: calc(100vh - 80px);
 
     margin-top: -5px;
 
+    white-space: nowrap;
+
     text-shadow:
         0 0 3px #ffffff,
         0 0 6px #ffffff,
@@ -211,7 +225,8 @@ min-height: calc(100vh - 80px);
 .icone-gaivota {
   width: 185px;
   height: auto;
-  margin-left: 70px;
+  display: block;
+  margin: -15px auto 10px;
 
   text-shadow:
         0 0 3px #ffffff,
@@ -220,24 +235,37 @@ min-height: calc(100vh - 80px);
 }
 
 .descricao {
-    margin-top: 4px;
+    width: 450px;
+    max-width: none;
 
+    margin: 10px auto 0;
+
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+
+    text-align: center;
     font-size: 12px;
-
     font-weight: 600;
+    line-height: 1.6;
 
-    line-height: 1.5;
+    color: #183d72;
 
-    color: white;
-
+    text-shadow:
+        0 0 3px #ffffff,
+        0 0 6px #ffffff,
+        0 0 10px rgba(255, 255, 255, 0.95);
 }
 
 .sol {
+    display: block;
+    width: 100%;
+    text-align: center;
     color: #ef8b28;
 
     font-size: 35px;
 
-    margin-top: 5px;
+    margin: 10px auto 0;
 
     text-shadow:
         0 0 3px #ffffff,
@@ -247,13 +275,23 @@ min-height: calc(100vh - 80px);
 
 .cards {
     display: flex;
-
     justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 
-    gap: 14px;
+    gap: 15px;
 
-    margin-top: 25px;
+    width: 100%;
+    max-width: 900px;
+
+    margin: 0 auto;
+    padding: 0;
+
+    position: relative;
+    z-index: 1;
+    transform: translate(40px, -120px);
 }
+
 
 .card {
     width: 150px;
@@ -277,6 +315,8 @@ min-height: calc(100vh - 80px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
 
     transition: 0.3s;
+
+    flex-shrink: 0;
 }
 
 .card:hover {
@@ -341,111 +381,83 @@ min-height: calc(100vh - 80px);
 }
 
 
-/* RODAPÉ */
+/* RODAPE IGUAL AO DA LOCALIZACAO */
 
-footer.rodape {
+.rodape-localizacao {
     width: 100%;
-    min-height: 130px;
+    min-height: 92px;
+
     background-color: #351d0d;
-    padding: 30px;
-    color: white;
-    box-sizing: border-box;
-}
+    color: #ffffff;
 
-/* ORGANIZA AS TRÊS INFORMAÇÕES */
-.rodape-container {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    align-items: center;
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* CADA INFORMAÇÃO */
-.rodape-item {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    text-align: center;
-    min-width: 0;
-    gap: 5px;
+
+    gap: 28px;
+    padding: 10px 30px;
 }
 
-/* ÍCONES */
-.rodape-item .icone {
-    width: 45px;
-    height: 45px;
+/* INFORMACOES DO RODAPE */
+
+.rodape-localizacao .informacao {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 220px;
+}
+
+/* ICONES DO RODAPE */
+
+.rodape-localizacao .icone-footer {
+    width: 37px;
+    height: 37px;
     border-radius: 50%;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 22px;
+
+    color: #ffffff;
+    font-size: 18px;
+    flex-shrink: 0;
 }
 
-/* TÍTULOS - FONTE ORIGINAL */
-.rodape-item h3 {
+.rodape-localizacao .icone-footer.local {
+    background-color: #ed741c;
+}
+
+.rodape-localizacao .icone-footer.instagram {
+    background-color: #e1306c;
+}
+
+.rodape-localizacao .icone-footer.whatsapp {
+    background-color: #20b957;
+}
+
+/* TEXTOS DO RODAPE */
+
+.rodape-localizacao .informacao h4 {
     font-family: "Pacifico", cursive;
-    font-size: 19px;
+    font-size: 12px;
     font-weight: 400;
-    color: white;
-    margin: 5px 0;
+    margin: 0;
 }
 
-/* DESCRIÇÕES */
-.rodape-item p {
-    font-family: Arial, sans-serif;
-    font-size: 13px;
+.rodape-localizacao .informacao p {
+    font-family: "Montserrat", sans-serif;
+    color: #dddddd;
+    font-size: 8px;
     line-height: 1.5;
-    margin: 0;
+    margin-top: 3px;
     overflow-wrap: anywhere;
 }
 
-/* DIREITOS AUTORAIS */
-.rodape-final {
-    text-align: center;
-    margin-top: 25px;
-    padding-top: 15px;
-    border-top: 1px solid rgba(255,255,255,0.3);
-    font-size: 12px;
-}
+/* SEPARADORES DO RODAPE */
 
-/* RESPONSIVIDADE */
-@media (max-width: 700px) {
-    .rodape-container {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
-}
-
-
-/* Círculos coloridos dos ícones do rodapé */
-
-.rodape .rodape-item .icone {
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    margin: 0 auto 12px;
-    font-size: 25px;
-    color: white;
-}
-
-/* Localização - laranja */
-.rodape .rodape-item .icone.local {
-    background-color: #e98b39;
-}
-
-/* Instagram - rosa */
-.rodape .rodape-item .icone.instagram {
-    background-color: #d95787;
-}
-
-/* WhatsApp - verde */
-.rodape .rodape-item .icone.whatsapp {
-    background-color: #4caf68;
+.rodape-localizacao .separador {
+    width: 1px;
+    height: 45px;
+    background-color: rgba(255, 255, 255, 0.4);
+    flex-shrink: 0;
 }

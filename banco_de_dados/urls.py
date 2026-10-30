@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from core.views import listar_tabelas, cadastrar_bdd, pagina_inicial, pagina_contatos, cardapio, pagina_localizacao, pagina_funcionario, cardapio_teste, cadastrar_reserva, reserva_sucesso, promocoes, inicio_funcionario, reserva_funcionario, acao_reserva
+from core.views import listar_tabelas, cadastrar_bdd, pagina_inicial, pagina_contatos, cardapio, pagina_localizacao, pagina_funcionario, cardapio_teste, cadastrar_reserva, reserva_sucesso, promocoes, inicio_funcionario, reserva_funcionario, acao_reserva, fotos_pratos
 
 urlpatterns = [ 
     path('reservas/', cadastrar_reserva, name='cadastrar_reserva'),
@@ -33,6 +33,7 @@ urlpatterns = [
     path('pagina-func/', inicio_funcionario, name='inicio_funcionario'),
     path('funcionario/reservas/', reserva_funcionario, name='reserva_funcionario'),
     path('funcionario/reservas/<int:reserva_id>/acao/', acao_reserva, name='acao_reserva'),
+    path('fotos-pratos/', fotos_pratos, name='fotos_pratos'),
 
     path('admin/', admin.site.urls),
 ]
