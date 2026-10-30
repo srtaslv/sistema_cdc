@@ -1,0 +1,236 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotos dos Pratos | Cabana da Carol</title>
+    <link rel="stylesheet" href="{% static 'css/fotos_pratos.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    
+<div class="estrutura">
+
+    <aside class="menu">
+
+        <div class="logo-menu">
+            <img src="{% static 'img/logo.png' %}" alt="Cabana da Carol">
+            <h2>Cabana da Carol</h2>
+            <p>Praia do Amor</p>
+        </div>
+
+        <nav class="opcoes-menu">
+            <a href="{% url 'inicio_funcionario' %}">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Painel</span>
+            </a>
+
+            <a href="#funcionarios" class="item-menu">
+                <i class="fa-solid fa-users"></i>
+                    <span>Funcionários</span>
+            </a>
+
+            <a href="{% url 'reserva_funcionario' %}" class="item-menu">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span>Reservas</span>
+            </a>
+
+            <a href="#cardapio" class="item-menu">
+                    <i class="fa-solid fa-utensils"></i>
+                    <span>Cardápio</span>
+            </a>
+
+            <a href="{% url 'fotos_pratos' %}" class="ativo">
+                <i class="fa-solid fa-images"></i>
+                Fotos dos Pratos
+            </a>
+
+            <a href="{% url 'promocoes' %}" class="item-menu">
+                    <i class="fa-solid fa-tags"></i>
+                    <span>Promoções</span>
+            </a>
+        </nav>
+
+    </aside>
+
+    <div class="area-conteudo">
+
+        <header class="cabecalho">
+            <div>
+                <h1>Painel do Funcionário</h1>
+                <p>Praia do Amor - Praia da Pipa</p>
+            </div>
+
+            <div class="usuario">
+                <a href="#" class="botao-funcionarios">
+                    <i class="fa-solid fa-user-gear"></i>
+                    Funcionários
+                </a>
+
+                <a href="/" class="botao-sair">
+                    ↪ Sair
+                </a>
+            </div>
+        </header>
+
+     <main class="conteudo">
+        <div class="titulo-pagina">
+            <div>
+                <h2 class="titulo-com-icone">
+                  <i class="fa-regular fa-images"></i>
+                   <span>Fotos dos Pratos</span>
+                </h2>
+                <p>Adicione, organize e atualize as fotos e descrições dos pratos da barraca.</p>
+            </div>
+            <button class="botao-adicionar" type="button" onclick="abrirEditor()">
+                + Adicionar Fotos
+            </button>
+        </div>
+
+        <div class="filtros">
+            <button class="filtro ativo" data-categoria="todas">Todas</button>
+            {% for categoria in categorias %}
+                <button class="filtro" data-categoria="{{ categoria.id }}">
+                    {{ categoria.nome_categoria }}
+                </button>
+            {% endfor %}
+            <input type="search" id="pesquisa" placeholder="Buscar prato...">
+        </div>
+
+        <div class="area-principal">
+            <section class="grade-pratos">
+                {% for produto in produtos %}
+                <article class="cartao"
+                         data-categoria="{{ produto.categoria.id }}"
+                         data-nome="{{ produto.descricao|lower }}">
+
+                    {% with foto=produto.imagens.first %}
+                        {% if foto and foto.arquivo %}
+                            <img src="{{ foto.arquivo.url }}" alt="{{ produto.descricao }}">
+                        {% else %}
+                            <div class="sem-foto">Sem foto cadastrada</div>
+                        {% endif %}
+                    {% endwith %}
+
+                    <h3>{{ produto.descricao }}</h3>
+                    <p>{{ produto.detalhes|default:"Sem descrição cadastrada." }}</p>
+
+                    <div class="acoes">
+                        <button type="button"
+                                onclick="editarPrato('{{ produto.id }}')">
+                            ✎ Editar
+                        </button>
+                        <button type="button"
+                                onclick="removerFoto('{{ produto.id }}')">
+                            🗑 Remover foto
+                        </button>
+                    </div>
+                </article>
+                {% empty %}
+                    <p>Nenhum prato cadastrado.</p>
+                {% endfor %}
+            </section>
+
+            <aside class="editor" id="editor">
+                <div class="editor-cabecalho">
+                    <h2>Editar Fotos e Descrição</h2>
+                    <button type="button" onclick="fecharEditor()">×</button>
+                </div>
+
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input type="hidden" name="produto_id" id="produto_id">
+
+                    <label for="produto">Selecionar prato</label>
+                    <select id="produto" name="produto" required>
+                        <option value="">Selecione um prato</option>
+                        {% for produto in produtos %}
+                            <option value="{{ produto.id }}">{{ produto.descricao }}</option>
+                        {% endfor %}
+                    </select>
+
+                    <label for="descricao">Descrição do prato</label>
+                    <textarea id="descricao" name="descricao" maxlength="500" rows="4"></textarea>
+
+                    <label for="fotos">Adicionar fotos</label>
+                    <div class="upload">
+                        <span>☁</span>
+                        <p>Selecione as fotos dos pratos</p>
+                        <small>JPG, PNG ou WEBP</small>
+                        <input type="file" id="fotos" name="fotos" accept="image/*" multiple>
+                    </div>
+
+                    <div class="botoes-editor">
+                        <button type="submit" class="salvar">✓ Salvar Alterações</button>
+                        <button type="button" class="cancelar" onclick="fecharEditor()">Cancelar</button>
+                    </div>
+                </form>
+            </aside>
+        </div>    
+      </main>
+
+     <footer class="rodape">
+        <p>
+            Sistema CDC - Cabana da Carol
+            <span>|</span>
+            Todos os direitos reservados © 2026
+        </p>
+     </footer>
+
+    </div> <!-- Fecha area-conteudo -->
+
+</div> <!-- Fecha estrutura -->
+
+<script>
+    const editor = document.getElementById("editor");
+
+    function abrirEditor() {
+        editor.style.display = "block";
+    }
+
+    function fecharEditor() {
+        editor.style.display = "none";
+    }
+
+    function editarPrato(id) {
+        abrirEditor();
+        document.getElementById("produto").value = id;
+        document.getElementById("produto_id").value = id;
+    }
+
+    function removerFoto(id) {
+        alert("A remoção da foto será conectada ao Django na próxima etapa.");
+    }
+
+    document.getElementById("pesquisa").addEventListener("input", function() {
+        const termo = this.value.toLowerCase();
+        document.querySelectorAll(".cartao").forEach(cartao => {
+            cartao.style.display = cartao.dataset.nome.includes(termo) ? "" : "none";
+        });
+    });
+
+    document.querySelectorAll(".filtro").forEach(botao => {
+        botao.addEventListener("click", function() {
+            document.querySelectorAll(".filtro").forEach(b => b.classList.remove("ativo"));
+            this.classList.add("ativo");
+
+            const categoria = this.dataset.categoria;
+            document.querySelectorAll(".cartao").forEach(cartao => {
+                cartao.style.display = categoria === "todas" ||
+                    cartao.dataset.categoria === categoria ? "" : "none";
+            });
+        });
+    });
+</script>
+</body>
+</html>
