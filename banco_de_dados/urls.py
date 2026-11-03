@@ -34,6 +34,7 @@ urlpatterns = [
     path('funcionario/reservas/', reserva_funcionario, name='reserva_funcionario'),
     path('funcionario/reservas/<int:reserva_id>/acao/', acao_reserva, name='acao_reserva'),
     path('fotos-pratos/', fotos_pratos, name='fotos_pratos'),
+    path('fotos/', pagina_fotos, name='pagina_fotos'),
 
     path('admin/', admin.site.urls),
 ]

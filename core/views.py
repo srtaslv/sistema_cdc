@@ -40,6 +40,9 @@ def cardapio(request):
 
     return render(request, 'cardapio.html', contexto)
 
+def pagina_fotos(request):
+    return render(request, 'fotos.html')
+
 def pagina_localizacao(request):
     return render (request, 'loc.html')
 
