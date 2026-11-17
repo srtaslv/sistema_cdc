@@ -170,8 +170,33 @@ def acao_reserva(request, reserva_id):
     )
 
 
-@login_required
+#@login_required
 def fotos_pratos(request):
+
+    if request.method == 'POST':
+        produto_id = request.POST.get('produto') or request.POST.get('produto_id')
+        descricao = request.POST.get('descricao')
+        fotos = request.FILES.getlist('fotos')
+
+        if produto_id:
+            produto = get_object_or_404(
+                Produto,
+                id=produto_id
+            )
+
+            if descricao is not None:
+                produto.detalhes = descricao
+                produto.save()
+
+            for foto in fotos:
+                Imagem.objects.create(
+                    produto=produto,
+                    arquivo=foto,
+                    descricao_imagem=produto.descricao
+                )
+
+            return redirect('fotos_pratos')
+
     produtos = Produto.objects.select_related(
         'categoria'
     ).prefetch_related('imagens').all()
@@ -183,6 +208,10 @@ def fotos_pratos(request):
         'categorias': categorias
     }
 
-    return render(request, 'fotos_pratos.html', contexto)
+    return render(
+        request,
+        'fotos_pratos.html',
+        contexto
+    )
 
 
