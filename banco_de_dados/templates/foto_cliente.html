@@ -1,0 +1,321 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Galeria de Fotos | Cabana da Carol</title>
+
+    <link rel="stylesheet" href="{% static 'css/fotos.css' %}">
+
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icones -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- CABECALHO -->
+    <header class="header">
+
+        <div class="logo">
+            <img src="{% static 'img/logo.png' %}"
+                 alt="Logo da Cabana da Carol">
+
+            <div class="texto-logo">
+                <h1>Cabana da Carol</h1>
+
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Praia de Amor - Praia da Pipa
+                </p>
+            </div>
+        </div>
+
+        <nav class="menu">
+
+            <a href="{% url 'pagina_inicial' %}">
+                <i class="fa-solid fa-house"></i>
+                Inicio
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-utensils"></i>
+                Cardapio Digital
+            </a>
+
+            <a href="#" class="ativo">
+                <i class="fa-solid fa-images"></i>
+                Fotos
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-tag"></i>
+                Promocoes
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-location-dot"></i>
+                Localizacao
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-calendar-days"></i>
+                Reservas
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-phone"></i>
+                Contato
+            </a>
+
+        </nav>
+
+        <a href="#" class="botao-entrar">
+            <i class="fa-solid fa-user"></i>
+            Entrar
+        </a>
+
+    </header>
+
+
+    <!-- CONTEUDO PRINCIPAL -->
+    <main class="galeria-principal">
+
+        <section class="apresentacao">
+
+            <h2>
+                Nossa Galeria de Fotos
+            </h2>
+
+            <p>
+                Olha só essa seleção de sabores, drinks e momentos especiais da Cabana!
+            </p>
+
+            <p>
+                Aqui você encontra um pouco do que te espera por aqui
+                <span class="coracao">♥</span>
+            </p>
+
+        </section>
+
+
+        <!-- FILTROS DA GALERIA -->
+        <section class="galeria-area">
+
+            <div class="filtros">
+
+                <input type="radio" name="categoria"
+                       id="filtro-todos" checked>
+
+                <input type="radio" name="categoria"
+                       id="filtro-pratos">
+
+                <input type="radio" name="categoria"
+                       id="filtro-drinks">
+
+                <input type="radio" name="categoria"
+                       id="filtro-petiscos">
+
+                <input type="radio" name="categoria"
+                       id="filtro-ambiente">
+
+
+                <div class="botoes-filtro">
+
+                    <label for="filtro-todos">Todos</label>
+
+                    <label for="filtro-pratos">Pratos</label>
+
+                    <label for="filtro-drinks">Drinks</label>
+
+                    <label for="filtro-petiscos">Petiscos</label>
+
+                    <label for="filtro-ambiente">Ambiente</label>
+
+                </div>
+
+
+                <!-- CARDS DAS FOTOS -->
+                <div class="galeria">
+
+                    <!-- FOTO 1 -->
+                    <article class="foto-card"
+                             data-categoria="drinks">
+
+                        <img src="{% static 'img/galeria/drink-tropical.jpg' %}"
+                             alt="Drink tropical na praia">
+
+                        <div class="foto-informacao">
+                            <h3>Drink tropical</h3>
+                            <p>
+                                Refrescante, colorido e perfeito para curtir a praia.
+                            </p>
+                        </div>
+
+                    </article>
+
+
+                    <!-- FOTO 2 -->
+                    <article class="foto-card"
+                             data-categoria="petiscos">
+
+                        <img src="{% static 'img/galeria/petiscos-cabana.jpg' %}"
+                             alt="Petiscos da Cabana">
+
+                        <div class="foto-informacao">
+                            <h3>Petiscos da Cabana</h3>
+                            <p>
+                                Porcoes crocantes acompanhadas de fritas, salada e molhos.
+                            </p>
+                        </div>
+
+                    </article>
+
+
+                    <!-- FOTO 3 -->
+                    <article class="foto-card"
+                             data-categoria="petiscos">
+
+                        <img src="{% static 'img/galeria/cerveja-gelada.jpg' %}"
+                             alt="Petiscos e bebida na praia">
+
+                        <div class="foto-informacao">
+                            <h3>Cerveja gelada</h3>
+                            <p>
+                                O acompanhamento perfeito para um dia de sol.
+                            </p>
+                        </div>
+
+                    </article>
+
+
+                    <!-- FOTO 4 -->
+                    <article class="foto-card"
+                             data-categoria="pratos">
+
+                        <img src="{% static 'img/galeria/salada-especial.jpg' %}"
+                             alt="Salada especial de camarao">
+
+                        <div class="foto-informacao">
+                            <h3>Salada especial</h3>
+                            <p>
+                                Leve, fresca e cheia de sabor.
+                            </p>
+                        </div>
+
+                    </article>
+
+
+                    <!-- FOTO 5 -->
+                    <article class="foto-card"
+                             data-categoria="drinks">
+
+                        <img src="{% static 'img/galeria/drink-sem-alcool.jpg' %}"
+                             alt="Drink tropical sem alcool">
+
+                        <div class="foto-informacao">
+                            <h3>Drink sem alcool</h3>
+                            <p>
+                                Muito sabor e todo o frescor do mar.
+                            </p>
+                        </div>
+
+                    </article>
+
+
+                    <!-- FOTO 6 -->
+                    <article class="foto-card"
+                             data-categoria="petiscos">
+
+                        <img src="{% static 'img/galeria/camarao-empanado.jpg' %}"
+                             alt="Camarao empanado">
+
+                        <div class="foto-informacao">
+                            <h3>Camarao empanado</h3>
+                            <p>
+                                Crocante por fora, suculento por dentro.
+                            </p>
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- RODAPE -->
+    <footer class="rodape">
+
+        <div class="rodape-conteudo">
+
+            <!-- LOCALIZACAO -->
+            <div class="rodape-item">
+
+                <div class="rodape-icone local">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+
+                <div class="rodape-texto">
+                    <h3>Onde estamos</h3>
+                    <p>Praia de Amor</p>
+                    <p>Praia da Pipa/RN</p>
+                </div>
+
+            </div>
+
+
+            <!-- INSTAGRAM -->
+            <div class="rodape-item">
+
+                <div class="rodape-icone instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+
+                <div class="rodape-texto">
+                    <h3>Siga nosso Instagram</h3>
+                    <p>@cabanadacarolrestaurantepipa</p>
+                </div>
+
+            </div>
+
+
+            <!-- WHATSAPP -->
+            <div class="rodape-item">
+
+                <div class="rodape-icone whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </div>
+
+                <div class="rodape-texto">
+                    <h3>Fale conosco</h3>
+                    <p>(84) 98151-2346 - Cecilia</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="rodape-final">
+            Sistema CDC - Cabana da Carol
+            <span>|</span>
+            Todos os direitos reservados
+            <span>© 2026</span>
+        </div>
+
+    </footer>
+
+</body>
+</html>
