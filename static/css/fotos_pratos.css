@@ -19,6 +19,7 @@ body {
 .estrutura {
     display: flex;
     min-height: 100vh;
+    align-items: stretch;
 }
 
 /* MENU LATERAL */
@@ -32,6 +33,10 @@ body {
     display: flex;
     flex-direction: column;
     padding: 25px 15px;
+    box-sizing: border-box;
+    height: auto;
+    position: relative;
+    align-self: stretch; 
 }
 
 /* LOGO DO MENU */
@@ -665,5 +670,25 @@ body {
 /* EVITAR QUE O PAINEL DE EDIÇÃO ESPREMA OS CARTÕES */
 .area-conteudo {
     min-width: 0;
+}
+
+.rodape-menu {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: #c9d0d4;
+    font-size: 12px;
+}
+
+.rodape-menu i {
+    color: #e68a3b;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.rodape-menu p {
+    margin: 5px 0 0;
 }
 
