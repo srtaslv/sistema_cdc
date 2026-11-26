@@ -52,6 +52,9 @@ def pagina_funcionario(request):
 
     return render(request, 'funcionario.html')
 
+def pagina_fotos(request):
+    return render (request, 'foto_cliente.html')
+
 
 def cardapio_teste(request):
     categorias = Categoria.objects.filter(
